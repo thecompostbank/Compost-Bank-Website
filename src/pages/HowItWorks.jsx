@@ -72,9 +72,9 @@ export default function HowItWorks() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
+      <section data-nav-dark className="bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-sand/35 text-[9px] tracking-ultra uppercase font-lato mb-8">The Process</p>
+          <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">The Process</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
             Five steps to a circular operation.
           </h1>
@@ -145,9 +145,9 @@ export default function HowItWorks() {
       </section>
 
       {/* CTA */}
-      <section className="bg-forest py-24 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20 text-center">
+      <section data-nav-dark className="bg-forest py-24 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20 text-center">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-sand/30 text-[9px] tracking-ultra uppercase font-lato mb-8">Ready to Begin?</p>
+          <p className="text-sand/30 text-[13px] tracking-ultra uppercase font-lato mb-8">Ready to Begin?</p>
           <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-sand leading-[1.06] mb-8 max-w-xl mx-auto">
             Step one starts with a conversation.
           </h2>

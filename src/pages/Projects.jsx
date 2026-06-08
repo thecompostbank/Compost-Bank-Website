@@ -75,9 +75,9 @@ export default function Projects() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
+      <section data-nav-dark className="bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-sand/35 text-[9px] tracking-ultra uppercase font-lato mb-8">Our Work</p>
+          <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">Our Work</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
             Projects that prove the principle.
           </h1>
@@ -136,7 +136,7 @@ export default function Projects() {
       </section>
 
       {/* Quote break */}
-      <section className="relative bg-forest py-24 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20 overflow-hidden">
+      <section data-nav-dark className="relative bg-forest py-24 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20 overflow-hidden">
         <div className="max-w-screen-xl mx-auto text-center">
           <p className="font-cormorant text-3xl lg:text-4xl xl:text-5xl text-sand/70 italic leading-snug max-w-3xl mx-auto">
             "Every ton of organic waste diverted from landfill is a ton of carbon kept out of the atmosphere, and a ton of nutrients returned to the soil."
@@ -148,7 +148,7 @@ export default function Projects() {
       {/* CTA */}
       <section className="bg-cream py-24 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20 text-center">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-olive text-[9px] tracking-ultra uppercase font-lato mb-8">Start Your Project</p>
+          <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-8">Start Your Project</p>
           <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-forest leading-[1.06] mb-8 max-w-xl mx-auto">
             Ready to become a case study?
           </h2>

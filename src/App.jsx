@@ -4,6 +4,7 @@ import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Services from './pages/Services'
+import ServiceDetail from './pages/ServiceDetail'
 import HowItWorks from './pages/HowItWorks'
 import Projects from './pages/Projects'
 import About from './pages/About'
@@ -25,6 +26,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />

@@ -51,9 +51,9 @@ export default function About() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
+      <section data-nav-dark className="bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-sand/35 text-[9px] tracking-ultra uppercase font-lato mb-8">About Us</p>
+          <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">About Us</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-4xl">
             A practical response to a real problem.
           </h1>
@@ -65,7 +65,7 @@ export default function About() {
         <div className="max-w-screen-xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
             <div>
-              <p className="text-olive text-[9px] tracking-ultra uppercase font-lato mb-6">Mission</p>
+              <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-6">Mission</p>
               <h2 className="font-cormorant font-semibold text-3xl lg:text-4xl xl:text-5xl text-forest leading-[1.08] mb-6">
                 To transform organic waste from a disposal problem into a valuable resource.
               </h2>
@@ -75,7 +75,7 @@ export default function About() {
               </p>
             </div>
             <div>
-              <p className="text-olive text-[9px] tracking-ultra uppercase font-lato mb-6">Vision</p>
+              <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-6">Vision</p>
               <h2 className="font-cormorant font-semibold text-3xl lg:text-4xl xl:text-5xl text-forest leading-[1.08] mb-6">
                 A Phuket where no organic waste goes to landfill.
               </h2>
@@ -99,7 +99,7 @@ export default function About() {
             />
           </div>
           <div className="bg-forest p-10 lg:p-16 xl:p-20 flex flex-col justify-center order-1 lg:order-2">
-            <p className="text-sand/35 text-[9px] tracking-ultra uppercase font-lato mb-8">Context</p>
+            <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">Context</p>
             <h2 className="font-cormorant font-semibold text-3xl lg:text-4xl xl:text-5xl text-sand leading-[1.08] mb-7">
               Why Phuket?
             </h2>
@@ -127,7 +127,7 @@ export default function About() {
         <ContourPattern />
         <div className="max-w-screen-xl mx-auto relative">
           <div className="max-w-3xl">
-            <p className="text-olive text-[9px] tracking-ultra uppercase font-lato mb-8">Our Story</p>
+            <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-8">Our Story</p>
             <h2 className="font-cormorant font-semibold text-3xl lg:text-4xl xl:text-5xl text-forest leading-[1.08] mb-7">
               Founded on a simple observation.
             </h2>
@@ -177,9 +177,9 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="bg-forest py-24 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20 text-center">
+      <section data-nav-dark className="bg-forest py-24 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20 text-center">
         <div className="max-w-screen-xl mx-auto">
-          <p className="text-sand/30 text-[9px] tracking-ultra uppercase font-lato mb-8">Work With Us</p>
+          <p className="text-sand/30 text-[13px] tracking-ultra uppercase font-lato mb-8">Work With Us</p>
           <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-sand leading-[1.06] mb-8 max-w-xl mx-auto">
             Ready to build something together?
           </h2>
