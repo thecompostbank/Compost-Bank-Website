@@ -41,7 +41,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Details — who, included, why on cream */}
-      <ServiceSection {...service} description={null} showHeader={false} />
+      <ServiceSection {...service} description={null} showHeader={false} imageContain={service.imageContain} />
 
       {/* CTA */}
       <section data-nav-dark className="bg-forest py-16 lg:py-24 px-8 sm:px-12 lg:px-16 xl:px-20 text-center">

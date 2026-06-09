@@ -5,12 +5,13 @@ export const services = [
     number: '01',
     title: 'On-Site Composting Systems',
     summary: 'Custom-designed composting infrastructure built around your waste volumes, space, and operational requirements.',
-    image: { src: '/Images/brand-grid.png', alt: 'On-site composting infrastructure' },
+    image: { src: '/Images/service-01.jpg', alt: 'On-site composting infrastructure' },
+    imageContain: true,
     description: {
       heading: 'Designed Around Your Waste, Not Around a Machine.',
       body: 'Many composting providers offer standardized equipment with fixed processing capacities. We take a different approach. Our systems are based on forced aeration composting, a proven technology that uses controlled airflow to accelerate decomposition, minimize odors, and improve compost quality. Rather than selling a one-size-fits-all machine, we design each system around your waste volumes, available space, operational requirements, and long-term objectives. The result is a practical, scalable solution capable of managing the organic waste you actually produce.',
     },
-    forWho: 'Hotels, resorts, large restaurants, farms, golf courses, schools, and new property developments with sufficient space and organic waste volumes to justify a dedicated on-site system. Typically suited to businesses generating more than 100 kg of organic waste per day.',
+    forWho: 'Hotels, resorts, large restaurants, farms, golf courses, schools, and new property developments with sufficient space and organic waste volumes to justify a dedicated on-site system. Typically suited for operations generating more than 100 kg of organic waste per day.',
     included: [
       'Site assessment and organic waste volume audit',
       'Custom system design and capacity planning',

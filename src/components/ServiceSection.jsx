@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default function ServiceSection({ id, number, title, description, forWho, included, includedLabel, whyMatters, image, flipped, comingSoon, showHeader = true }) {
+export default function ServiceSection({ id, number, title, description, forWho, included, includedLabel, whyMatters, image, flipped, comingSoon, showHeader = true, imageContain = false }) {
   return (
     <section id={id} className="py-14 lg:py-20 px-8 sm:px-12 lg:px-16 xl:px-20 bg-cream">
       <div className="max-w-screen-xl mx-auto">
@@ -21,8 +21,8 @@ export default function ServiceSection({ id, number, title, description, forWho,
 
           {/* Image */}
           {image && (
-            <div className="h-56 sm:h-72 lg:h-[400px] overflow-hidden img-zoom">
-              <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
+            <div className={imageContain ? '' : 'h-56 sm:h-72 lg:h-[400px] overflow-hidden img-zoom'}>
+              <img src={image.src} alt={image.alt} className={imageContain ? 'w-full h-auto' : 'w-full h-full object-cover'} />
             </div>
           )}
 
