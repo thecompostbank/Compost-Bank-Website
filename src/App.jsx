@@ -6,7 +6,6 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
 import HowItWorks from './pages/HowItWorks'
-import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
 
@@ -28,7 +27,6 @@ function Layout() {
         <Route path="/services" element={<Services />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
-        <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

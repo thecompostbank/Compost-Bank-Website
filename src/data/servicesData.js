@@ -5,7 +5,7 @@ export const services = [
     number: '01',
     title: 'On-Site Composting Systems',
     summary: 'Custom-designed composting infrastructure built around your waste volumes, space, and operational requirements.',
-    image: { src: '/images/brand-grid.png', alt: 'On-site composting infrastructure' },
+    image: { src: '/Images/brand-grid.png', alt: 'On-site composting infrastructure' },
     description: {
       heading: 'Designed Around Your Waste, Not Around a Machine.',
       body: 'Many composting providers offer standardized equipment with fixed processing capacities. We take a different approach. Our systems are based on forced aeration composting, a proven technology that uses controlled airflow to accelerate decomposition, minimize odors, and improve compost quality. Rather than selling a one-size-fits-all machine, we design each system around your waste volumes, available space, operational requirements, and long-term objectives. The result is a practical, scalable solution capable of managing the organic waste you actually produce.',
@@ -28,13 +28,13 @@ export const services = [
     number: '02',
     title: 'Organic Waste Management Support',
     summary: 'Practical guidance, staff training, and operational support to help businesses better manage their organic waste.',
-    image: { src: '/images/hands-compost.png', alt: 'Hands examining rich compost' },
+    image: { src: '/Images/hands-compost.png', alt: 'Hands examining rich compost' },
     flipped: true,
     description: {
       heading: 'Making Waste Management Work in Practice.',
       body: 'Helping businesses understand, reduce, and better manage their organic waste through practical guidance, staff training, operational improvements, system implementation, monitoring, and ongoing support.',
     },
-    forWho: 'Businesses that generate organic waste and want to improve how it is managed, whether through waste reduction, operational improvements, staff engagement, compliance requirements, or preparation for future infrastructure projects. Suitable for hotels, resorts, restaurants, schools, hospitals, commercial facilities, and organizations at any stage of their sustainability journey.',
+    forWho: 'Suitable for hotels, resorts, restaurants, schools, hospitals, commercial facilities, and organizations at any stage of their sustainability journey.',
     included: [
       'Organic waste assessments and waste stream analysis',
       'Current waste management and operational review',
@@ -53,10 +53,10 @@ export const services = [
     number: '03',
     title: 'Bio-Generator Projects',
     summary: 'Integrating organic waste infrastructure into new developments during the design phase — before construction begins.',
-    image: { src: '/images/brand-grid.png', alt: 'Bio-generator and energy infrastructure' },
+    image: { src: '/Images/brand-grid.png', alt: 'Bio-generator and energy infrastructure' },
     description: {
       heading: 'Build It Right From Day One.',
-      body: 'The most cost-effective time to integrate organic waste infrastructure is before a project is built. We work alongside developers, architects, engineers, and MEP teams to design systems that recover value from organic waste and support long-term operational sustainability from the outset. Rather than retrofitting solutions into existing operations, we help developments incorporate waste management infrastructure during the design phase—when space allocation, utility requirements, workflows, and operational procedures can be integrated efficiently and effectively.',
+      body: 'The most cost-effective time to integrate organic waste infrastructure is before a project is built. Whether the focus is on composting or biogas systems, we work alongside developers, architects, engineers, and MEP teams to design systems that recover value from organic waste and support long-term operational sustainability from the outset. Rather than retrofitting solutions into existing operations, we help developments incorporate waste management infrastructure during the design phase—when space allocation, utility requirements, workflows, and operational procedures can be integrated efficiently and effectively.',
     },
     forWho: 'Developers, architects, MEP consultants, project managers, and owners planning hotels, resorts, mixed-use developments, schools, hospitals, residential communities, or other projects that will generate significant volumes of organic waste. Best suited to projects still in the design or pre-construction phase.',
     included: [
@@ -78,7 +78,7 @@ export const services = [
     number: '04',
     title: 'Centralized Processing & Collection',
     summary: 'A future service providing off-site organic waste collection and processing for businesses without on-site capacity.',
-    image: { src: '/images/aerial.png', alt: 'Centralized composting facility' },
+    image: { src: '/Images/aerial.png', alt: 'Centralized composting facility' },
     flipped: true,
     comingSoon: true,
     description: {
@@ -96,5 +96,6 @@ export const services = [
       'Compost return programs for landscaping and gardens',
       'Environmental impact certificates and sustainability reporting',
     ],
+    whyMatters: 'Building a circular economy requires more than individual action—it requires the right infrastructure. A centralized processing facility would create a shared pathway for organic waste recovery across Phuket, enabling more organizations to divert waste from landfill, return nutrients to the earth, and contribute to a more sustainable future for the island.',
   },
 ]

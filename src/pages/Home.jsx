@@ -80,22 +80,32 @@ export default function Home() {
     <main>
 
       {/* ── SECTION 1: HERO ─────────────────────────────────────────────── */}
-      <section data-nav-dark className="min-h-screen flex flex-col lg:flex-row">
-        {/* Left — text */}
-        <div className="relative bg-forest flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 pt-36 pb-20 lg:py-0 lg:w-[48%] xl:w-[44%]">
-          <p className="text-sand/40 text-[13px] tracking-ultra uppercase font-lato mb-10">
+      <section data-nav-dark className="min-h-screen relative flex items-center overflow-hidden">
+        {/* Hero with gradient overlay — solid green left, crisp photo right */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(90deg, rgba(46,58,47,0.96) 0%, rgba(46,58,47,0.88) 25%, rgba(46,58,47,0.55) 45%, rgba(46,58,47,0.15) 65%, rgba(46,58,47,0) 100%), url('/Images/home.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+          }}
+        />
+
+        {/* Text content */}
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-36 pb-20 lg:py-0 w-full max-w-2xl">
+          <p className="text-sand/60 text-[13px] tracking-ultra uppercase font-lato mb-10 [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
             Phuket, Thailand
           </p>
 
-          <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl xl:text-7xl text-sand leading-[1.04] mb-7">
+          <h1 className="font-cormorant font-bold text-5xl sm:text-6xl xl:text-7xl text-sand leading-[1.04] mb-7 [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">
             Turning organic<br />
             waste into<br />
-            <em className="italic font-normal text-sand/75">opportunity.</em>
+            <em className="italic font-semibold text-sand/90">opportunity.</em>
           </h1>
 
-          <div className="w-10 h-px bg-sand/20 mb-7" />
+          <div className="w-10 h-px bg-sand/30 mb-7" />
 
-          <p className="text-sand/60 text-sm lg:text-[15px] font-lato leading-relaxed mb-10 max-w-[340px]">
+          <p className="text-sand/80 text-sm lg:text-[15px] font-lato leading-relaxed mb-10 max-w-[340px] [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
             The Compost Bank helps businesses, new developments, and communities transform organic waste into valuable resources through practical solutions, infrastructure, and education—helping reduce environmental impact while supporting a more circular economy.
           </p>
 
@@ -113,24 +123,12 @@ export default function Home() {
               Book a Consultation
             </Link>
           </div>
-
-          <div className="absolute bottom-8 left-8 sm:left-12 lg:left-16 xl:left-20">
-            <p className="text-sand/18 text-[8px] tracking-ultra uppercase font-lato">
-              Wealth in Waste
-            </p>
-          </div>
         </div>
 
-        {/* Right — image */}
-        <div className="h-72 sm:h-96 lg:h-auto lg:flex-1 relative overflow-hidden">
-          <img
-            src="/images/aerial.png"
-            alt="Compost Bank composting facility, Phuket"
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="eager"
-          />
-          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-forest/30 to-transparent pointer-events-none" />
-          <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+        <div className="absolute bottom-8 left-8 sm:left-12 lg:left-16 xl:left-20 z-10">
+          <p className="text-sand/20 text-[8px] tracking-ultra uppercase font-lato">
+            Wealth in Waste
+          </p>
         </div>
       </section>
 
@@ -158,46 +156,57 @@ export default function Home() {
       </section>
 
       {/* ── SECTION 3: MISSION ──────────────────────────────────────────── */}
-      <section className="relative bg-sand-mid py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 overflow-hidden">
-        <ContourPattern />
-        <div className="max-w-screen-xl mx-auto relative">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div>
-              <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-8">
-                Our Mission
-              </p>
-              <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl xl:text-6xl text-forest leading-[1.08] mb-7">
-                To build the infrastructure needed for a circular Phuket.
-              </h2>
-              <div className="w-10 h-px bg-forest/20 mb-7" />
-              <p className="text-charcoal/60 text-sm lg:text-base font-lato leading-relaxed">
-                Creating practical pathways for organic waste to be recovered, processed, and returned to the earth as a valuable resource.
-              </p>
-            </div>
-            <div className="relative h-72 sm:h-96 lg:h-[520px] overflow-hidden img-zoom">
-              <img
-                src="/images/hands-compost.png"
-                alt="Hands holding rich compost"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+      <section className="relative min-h-[560px] lg:min-h-[640px] overflow-hidden flex items-center">
+        {/* Full-width background image */}
+        <img
+          src="/Images/our-mission.png"
+          alt="Young plant emerging from rich compost soil"
+          className="absolute inset-0 w-full h-full object-cover object-[60%_center]"
+        />
+        {/* Progressive blur — strong on left (text area), fades to nothing on right (plant stays sharp) */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backdropFilter: 'blur(14px)',
+            WebkitBackdropFilter: 'blur(14px)',
+            maskImage: 'linear-gradient(to right, white 0%, white 30%, rgba(255,255,255,0.6) 48%, transparent 68%)',
+            WebkitMaskImage: 'linear-gradient(to right, white 0%, white 30%, rgba(255,255,255,0.6) 48%, transparent 68%)',
+          }}
+        />
+        {/* Subtle warm overlay on text side for contrast */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to right, rgba(245,240,232,0.72) 0%, rgba(245,240,232,0.45) 35%, rgba(245,240,232,0.1) 58%, transparent 72%)',
+          }}
+        />
+        {/* Text content */}
+        <div className="relative z-10 py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 max-w-xl">
+          <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-8">
+            Our Mission
+          </p>
+          <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl xl:text-6xl text-forest leading-[1.08] mb-7">
+            To build the infrastructure needed for a circular Phuket.
+          </h2>
+          <div className="w-10 h-px bg-forest/20 mb-7" />
+          <p className="text-charcoal/70 text-sm lg:text-base font-lato leading-relaxed">
+            Creating practical pathways for organic waste to be recovered, processed, and returned to the earth as a valuable resource.
+          </p>
         </div>
       </section>
 
 
       {/* ── SECTION 5: LOOKING FOR A SOLUTION ──────────────────────────── */}
       <section data-nav-dark className="bg-charcoal">
-        <div className="grid lg:grid-cols-2">
-          {/* Text column */}
-          <div className="py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20">
+        <div>
+          <div className="py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 max-w-3xl">
             <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl xl:text-6xl text-sand leading-[1.06] mb-16">
               Looking for a Solution?
             </h2>
             <div className="divide-y divide-sand/10">
               <div className="py-8 lg:py-10">
                 <p className="text-sand/60 text-base font-lato leading-relaxed mb-4">
-                  Generate organic waste at your business?
+                  Do you generate organic waste at your business?
                 </p>
                 <Link to="/services/on-site-composting" className="flex items-center gap-3 text-sand font-lato text-base group hover:opacity-70 transition-opacity">
                   <span className="text-terracotta">→</span>
@@ -215,7 +224,7 @@ export default function Home() {
               </div>
               <div className="py-8 lg:py-10">
                 <p className="text-sand/60 text-base font-lato leading-relaxed mb-4">
-                  Planning a new development in Phuket?
+                  Are you planning a new development in Phuket that will generate organic waste?
                 </p>
                 <Link to="/services/bio-generator-projects" className="flex items-center gap-3 text-sand font-lato text-base group hover:opacity-70 transition-opacity">
                   <span className="text-terracotta">→</span>
@@ -232,14 +241,6 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-          {/* Image column — replace src with your image */}
-          <div className="h-72 lg:h-auto overflow-hidden">
-            <img
-              src="/images/hands-compost.png"
-              alt=""
-              className="w-full h-full object-cover"
-            />
           </div>
         </div>
       </section>
@@ -266,66 +267,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SECTION 7: DUAL TRACK ───────────────────────────────────────── */}
-      <section className="relative bg-sand-mid py-24 lg:py-44 px-8 sm:px-12 lg:px-16 xl:px-20 overflow-hidden">
-        <ContourPattern />
-        <div className="max-w-screen-xl mx-auto relative">
-          <div className="text-center mb-20">
-            <h2 className="font-cormorant font-semibold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-forest leading-[1.06]">
-              Two pathways.<br />
-              <em className="italic font-normal">One circular future.</em>
-            </h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-px bg-forest/12">
-            {/* Track 1 */}
-            <div className="bg-sand-mid p-10 lg:p-14 xl:p-16">
-              <div className="flex items-center gap-4 mb-10">
-                <span className="text-[9px] font-lato tracking-ultra uppercase text-olive/50 flex-shrink-0">Track One</span>
-                <div className="flex-1 h-px bg-forest/12" />
-              </div>
-              <h3 className="font-cormorant font-semibold text-3xl lg:text-4xl text-forest mb-5 leading-snug">
-                On-Site Systems
-              </h3>
-              <p className="text-charcoal/60 text-sm font-lato leading-relaxed mb-6">
-                For businesses with space and resources to manage organic waste on-site. We design, build, and support you in operating a composting system that fits your exact operation.
-              </p>
-              <p className="text-forest/40 text-xs font-lato leading-relaxed italic mb-10">
-                Hotels · Resorts · Large Restaurants · Farms · New Developments
-              </p>
-              <Link
-                to="/services#onsite"
-                className="inline-block text-[9.5px] font-lato tracking-ultra uppercase border border-forest/30 text-forest px-8 py-3.5 hover:bg-forest hover:text-sand hover:border-forest transition-all duration-200"
-              >
-                Learn More
-              </Link>
-            </div>
-
-            {/* Track 2 */}
-            <div className="bg-forest p-10 lg:p-14 xl:p-16">
-              <div className="flex items-center gap-4 mb-10">
-                <span className="text-[9px] font-lato tracking-ultra uppercase text-sand/35 flex-shrink-0">Track Two</span>
-                <div className="flex-1 h-px bg-sand/12" />
-              </div>
-              <h3 className="font-cormorant font-semibold text-3xl lg:text-4xl text-sand mb-5 leading-snug">
-                Centralized Processing
-              </h3>
-              <p className="text-sand/60 text-sm font-lato leading-relaxed mb-6">
-                For businesses that cannot build their own systems. We collect your sorted organic waste and process it at our centralized facility — giving you the environmental credentials without the operational complexity.
-              </p>
-              <p className="font-cormorant text-xl lg:text-2xl text-sand/50 italic mb-10">
-                You sort. We handle the rest.
-              </p>
-              <Link
-                to="/services#centralized"
-                className="inline-block text-[9.5px] font-lato tracking-ultra uppercase border border-sand/25 text-sand px-8 py-3.5 hover:bg-sand hover:text-forest transition-all duration-200"
-              >
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
       {/* ── SECTION 9: CTA ──────────────────────────────────────────────── */}

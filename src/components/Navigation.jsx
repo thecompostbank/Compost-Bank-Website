@@ -4,7 +4,6 @@ import { services } from '../data/servicesData'
 
 const navLinks = [
   { label: 'How It Works', path: '/how-it-works' },
-  { label: 'Projects', path: '/projects' },
   { label: 'About', path: '/about' },
 ]
 
@@ -57,7 +56,7 @@ export default function Navigation() {
   const useLightText = !navBgVisible || navIsDark
 
   const logoColor = useLightText ? 'text-sand' : 'text-forest'
-  const linkColor = useLightText ? 'text-sand' : 'text-forest'
+  const linkColor = (isHome && !navBgVisible) ? 'text-forest' : (useLightText ? 'text-sand' : 'text-forest')
   const bgClass = navIsDark
     ? 'bg-forest/95 backdrop-blur-md'
     : navBgVisible
@@ -143,9 +142,9 @@ export default function Navigation() {
             <Link
               to="/contact"
               className={`text-[13px] font-lato tracking-ultra uppercase px-7 py-3 border transition-all duration-200 ${
-                useLightText
-                  ? 'border-sand/35 text-sand hover:bg-sand/10 hover:border-sand/60'
-                  : 'border-forest/40 text-forest hover:bg-forest hover:text-sand hover:border-forest'
+                (isHome && !navBgVisible) || !useLightText
+                  ? 'border-forest/40 text-forest hover:bg-forest hover:text-sand hover:border-forest'
+                  : 'border-sand/35 text-sand hover:bg-sand/10 hover:border-sand/60'
               }`}
             >
               Book a Consultation

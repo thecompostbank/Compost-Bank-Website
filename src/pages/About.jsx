@@ -22,28 +22,34 @@ const ContourPattern = ({ opacity = '0.06' }) => (
 
 const values = [
   {
-    title: 'Practical Action',
-    body: 'We prioritise what works over what sounds good. Every recommendation we make is grounded in operational reality — systems that can actually be built, run, and maintained by real teams in real conditions.',
+    title: 'Education & Empowerment',
+    body: 'We believe meaningful change begins with understanding. Through education, transparency, and leading by example, we help individuals and organizations see waste differently and take action with confidence.',
+    image: '/Images/hands-compost.png',
   },
   {
-    title: 'Transparency',
-    body: 'We are honest about what we know and what we do not. We share data, document outcomes, and report on both successes and challenges — because trust is built on honesty, not on marketing.',
+    title: 'Collective Responsibility',
+    body: 'No single business, community, or government can solve the waste challenge alone. We believe lasting progress is built through collaboration, shared responsibility, and collective action.',
+    image: '/Images/aerial.png',
   },
   {
-    title: 'Education',
-    body: 'We build capability wherever we work. Training staff, sharing knowledge, and leaving businesses better equipped to manage waste long after our direct involvement has ended.',
+    title: 'Regeneration',
+    body: 'Organic waste should be returned to the earth, not buried in landfill. We believe healthy soils, thriving ecosystems, and sustainable agriculture depend on keeping valuable nutrients in circulation and restoring natural cycles.',
+    image: '/Images/brand-grid.png',
   },
   {
-    title: 'Circularity',
-    body: 'Waste is not an endpoint — it is a resource in the wrong place. Everything we do is oriented around closing the loop: keeping organic matter in productive use rather than sending it to landfill.',
+    title: 'Transparency & Accountability',
+    body: 'What gets measured gets managed. We are committed to transparency, accountability, and evidence-based decision making. By making waste visible through data and reporting, we help turn hidden problems into actionable opportunities.',
+    image: '/Images/aerial.png',
   },
   {
-    title: 'Collaboration',
-    body: "Phuket's waste challenge is too large for any one organisation. We work with businesses, communities, government bodies, and other organisations to build systems that are bigger than ourselves.",
+    title: 'Practical Solutions',
+    body: 'We believe sustainability only creates value when it works in practice. Every site, waste stream, and community is different, which is why we focus on practical, adaptable solutions rather than one-size-fits-all approaches.',
+    image: '/Images/hands-compost.png',
   },
   {
-    title: 'Long-Term Thinking',
-    body: 'We build for durability, not for demonstration. The systems we design and install are meant to function for years — and the relationships we build are designed to last just as long.',
+    title: 'Resource Recovery',
+    body: "Waste is not the end of a material's journey. We believe valuable resources should remain in use for as long as possible. Through composting, circular systems, and innovative infrastructure, we help transform discarded materials into new opportunities.",
+    image: '/Images/brand-grid.png',
   },
 ]
 
@@ -93,7 +99,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="h-64 sm:h-96 lg:h-auto overflow-hidden img-zoom order-2 lg:order-1">
             <img
-              src="/images/aerial.png"
+              src="/Images/aerial.png"
               alt="Phuket tropical landscape and composting infrastructure"
               className="w-full h-full object-cover"
             />
@@ -129,15 +135,27 @@ export default function About() {
           <div className="max-w-3xl">
             <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-8">Our Story</p>
             <h2 className="font-cormorant font-semibold text-3xl lg:text-4xl xl:text-5xl text-forest leading-[1.08] mb-7">
-              Founded on a simple observation.
+              Started by challenging a common assumption.
             </h2>
             <div className="w-8 h-px bg-forest/15 mb-7" />
+            <p className="font-lato font-bold text-charcoal/80 text-sm lg:text-base mb-7">
+              The most visible waste problem isn't always the biggest one.
+            </p>
             <div className="space-y-5 text-charcoal/65 text-sm lg:text-base font-lato leading-relaxed">
               <p>
-                [Founder story to be added — a personal account of the moment or journey that led to founding The Compost Bank. The problem observed, the decision to act, and the values that have guided the work since.]
+                The Compost Bank was founded by Rae Ann Collier and Tom Gossland after they identified a gap in Phuket's waste management infrastructure that few people were talking about.
               </p>
-              <p className="italic text-charcoal/45">
-                — Placeholder for founder biography and founding narrative.
+              <p>
+                When Rae Ann began researching waste management on the island, much of the conversation focused on plastic pollution. But the more she looked into Phuket's waste system, the less convinced she became that plastic was the biggest challenge. Recycling networks already existed, collection initiatives were growing, and awareness was high. Yet one waste stream kept appearing in the data again and again: organic waste.
+              </p>
+              <p>
+                The deeper she dug, the clearer the problem became. Huge volumes of food waste, garden waste, and other organic materials were ending up in landfill every day, not because they had no value, but because the infrastructure needed to recover them simply didn't exist.
+              </p>
+              <p>
+                Determined to do something about it, she began developing the idea that would become The Compost Bank. With Tom's engineering background in renewable energy systems complementing her experience in resource management and waste systems, the project evolved from an idea into a practical mission.
+              </p>
+              <p>
+                Today, they are working to help Phuket rethink organic waste—not as rubbish to get rid of, but as a resource worth recovering. Their goal is simple: build practical solutions, create the infrastructure that's currently missing, and prove that waste only becomes waste when we fail to use it.
               </p>
             </div>
           </div>
@@ -155,12 +173,19 @@ export default function About() {
               Six principles that shape every decision — from how we design systems to how we work with clients and communities.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-forest/8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {values.map((v) => (
-              <div key={v.title} className="bg-cream p-8 lg:p-10">
-                <div className="w-5 h-px bg-olive mb-6" />
-                <h3 className="font-cormorant text-2xl text-forest mb-4 leading-snug">{v.title}</h3>
-                <p className="text-charcoal/55 text-sm font-lato leading-relaxed">{v.body}</p>
+              <div key={v.title} className="group relative overflow-hidden border border-forest/10 p-8 lg:p-10 cursor-default transition-all duration-300 ease-in-out hover:scale-[1.04] hover:z-10 hover:shadow-xl hover:border-forest/25">
+                {/* Blurred background image */}
+                <img src={v.image} alt="" className="absolute inset-0 w-full h-full object-cover blur-sm scale-105 pointer-events-none" aria-hidden="true" />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-sand/90 group-hover:bg-cream/85 transition-colors duration-300 pointer-events-none" />
+                {/* Content */}
+                <div className="relative">
+                  <div className="w-5 h-px bg-olive mb-6 transition-colors duration-300 group-hover:bg-terracotta" />
+                  <h3 className="font-cormorant text-2xl text-forest mb-4 leading-snug">{v.title}</h3>
+                  <p className="text-charcoal/65 text-sm font-lato leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">{v.body}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -170,7 +195,7 @@ export default function About() {
       {/* Brand image */}
       <section className="h-72 sm:h-96 lg:h-[500px] overflow-hidden img-zoom">
         <img
-          src="/images/brand-grid.png"
+          src="/Images/brand-grid.png"
           alt="The Compost Bank team and operations"
           className="w-full h-full object-cover"
         />

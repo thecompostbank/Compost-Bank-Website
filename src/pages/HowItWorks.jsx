@@ -4,41 +4,41 @@ const steps = [
   {
     number: '01',
     title: 'Assess',
-    headline: 'We start by understanding your waste.',
+    headline: 'We start by understanding your operation.',
     body: "Every engagement begins with a thorough assessment of your organic waste streams — what you're generating, how much, where it comes from, and what it's currently costing you. We walk your site, speak with your team, and review your operations to build a complete picture.",
     details: [
-      'On-site waste audit and characterisation',
-      'Volume measurement and composition analysis',
-      'Current cost and disposal pathway review',
-      'Staff interviews and operational mapping',
+      'Organic waste stream assessment and characterization',
+      'Current management practices and disposal pathway review',
+      'Waste volume analysis and infrastructure planning',
+      'Operational workflow and stakeholder mapping',
     ],
-    outcome: 'A clear understanding of your starting point — and the opportunity within it.',
+    outcome: 'A clear understanding of your current situation, future needs, and the opportunities within them.',
   },
   {
     number: '02',
     title: 'Design',
-    headline: 'We design a system built for your operation.',
-    body: "No two businesses are the same. We use the findings from the assessment to design an approach that fits your space, your volumes, your team, and your budget. Whether that means an on-site composting system, a connection to centralized collection, or a biogas solution — we design for practicality and performance.",
+    headline: 'We design the right solution for your needs.',
+    body: "No two businesses are the same. We use the findings from the assessment to design an approach that fits your space, your volumes, your team, and your budget. Whether that means operational improvements, an on-site composting system, a future biogas project, or a pathway toward centralized processing, we develop practical solutions tailored to your goals, constraints, and resources.",
     details: [
       'System type selection and pathway recommendation',
-      'Infrastructure design and capacity modelling',
-      'Equipment specification and supplier sourcing',
-      'Staff workflow and SOP design',
+      'Infrastructure design and capacity planning',
+      'Operational procedures and workflow design',
+      'Material sourcing and implementation planning',
     ],
-    outcome: 'A practical, costed design ready for implementation.',
+    outcome: 'A practical roadmap designed around your operation, objectives, and long-term success.',
   },
   {
     number: '03',
     title: 'Build',
-    headline: 'We build the infrastructure.',
-    body: 'For on-site systems and bio-generator projects, we manage the full build process — from groundworks and civil construction through to equipment installation and commissioning. We work with trusted local contractors and suppliers to deliver on time and on budget.',
+    headline: 'We bring the solution to life.',
+    body: 'For infrastructure projects, we manage the implementation process from design through commissioning. For operational support projects, we help implement systems, procedures, and workflows that create lasting change.',
     details: [
-      'Civil works, drainage, and bays construction',
+      'Infrastructure construction and implementation',
       'Equipment installation and commissioning',
-      'Quality checks and system performance testing',
-      'Health, safety, and environmental compliance',
+      'Operational systems and process deployment',
+      'Quality assurance and performance verification',
     ],
-    outcome: 'A fully operational composting or processing system, ready to use.',
+    outcome: 'A solution that is implemented, operational, and ready to deliver measurable results.',
   },
   {
     number: '04',
@@ -51,7 +51,7 @@ const steps = [
       'Written SOPs and visual guides for every process',
       'Train-the-trainer sessions for sustained capability',
     ],
-    outcome: 'A team that can run the system confidently — without needing us every day.',
+    outcome: 'A confident team with the knowledge and tools needed to run the system successfully.',
   },
   {
     number: '05',
@@ -60,11 +60,11 @@ const steps = [
     body: 'Composting systems require attention, adjustment, and ongoing optimisation. We provide regular monitoring visits, remote advisory support, and monthly performance reports — tracking the volumes you divert, the compost you produce, and the carbon you save.',
     details: [
       'Regular site monitoring visits and system checks',
-      'Monthly performance reports — volumes, compost output, CO₂ avoided',
       'Remote advisory and troubleshooting support',
-      'Annual system review and optimisation recommendations',
+      'Performance tracking and impact reporting',
+      'Annual review and optimisation recommendations',
     ],
-    outcome: 'Consistent performance, continuous improvement, and the data to prove your impact.',
+    outcome: 'Continuous improvement, measurable impact, and support when you need it.',
   },
 ]
 
@@ -80,7 +80,7 @@ export default function HowItWorks() {
           </h1>
           <div className="w-10 h-px bg-sand/15 my-8" />
           <p className="text-sand/55 text-sm lg:text-base font-lato leading-relaxed max-w-xl">
-            From first conversation to long-term partnership — a systematic, practical process built on deep operational experience.
+            Every project is different, but our approach remains the same: understand the challenge, design the right solution, implement it properly, and provide the support needed for long-term success.
           </p>
         </div>
       </section>
@@ -138,7 +138,7 @@ export default function HowItWorks() {
       {/* Full width image break */}
       <section className="h-72 sm:h-96 lg:h-[500px] overflow-hidden img-zoom">
         <img
-          src="/images/aerial.png"
+          src="/Images/aerial.png"
           alt="Compost Bank composting facility"
           className="w-full h-full object-cover"
         />
