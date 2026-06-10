@@ -20,11 +20,8 @@ export default function Services() {
             backgroundPosition: 'center center',
           }}
         />
-        {/* Mobile: uniform dark tint over full image (no mid-section break), fades to cream at bottom */}
-        <div
-          className="absolute inset-0 lg:hidden"
-          style={{ background: 'linear-gradient(to bottom, rgba(46,58,47,0.72) 0%, rgba(46,58,47,0.72) 60%, rgba(46,58,47,0.5) 80%, #F5F0E8 100%)' }}
-        />
+        {/* Mobile: flat dark overlay — full image visible, text readable, no fading within hero */}
+        <div className="absolute inset-0 lg:hidden" style={{ background: 'rgba(46,58,47,0.68)' }} />
         <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-6">What We Do</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
