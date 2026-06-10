@@ -3,7 +3,7 @@ import SEO from '../components/SEO'
 
 const ContourPattern = ({ opacity = '0.06' }) => (
   <svg
-    className="absolute inset-0 w-full h-full pointer-events-none"
+    className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none"
     viewBox="0 0 1440 700"
     preserveAspectRatio="xMidYMid slice"
     fill="none"
