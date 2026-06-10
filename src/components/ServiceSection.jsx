@@ -76,14 +76,6 @@ export default function ServiceSection({ id, number, title, description, forWho,
               </div>
             )}
 
-            <div className="mt-8">
-              <Link
-                to="/contact"
-                className="inline-block text-[9.5px] font-lato tracking-ultra uppercase border border-forest/30 text-forest px-8 py-3.5 hover:bg-forest hover:text-sand hover:border-forest transition-all duration-200"
-              >
-                Enquire About This Service
-              </Link>
-            </div>
           </>
         ) : (
           /* Standard grid — 40/60 when imageWide, else 50/50 */
@@ -139,14 +131,6 @@ export default function ServiceSection({ id, number, title, description, forWho,
                 </div>
               )}
 
-              <div className="mt-8">
-                <Link
-                  to="/contact"
-                  className="inline-block text-[9.5px] font-lato tracking-ultra uppercase border border-forest/30 text-forest px-8 py-3.5 hover:bg-forest hover:text-sand hover:border-forest transition-all duration-200"
-                >
-                  Enquire About This Service
-                </Link>
-              </div>
             </div>
           </div>
         )}
