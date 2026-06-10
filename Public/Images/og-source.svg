@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#2E3A2F"/>
+
+  <!-- Contour line texture -->
+  <g fill="none" stroke="#7A9E7A" stroke-width="1" opacity="0.07">
+    <path d="M -100,120 C 200,100 500,145 800,115 C 1000,95 1150,130 1300,110"/>
+    <path d="M -100,185 C 200,165 500,210 800,180 C 1000,160 1150,195 1300,175"/>
+    <path d="M -100,250 C 200,230 500,275 800,245 C 1000,225 1150,260 1300,240"/>
+    <path d="M -100,315 C 200,295 500,340 800,310 C 1000,290 1150,325 1300,305"/>
+    <path d="M -100,380 C 200,360 500,405 800,375 C 1000,355 1150,390 1300,370"/>
+    <path d="M -100,445 C 200,425 500,470 800,440 C 1000,420 1150,455 1300,435"/>
+    <path d="M -100,510 C 200,490 500,535 800,505 C 1000,485 1150,520 1300,500"/>
+  </g>
+
+  <!-- Right side decorative circle rings (cycle / compost motif) -->
+  <circle cx="990" cy="315" r="320" fill="none" stroke="#7A9E7A" stroke-width="1" opacity="0.10"/>
+  <circle cx="990" cy="315" r="260" fill="none" stroke="#7A9E7A" stroke-width="1" opacity="0.10"/>
+  <circle cx="990" cy="315" r="200" fill="none" stroke="#7A9E7A" stroke-width="1" opacity="0.12"/>
+  <circle cx="990" cy="315" r="140" fill="none" stroke="#7A9E7A" stroke-width="1.5" opacity="0.14"/>
+  <circle cx="990" cy="315" r="82"  fill="#374A38" opacity="0.9"/>
+  <circle cx="990" cy="315" r="48"  fill="#415244" opacity="0.9"/>
+
+  <!-- Leaf icon in circle centre -->
+  <path d="M990,268 C1022,294 1022,336 990,362 C958,336 958,294 990,268Z"
+        fill="#6B9A6E" opacity="0.85"/>
+  <line x1="990" y1="268" x2="990" y2="362" stroke="#2E3A2F" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Left side thin accent rule -->
+  <rect x="96" y="176" width="32" height="1.2" fill="#B8875A" opacity="0.9"/>
+
+  <!-- Location eyebrow -->
+  <text x="96" y="163"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="11.5"
+    fill="#F5F0E8"
+    opacity="0.35"
+    letter-spacing="4.5">PHUKET · THAILAND</text>
+
+  <!-- Brand name -->
+  <text x="96" y="298"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="78"
+    font-weight="400"
+    fill="#F5F0E8"
+    letter-spacing="-0.5">The Compost Bank</text>
+
+  <!-- Tagline -->
+  <text x="99" y="352"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="29"
+    font-style="italic"
+    fill="#B8875A"
+    letter-spacing="1.5">Wealth in Waste</text>
+
+  <!-- Divider -->
+  <rect x="96" y="382" width="56" height="1" fill="#F5F0E8" opacity="0.15"/>
+
+  <!-- Description line 1 -->
+  <text x="96" y="418"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="18"
+    fill="#F5F0E8"
+    opacity="0.48"
+    letter-spacing="0.2">Transforming organic waste into valuable resources.</text>
+
+  <!-- Description line 2 -->
+  <text x="96" y="446"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="18"
+    fill="#F5F0E8"
+    opacity="0.48"
+    letter-spacing="0.2">Composting infrastructure and circular economy solutions.</text>
+
+  <!-- Domain -->
+  <text x="96" y="592"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="12"
+    fill="#F5F0E8"
+    opacity="0.22"
+    letter-spacing="4.5">THECOMPOSTBANK.COM</text>
+
+</svg>
