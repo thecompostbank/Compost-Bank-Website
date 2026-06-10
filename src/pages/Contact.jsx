@@ -40,14 +40,38 @@ export default function Contact() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
 
   const handleChange = (e) => {
     setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSending(true)
+    setError(false)
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/raeann@thecompostbank.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          ...formState,
+          _subject: 'New Consultation Request — The Compost Bank',
+          _template: 'table',
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSubmitted(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -265,10 +289,17 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full bg-forest hover:bg-forest/85 text-sand text-[10px] tracking-ultra uppercase font-lato py-4 transition-colors duration-200"
+                    disabled={sending}
+                    className="w-full bg-forest hover:bg-forest/85 disabled:opacity-60 text-sand text-[10px] tracking-ultra uppercase font-lato py-4 transition-colors duration-200"
                   >
-                    Send Enquiry
+                    {sending ? 'Sending…' : 'Send Enquiry'}
                   </button>
+
+                  {error && (
+                    <p className="text-[10px] font-lato text-terracotta text-center mt-4">
+                      Something went wrong. Please try again or email us directly.
+                    </p>
+                  )}
 
                   <p className="text-[9px] font-lato text-charcoal/45 text-center mt-5">
                     We respond to all enquiries within 2 business days.

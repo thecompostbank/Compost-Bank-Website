@@ -12,13 +12,37 @@ const EMPTY_FORM = {
 function InterestForm() {
   const [form, setForm] = useState(EMPTY_FORM)
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
 
   const set = (field) => (e) =>
     setForm(f => ({ ...f, [field]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }))
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSending(true)
+    setError(false)
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/raeann@thecompostbank.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          ...form,
+          _subject: 'New Registration of Interest — Centralized Processing & Collection',
+          _template: 'table',
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSubmitted(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   const inputClass = "w-full bg-transparent border-b border-forest/20 py-3 text-sm font-lato text-charcoal placeholder-charcoal/30 focus:outline-none focus:border-forest/60 transition-colors duration-200"
@@ -109,10 +133,16 @@ function InterestForm() {
       <div className="mt-10">
         <button
           type="submit"
-          className="inline-block bg-forest hover:bg-forest/90 text-sand text-[10px] tracking-ultra uppercase font-lato px-12 py-4 transition-colors duration-200"
+          disabled={sending}
+          className="inline-block bg-forest hover:bg-forest/90 disabled:opacity-60 text-sand text-[10px] tracking-ultra uppercase font-lato px-12 py-4 transition-colors duration-200"
         >
-          Submit Interest
+          {sending ? 'Sending…' : 'Submit Interest'}
         </button>
+        {error && (
+          <p className="text-[10px] font-lato text-terracotta mt-4">
+            Something went wrong. Please try again or email us directly.
+          </p>
+        )}
         <p className="text-charcoal/35 text-xs font-lato mt-4 leading-relaxed">
           Submitting this form does not create any obligation. It simply helps us understand potential demand.
         </p>
