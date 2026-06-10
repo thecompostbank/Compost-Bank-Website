@@ -13,15 +13,13 @@ export default function Services() {
       {/* Hero */}
       <section data-nav-dark className="relative overflow-hidden bg-forest pt-36 pb-12 sm:pt-44 sm:pb-16 lg:pt-64 lg:pb-20 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hidden lg:block"
           style={{
             backgroundImage: `linear-gradient(90deg, rgba(46,58,47,0.96) 0%, rgba(46,58,47,0.96) 55%, rgba(46,58,47,0.7) 70%, rgba(46,58,47,0.2) 85%, rgba(46,58,47,0) 100%), url('/Images/palm.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
           }}
         />
-        {/* Mobile: flat dark overlay — full image visible, text readable, no fading within hero */}
-        <div className="absolute inset-0 lg:hidden" style={{ background: 'rgba(46,58,47,0.68)' }} />
         <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-6">What We Do</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
