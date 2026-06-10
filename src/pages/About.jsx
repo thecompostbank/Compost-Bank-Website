@@ -67,12 +67,27 @@ export default function About() {
 
         {/* Atmospheric image — full bleed */}
         <div className="absolute inset-0">
+          {/* Base layer — crisp everywhere */}
           <img
             src="/Images/fw.jpg"
             alt=""
             aria-hidden="true"
-            className="w-full h-full object-cover"
-            style={{ opacity: 1, objectPosition: '50% center', filter: 'blur(4px)', transform: 'scale(1.05)' }}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: '50% center' }}
+          />
+          {/* Blurred overlay — left side only, fades out before right edge */}
+          <img
+            src="/Images/fw.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              objectPosition: '50% center',
+              filter: 'blur(6px)',
+              transform: 'scale(1.05)',
+              maskImage: 'linear-gradient(to right, black 0%, black 25%, transparent 60%)',
+              WebkitMaskImage: 'linear-gradient(to right, black 0%, black 25%, transparent 60%)',
+            }}
           />
           {/* Dark green tint */}
           <div className="absolute inset-0 bg-forest/10" />
