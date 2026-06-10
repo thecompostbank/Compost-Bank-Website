@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 
 const SITE_NAME = 'The Compost Bank'
 const CANONICAL_DOMAIN = 'https://thecompostbank.com'
-const DEFAULT_OG_IMAGE = `${CANONICAL_DOMAIN}/og-image.jpg`
+const DEFAULT_OG_IMAGE = `${CANONICAL_DOMAIN}/og-image-v2.jpg`
 
 export default function SEO({ title, description, path = '', ogImage }) {
   const fullTitle = title
