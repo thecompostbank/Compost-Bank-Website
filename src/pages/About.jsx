@@ -68,7 +68,7 @@ export default function About() {
         {/* Atmospheric image — full bleed */}
         <div className="absolute inset-0">
           <img
-            src="/Images/farmer.jpg"
+            src="/Images/fw.jpg"
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover"
