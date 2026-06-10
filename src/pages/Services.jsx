@@ -15,7 +15,7 @@ export default function Services() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `linear-gradient(90deg, rgba(46,58,47,0.96) 0%, rgba(46,58,47,0.88) 25%, rgba(46,58,47,0.55) 45%, rgba(46,58,47,0.15) 65%, rgba(46,58,47,0) 100%), url('/Images/palm.jpg')`,
+            backgroundImage: `linear-gradient(90deg, rgba(46,58,47,0.96) 0%, rgba(46,58,47,0.96) 55%, rgba(46,58,47,0.7) 70%, rgba(46,58,47,0.2) 85%, rgba(46,58,47,0) 100%), url('/Images/palm.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
           }}
