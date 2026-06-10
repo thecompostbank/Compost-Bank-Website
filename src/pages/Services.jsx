@@ -20,8 +20,11 @@ export default function Services() {
             backgroundPosition: 'center center',
           }}
         />
-        {/* Mobile: stronger overlay so text is readable while photo still shows */}
-        <div className="absolute inset-0 bg-forest/75 lg:hidden" />
+        {/* Mobile: vertical gradient so full image shows edge-to-edge, text stays readable */}
+        <div
+          className="absolute inset-0 lg:hidden"
+          style={{ background: 'linear-gradient(to bottom, rgba(46,58,47,0.82) 0%, rgba(46,58,47,0.55) 60%, rgba(46,58,47,0.25) 100%)' }}
+        />
         <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-6">What We Do</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
