@@ -72,7 +72,7 @@ export default function About() {
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover"
-            style={{ opacity: 1, objectPosition: '50% center' }}
+            style={{ opacity: 1, objectPosition: '50% center', filter: 'blur(4px)', transform: 'scale(1.05)' }}
           />
           {/* Dark green tint */}
           <div className="absolute inset-0 bg-forest/10" />
