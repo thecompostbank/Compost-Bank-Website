@@ -62,7 +62,7 @@ export default function About() {
         {/* Atmospheric image — full bleed */}
         <div className="absolute inset-0">
           <img
-            src="/Images/farmer.png"
+            src="/Images/farmer.jpg"
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover"
@@ -122,7 +122,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-stretch">
           <div className="h-56 sm:h-72 lg:h-full overflow-hidden img-zoom order-2 lg:order-1">
             <img
-              src="/Images/phuket.png"
+              src="/Images/phuket.jpg"
               alt="Phuket coastline and tropical landscape"
               className="w-full h-full object-cover"
               style={{ objectPosition: 'center 80%' }}
