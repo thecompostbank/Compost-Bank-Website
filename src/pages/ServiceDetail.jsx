@@ -185,27 +185,27 @@ export default function ServiceDetail() {
             >
               ← All Services
             </Link>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               {prevService && (
                 <Link
                   to={`/services/${prevService.slug}`}
-                  className="inline-flex items-center gap-2 text-sand/40 text-[11px] font-lato tracking-widest uppercase hover:text-sand/70 transition-colors"
-                  title={prevService.title}
+                  aria-label={`Previous: ${prevService.title}`}
+                  className="w-10 h-10 flex items-center justify-center border border-sand/25 text-sand/50 hover:border-sand/60 hover:text-sand transition-all duration-200"
                 >
-                  <span className="hidden sm:inline">{prevService.number} {prevService.title}</span>
-                  <span className="sm:hidden">{prevService.number}</span>
-                  <span>←</span>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+                    <path d="M10 3L5 8l5 5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </Link>
               )}
               {nextService && (
                 <Link
                   to={`/services/${nextService.slug}`}
-                  className="inline-flex items-center gap-2 text-sand/40 text-[11px] font-lato tracking-widest uppercase hover:text-sand/70 transition-colors"
-                  title={nextService.title}
+                  aria-label={`Next: ${nextService.title}`}
+                  className="w-10 h-10 flex items-center justify-center border border-sand/25 text-sand/50 hover:border-sand/60 hover:text-sand transition-all duration-200"
                 >
-                  <span className="hidden sm:inline">{nextService.number} {nextService.title}</span>
-                  <span className="sm:hidden">{nextService.number}</span>
-                  <span>→</span>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
+                    <path d="M6 3l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </Link>
               )}
             </div>
