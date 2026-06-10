@@ -10,6 +10,7 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [onDarkSection, setOnDarkSection] = useState(true)
+  const [onCharcoalSection, setOnCharcoalSection] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
   const isHome = location.pathname === '/'
@@ -27,22 +28,41 @@ export default function Navigation() {
 
   useEffect(() => {
     const darkSections = document.querySelectorAll('[data-nav-dark]')
-    if (!darkSections.length) {
-      setOnDarkSection(false)
-      return
-    }
+    const charcoalSections = document.querySelectorAll('[data-nav-charcoal]')
 
-    const active = new Set()
-    const observer = new IntersectionObserver(
+    const activeDark = new Set()
+    const activeCharcoal = new Set()
+
+    const opts = { rootMargin: '0px 0px -75% 0px', threshold: 0 }
+
+    const darkObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach(e => e.isIntersecting ? active.add(e.target) : active.delete(e.target))
-        setOnDarkSection(active.size > 0)
+        entries.forEach(e => e.isIntersecting ? activeDark.add(e.target) : activeDark.delete(e.target))
+        setOnDarkSection(activeDark.size > 0)
       },
-      { rootMargin: '0px 0px -75% 0px', threshold: 0 }
+      opts
     )
 
-    darkSections.forEach(s => observer.observe(s))
-    return () => observer.disconnect()
+    const charcoalObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(e => e.isIntersecting ? activeCharcoal.add(e.target) : activeCharcoal.delete(e.target))
+        setOnCharcoalSection(activeCharcoal.size > 0)
+      },
+      opts
+    )
+
+    if (!darkSections.length && !charcoalSections.length) {
+      setOnDarkSection(false)
+      setOnCharcoalSection(false)
+    }
+
+    darkSections.forEach(s => darkObserver.observe(s))
+    charcoalSections.forEach(s => charcoalObserver.observe(s))
+
+    return () => {
+      darkObserver.disconnect()
+      charcoalObserver.disconnect()
+    }
   }, [location.pathname])
 
   const toggleMenu = () => {
@@ -53,15 +73,18 @@ export default function Navigation() {
 
   const navBgVisible = scrolled || !isHome
   const navIsDark = navBgVisible && onDarkSection
-  const useLightText = !navBgVisible || navIsDark
+  const navIsCharcoal = navBgVisible && onCharcoalSection
+  const useLightText = !navBgVisible || navIsDark || navIsCharcoal
 
   const logoColor = useLightText ? 'text-sand' : 'text-forest'
   const linkColor = (isHome && !navBgVisible) ? 'text-forest' : (useLightText ? 'text-sand' : 'text-forest')
-  const bgClass = navIsDark
-    ? 'bg-forest/95 backdrop-blur-md'
-    : navBgVisible
-      ? 'bg-cream/96 backdrop-blur-md shadow-[0_1px_0_0_rgba(46,58,47,0.08)]'
-      : 'bg-transparent'
+  const bgClass = navIsCharcoal
+    ? 'bg-charcoal/95 backdrop-blur-md'
+    : navIsDark
+      ? 'bg-forest/95 backdrop-blur-md'
+      : navBgVisible
+        ? 'bg-cream/96 backdrop-blur-md shadow-[0_1px_0_0_rgba(46,58,47,0.08)]'
+        : 'bg-transparent'
 
   return (
     <>
@@ -107,13 +130,13 @@ export default function Navigation() {
                 Services
               </Link>
               <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className={`w-72 py-2 shadow-lg ${navIsDark ? 'bg-forest border border-sand/10' : 'bg-cream border border-forest/8'}`}>
+                <div className={`w-72 py-2 shadow-lg ${(navIsDark || navIsCharcoal) ? 'bg-forest border border-sand/10' : 'bg-cream border border-forest/8'}`}>
                   {services.map(s => (
                     <Link
                       key={s.slug}
                       to={`/services/${s.slug}`}
                       className={`flex items-start gap-3 px-5 py-3 transition-colors duration-150 ${
-                        navIsDark
+                        (navIsDark || navIsCharcoal)
                           ? 'hover:bg-sand/5 text-sand/70 hover:text-sand'
                           : 'hover:bg-forest/5 text-charcoal/60 hover:text-forest'
                       }`}

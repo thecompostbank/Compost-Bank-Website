@@ -9,26 +9,23 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-1 mb-6">
-              <img src="/Images/logo-for-website.png" alt="The Compost Bank" className="w-24 h-24 flex-shrink-0 object-contain" />
-              <div>
-                <p className="text-[10px] font-lato tracking-ultra uppercase font-bold block mb-[3px]">The Compost Bank</p>
-                <p className="text-[8.5px] font-lato tracking-wide2 uppercase text-terracotta block">Wealth in Waste</p>
-              </div>
+            <div>
+              <p className="text-base font-lato tracking-ultra uppercase font-bold block mb-[3px]">The Compost Bank</p>
+              <p className="text-[11px] font-lato tracking-wide2 uppercase text-terracotta block mb-6">Wealth in Waste</p>
+              <p className="font-cormorant text-xl text-sand/70 leading-snug mb-6 italic">
+                Building infrastructure.<br />
+                Creating value.<br />
+                Restoring balance.
+              </p>
+              <p className="text-sand/40 text-xs font-lato leading-relaxed max-w-xs">
+                Transforming organic waste from a disposal problem into a valuable resource while building the infrastructure needed for a more circular Phuket.
+              </p>
             </div>
-            <p className="font-cormorant text-xl text-sand/70 leading-snug max-w-xs mb-8 italic">
-              Building infrastructure.<br />
-              Creating value.<br />
-              Restoring balance.
-            </p>
-            <p className="text-sand/40 text-xs font-lato leading-relaxed max-w-xs">
-              Transforming organic waste from a disposal problem into a valuable resource while building the infrastructure needed for a more circular Phuket.
-            </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="text-[9px] font-lato tracking-ultra uppercase text-sand/35 mb-6">Navigate</p>
+            <p className="text-sm font-lato tracking-ultra uppercase text-sand/35 font-bold mb-6">Navigate</p>
             <nav className="flex flex-col gap-3.5">
               {[
                 ['Services', '/services'],
@@ -49,7 +46,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-[9px] font-lato tracking-ultra uppercase text-sand/35 mb-6">Contact</p>
+            <p className="text-sm font-lato tracking-ultra uppercase text-sand/35 font-bold mb-6">Contact</p>
             <div className="space-y-4">
               <div>
                 <p className="text-[9px] font-lato tracking-widest uppercase text-sand/30 mb-1">Location</p>
@@ -57,8 +54,11 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-[9px] font-lato tracking-widest uppercase text-sand/30 mb-1">Enquiries</p>
-                <a href="mailto:hello@thecompostbank.com" className="text-[11px] font-lato text-sand/60 hover:text-sand transition-colors">
-                  hello@thecompostbank.com
+                <a href="mailto:raeann@thecompostbank.com" className="text-[11px] font-lato text-sand/60 hover:text-sand transition-colors block">
+                  raeann@thecompostbank.com
+                </a>
+                <a href="mailto:tom@thecompostbank.com" className="text-[11px] font-lato text-sand/60 hover:text-sand transition-colors block mt-1">
+                  tom@thecompostbank.com
                 </a>
               </div>
               <div className="pt-4">

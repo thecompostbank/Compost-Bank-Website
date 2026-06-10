@@ -57,8 +57,30 @@ export default function About() {
   return (
     <main>
       {/* Hero */}
-      <section data-nav-dark className="bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section data-nav-dark className="relative overflow-hidden bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
+
+        {/* Atmospheric image — full bleed */}
+        <div className="absolute inset-0">
+          <img
+            src="/Images/farmer.png"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover"
+            style={{ opacity: 1, objectPosition: '50% center' }}
+          />
+          {/* Dark green tint */}
+          <div className="absolute inset-0 bg-forest/10" />
+          {/* Fade into green from the left */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(90deg, rgba(46,58,47,1) 0%, rgba(46,58,47,1) 30%, rgba(46,58,47,0.6) 45%, rgba(46,58,47,0.1) 60%, rgba(46,58,47,0) 100%)',
+            }}
+          />
+        </div>
+
+        {/* Text */}
+        <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">About Us</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-4xl">
             A practical response to a real problem.
@@ -96,7 +118,7 @@ export default function About() {
 
       {/* Why Phuket */}
 
-      <section className="relative overflow-hidden">
+      <section data-nav-dark className="relative overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-stretch">
           <div className="h-56 sm:h-72 lg:h-full overflow-hidden img-zoom order-2 lg:order-1">
             <img
@@ -112,7 +134,7 @@ export default function About() {
               Why Phuket?
             </h2>
             <div className="w-8 h-px bg-sand/15 mb-7" />
-            <div className="space-y-5 text-sand/60 text-sm font-lato leading-relaxed">
+            <div className="space-y-5 text-sand/60 text-sm lg:text-base font-lato leading-relaxed">
               <p>
                 Phuket generates enormous volumes of organic waste. Hotels, restaurants, markets, and a resident population of over 400,000 people produce food waste, garden waste, and agricultural residue at a scale that overwhelms existing infrastructure.
               </p>

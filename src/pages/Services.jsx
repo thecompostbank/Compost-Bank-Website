@@ -5,8 +5,16 @@ export default function Services() {
   return (
     <main>
       {/* Hero */}
-      <section data-nav-dark className="bg-forest pt-36 pb-16 lg:pt-44 lg:pb-20 px-8 sm:px-12 lg:px-16 xl:px-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section data-nav-dark className="relative overflow-hidden bg-forest pt-52 pb-16 lg:pt-64 lg:pb-20 px-8 sm:px-12 lg:px-16 xl:px-20">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(90deg, rgba(46,58,47,0.96) 0%, rgba(46,58,47,0.88) 25%, rgba(46,58,47,0.55) 45%, rgba(46,58,47,0.15) 65%, rgba(46,58,47,0) 100%), url('/Images/palm.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+          }}
+        />
+        <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-6">What We Do</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
             Practical solutions for organic waste.
@@ -26,7 +34,7 @@ export default function Services() {
               <Link
                 key={s.slug}
                 to={`/services/${s.slug}`}
-                className={`group flex items-start gap-6 lg:gap-12 py-8 -mx-4 px-4 hover:bg-forest/[0.025] transition-colors duration-300 ${
+                className={`group flex items-start gap-6 lg:gap-12 py-8 -mx-4 px-4 hover:bg-forest/10 transition-colors duration-300 ${
                   s.comingSoon
                     ? 'mt-6 border-t-2 border-forest/20'
                     : i > 0
@@ -34,9 +42,9 @@ export default function Services() {
                     : ''
                 }`}
               >
-                <span className="text-[11px] font-lato tracking-wide text-olive/50 pt-1.5 flex-shrink-0 w-6">{s.number}</span>
+                <span className="font-cormorant font-light text-4xl text-forest flex-shrink-0 w-10 leading-none">{s.number}</span>
                 <div className="flex-1 flex flex-col lg:flex-row lg:items-start lg:gap-10">
-                  <h2 className="font-cormorant text-2xl lg:text-[28px] mb-2 lg:mb-0 lg:w-72 xl:w-80 flex-shrink-0 leading-snug text-forest group-hover:text-olive transition-colors">
+                  <h2 className="font-cormorant text-2xl lg:text-[28px] mb-2 lg:mb-0 lg:w-72 xl:w-80 flex-shrink-0 leading-snug text-forest group-hover:text-olive group-hover:font-bold transition-all">
                     {s.comingSoon ? (
                       <>
                         <span className="font-bold text-terracotta">Coming Soon: </span>

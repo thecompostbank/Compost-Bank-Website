@@ -1,6 +1,124 @@
+import { useState } from 'react'
 import { useParams, Navigate, Link } from 'react-router-dom'
 import { services } from '../data/servicesData'
 import ServiceSection from '../components/ServiceSection'
+
+const EMPTY_FORM = {
+  businessName: '', contactName: '', position: '', email: '',
+  phone: '', businessType: '', wasteVolume: '', participation: '', comments: '', consent: false,
+}
+
+function InterestForm() {
+  const [form, setForm] = useState(EMPTY_FORM)
+  const [submitted, setSubmitted] = useState(false)
+
+  const set = (field) => (e) =>
+    setForm(f => ({ ...f, [field]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }))
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
+  }
+
+  const inputClass = "w-full bg-transparent border-b border-forest/20 py-3 text-sm font-lato text-charcoal placeholder-charcoal/30 focus:outline-none focus:border-forest/60 transition-colors duration-200"
+  const labelClass = "block text-[10px] font-lato tracking-ultra uppercase text-forest/50 mb-1"
+
+  if (submitted) {
+    return (
+      <div className="text-center py-16 lg:py-24">
+        <div className="w-8 h-px bg-olive mx-auto mb-8" />
+        <h3 className="font-cormorant font-semibold text-3xl lg:text-4xl text-forest mb-6 leading-snug">
+          Thank you for your interest.
+        </h3>
+        <p className="text-charcoal/60 text-sm lg:text-base font-lato leading-relaxed max-w-xl mx-auto">
+          Your submission helps demonstrate demand for better organic waste infrastructure in Phuket and will help guide the future development of the project.
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="max-w-2xl">
+      <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+
+        <div>
+          <label className={labelClass}>Business Name</label>
+          <input required value={form.businessName} onChange={set('businessName')} className={inputClass} placeholder="Your organisation" />
+        </div>
+        <div>
+          <label className={labelClass}>Contact Name</label>
+          <input required value={form.contactName} onChange={set('contactName')} className={inputClass} placeholder="Full name" />
+        </div>
+        <div>
+          <label className={labelClass}>Position</label>
+          <input value={form.position} onChange={set('position')} className={inputClass} placeholder="Role or title" />
+        </div>
+        <div>
+          <label className={labelClass}>Email Address</label>
+          <input required type="email" value={form.email} onChange={set('email')} className={inputClass} placeholder="email@yourorganisation.com" />
+        </div>
+        <div>
+          <label className={labelClass}>Phone Number</label>
+          <input value={form.phone} onChange={set('phone')} className={inputClass} placeholder="+66 or international" />
+        </div>
+        <div>
+          <label className={labelClass}>Business Type</label>
+          <select value={form.businessType} onChange={set('businessType')} className={`${inputClass} bg-sand-mid`}>
+            <option value="" disabled>Select type</option>
+            {['Hotel / Resort', 'Restaurant / Café', 'School / University', 'Hospital / Healthcare', 'Market / Retail', 'Office Building', 'Shopping Centre', 'Residential Community', 'Government / Municipality', 'Other'].map(t => (
+              <option key={t} value={t}>{t}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label className={labelClass}>Estimated Organic Waste Generated Per Day</label>
+          <input value={form.wasteVolume} onChange={set('wasteVolume')} className={inputClass} placeholder="e.g. 50 kg, 200 kg" />
+        </div>
+        <div>
+          <label className={labelClass}>Preferred Participation Method</label>
+          <select value={form.participation} onChange={set('participation')} className={`${inputClass} bg-sand-mid`}>
+            <option value="" disabled>Select preference</option>
+            <option value="self-delivery">Self-delivery</option>
+            <option value="collection">Collection service</option>
+            <option value="either">Open to either option</option>
+          </select>
+        </div>
+        <div className="sm:col-span-2">
+          <label className={labelClass}>Additional Comments</label>
+          <textarea value={form.comments} onChange={set('comments')} rows={4} className={`${inputClass} resize-none`} placeholder="Any additional context, questions, or information" />
+        </div>
+
+      </div>
+
+      {/* Consent */}
+      <div className="flex items-start gap-4 mt-10 pt-8 border-t border-forest/8">
+        <input
+          required
+          type="checkbox"
+          id="consent"
+          checked={form.consent}
+          onChange={set('consent')}
+          className="mt-1 flex-shrink-0 accent-forest w-4 h-4 cursor-pointer"
+        />
+        <label htmlFor="consent" className="text-sm font-lato text-charcoal/65 leading-relaxed cursor-pointer">
+          Our organization would be interested in exploring participation in a future centralized organic waste recovery facility.
+        </label>
+      </div>
+
+      <div className="mt-10">
+        <button
+          type="submit"
+          className="inline-block bg-forest hover:bg-forest/90 text-sand text-[10px] tracking-ultra uppercase font-lato px-12 py-4 transition-colors duration-200"
+        >
+          Submit Interest
+        </button>
+        <p className="text-charcoal/35 text-xs font-lato mt-4 leading-relaxed">
+          Submitting this form does not create any obligation. It simply helps us understand potential demand.
+        </p>
+      </div>
+    </form>
+  )
+}
 
 export default function ServiceDetail() {
   const { slug } = useParams()
@@ -37,13 +155,54 @@ export default function ServiceDetail() {
               </p>
             </>
           )}
+          {service.id === 'centralized' && (
+            <a
+              href="#register-interest"
+              className="inline-block mt-8 text-[10px] font-lato tracking-ultra uppercase border border-sand/35 text-sand px-10 py-3.5 hover:bg-sand/10 hover:border-sand/60 transition-all duration-200"
+            >
+              Register Your Interest
+            </a>
+          )}
         </div>
       </section>
 
       {/* Details — who, included, why on cream */}
       <ServiceSection {...service} description={null} showHeader={false} imageContain={service.imageContain} imageFullHeight={service.imageFullHeight} imageWide={service.imageWide} />
 
-      {/* Footer image — gradient blend matching homepage hero */}
+      {/* Register Interest — service 04 only */}
+      {service.id === 'centralized' && (
+        <section id="register-interest" className="bg-sand-mid py-24 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="grid lg:grid-cols-[1fr_2fr] gap-16 lg:gap-24">
+
+              {/* Left — heading + intro */}
+              <div className="lg:pt-1">
+                <p className="text-[10px] font-lato tracking-ultra uppercase text-olive mb-6">Centralized Network</p>
+                <h2 className="font-cormorant font-semibold text-3xl lg:text-4xl xl:text-5xl text-forest leading-[1.08] mb-7">
+                  Register Your Interest
+                </h2>
+                <div className="w-8 h-px bg-forest/15 mb-7" />
+                <div className="space-y-4 text-charcoal/60 text-sm font-lato leading-relaxed">
+                  <p>
+                    The Compost Bank is currently assessing demand for a future centralized organic waste processing facility in Phuket.
+                  </p>
+                  <p>
+                    If your organization would be interested in diverting organic waste through a future recovery network, we invite you to register your interest below.
+                  </p>
+                  <p>
+                    Submitting this form does not create any obligation. It simply helps us understand potential demand and supports the development of the infrastructure needed to recover organic waste on the island.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right — form */}
+              <InterestForm />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Footer image — gradient blend */}
       {service.footerImage && (
         <section
           className="h-72 sm:h-96 lg:h-[500px]"

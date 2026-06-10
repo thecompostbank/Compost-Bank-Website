@@ -125,11 +125,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-8 sm:left-12 lg:left-16 xl:left-20 z-10">
-          <p className="text-sand/20 text-[8px] tracking-ultra uppercase font-lato">
-            Wealth in Waste
-          </p>
-        </div>
       </section>
 
       {/* ── SECTION 2: BRAND STATEMENT ──────────────────────────────────── */}
@@ -139,7 +134,7 @@ export default function Home() {
         </div>
         <div className="max-w-screen-xl mx-auto relative">
           <div className="max-w-5xl">
-            <p className="text-sand/30 text-[13px] tracking-ultra uppercase font-lato mb-12">
+            <p className="text-sand/30 text-[13px] tracking-ultra uppercase font-lato font-bold mb-12">
               Our Approach
             </p>
             <h2 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] mb-10">
@@ -182,7 +177,7 @@ export default function Home() {
         />
         {/* Text content */}
         <div className="relative z-10 py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 max-w-xl">
-          <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-8">
+          <p className="text-olive text-[13px] tracking-ultra uppercase font-lato font-bold mb-8">
             Our Mission
           </p>
           <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl xl:text-6xl text-forest leading-[1.08] mb-7">
@@ -198,44 +193,44 @@ export default function Home() {
 
       {/* ── SECTION 5: LOOKING FOR A SOLUTION ──────────────────────────── */}
       <section data-nav-dark className="bg-charcoal">
-        <div className="grid lg:grid-cols-2 items-stretch">
-          <div className="py-16 lg:py-24 px-8 sm:px-12 lg:px-16 xl:px-20">
+        <div className="grid lg:grid-cols-[3fr_2fr] items-stretch">
+          <div className="pt-24 pb-16 lg:pt-40 lg:pb-24 px-8 sm:px-12 lg:pl-40 lg:pr-16 xl:pl-52 xl:pr-20">
             <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-sand leading-[1.06] mb-8">
               Looking for a Solution?
             </h2>
             <div className="divide-y divide-sand/10">
               <div className="py-5">
-                <p className="text-sand/60 text-sm font-lato leading-relaxed mb-2">
+                <p className="text-sand/60 text-sm lg:text-base font-lato leading-relaxed mb-2">
                   Do you generate organic waste at your business?
                 </p>
-                <Link to="/services/on-site-composting" className="flex items-center gap-3 text-sand font-lato text-sm group hover:opacity-70 transition-opacity">
+                <Link to="/services/on-site-composting" className="flex items-center gap-3 text-sand font-lato text-sm lg:text-base group hover:opacity-70 transition-opacity">
                   <span className="text-terracotta">→</span>
                   <span className="border-b border-sand/20 group-hover:border-sand/50 transition-colors pb-px">Explore on-site composting solutions</span>
                 </Link>
               </div>
               <div className="py-5">
-                <p className="text-sand/60 text-sm font-lato leading-relaxed mb-2">
+                <p className="text-sand/60 text-sm lg:text-base font-lato leading-relaxed mb-2">
                   Need help making waste management work in practice?
                 </p>
-                <Link to="/services/organic-waste-management" className="flex items-center gap-3 text-sand font-lato text-sm group hover:opacity-70 transition-opacity">
+                <Link to="/services/organic-waste-management" className="flex items-center gap-3 text-sand font-lato text-sm lg:text-base group hover:opacity-70 transition-opacity">
                   <span className="text-terracotta">→</span>
                   <span className="border-b border-sand/20 group-hover:border-sand/50 transition-colors pb-px">Improve processes, train teams, and build practical systems that reduce waste and improve performance</span>
                 </Link>
               </div>
               <div className="py-5">
-                <p className="text-sand/60 text-sm font-lato leading-relaxed mb-2">
+                <p className="text-sand/60 text-sm lg:text-base font-lato leading-relaxed mb-2">
                   Are you planning a new development in Phuket that will generate organic waste?
                 </p>
-                <Link to="/services/bio-generator-projects" className="flex items-center gap-3 text-sand font-lato text-sm group hover:opacity-70 transition-opacity">
+                <Link to="/services/bio-generator-projects" className="flex items-center gap-3 text-sand font-lato text-sm lg:text-base group hover:opacity-70 transition-opacity">
                   <span className="text-terracotta">→</span>
                   <span className="border-b border-sand/20 group-hover:border-sand/50 transition-colors pb-px">Design organic waste infrastructure before construction begins</span>
                 </Link>
               </div>
               <div className="py-5">
-                <p className="text-sand/60 text-sm font-lato leading-relaxed mb-2">
+                <p className="text-sand/60 text-sm lg:text-base font-lato leading-relaxed mb-2">
                   Interested in future collection services?
                 </p>
-                <Link to="/services/centralized-processing" className="flex items-center gap-3 text-sand font-lato text-sm group hover:opacity-70 transition-opacity">
+                <Link to="/services/centralized-processing" className="flex items-center gap-3 text-sand font-lato text-sm lg:text-base group hover:opacity-70 transition-opacity">
                   <span className="text-terracotta">→</span>
                   <span className="border-b border-sand/20 group-hover:border-sand/50 transition-colors pb-px">Register your interest in Phuket's future organic waste network</span>
                 </Link>
@@ -243,12 +238,18 @@ export default function Home() {
             </div>
           </div>
           {/* Map image */}
-          <div className="flex items-center justify-center h-full px-8 lg:px-12 py-16 lg:py-24">
+          <div className="relative flex items-center justify-center h-full pl-0 pr-8 lg:pr-12 py-16 lg:py-24">
             <img
               src="/Images/map.png"
               alt="Phuket island map with collection network"
               className="w-full h-full object-contain opacity-90"
             />
+            {/* Fade left edge into charcoal */}
+            <div className="absolute inset-y-0 left-0 w-24 pointer-events-none" style={{ background: 'linear-gradient(90deg, #1F1F1F 0%, transparent 100%)' }} />
+            {/* Fade all other edges */}
+            <div className="absolute inset-x-0 top-0 h-16 pointer-events-none" style={{ background: 'linear-gradient(180deg, #1F1F1F 0%, transparent 100%)' }} />
+            <div className="absolute inset-x-0 bottom-0 h-16 pointer-events-none" style={{ background: 'linear-gradient(0deg, #1F1F1F 0%, transparent 100%)' }} />
+            <div className="absolute inset-y-0 right-0 w-16 pointer-events-none" style={{ background: 'linear-gradient(270deg, #1F1F1F 0%, transparent 100%)' }} />
           </div>
         </div>
       </section>
@@ -285,7 +286,7 @@ export default function Home() {
             Get Started
           </p>
           <h2 className="font-cormorant font-semibold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-forest leading-[1.06] mb-10 max-w-3xl mx-auto">
-            Ready to turn your organic waste into opportunity?
+            Ready to find wealth in your waste?
           </h2>
           <div className="w-10 h-px bg-forest/18 mx-auto mb-10" />
           <Link

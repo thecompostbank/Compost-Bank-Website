@@ -21,12 +21,12 @@ const ContourPattern = ({ opacity = '0.06' }) => (
 )
 
 const inputClass =
-  'w-full bg-transparent border-b border-forest/20 py-3 text-sm font-lato text-charcoal placeholder-charcoal/30 focus:outline-none focus:border-forest/60 transition-colors duration-200'
+  'w-full bg-transparent border-b border-charcoal/25 py-3 text-sm font-lato text-charcoal placeholder-charcoal/40 focus:outline-none focus:border-forest transition-colors duration-200'
 
-const labelClass = 'block text-[9px] font-lato tracking-ultra uppercase text-charcoal/40 mb-2'
+const labelClass = 'block text-[9px] font-lato tracking-ultra uppercase text-charcoal/60 font-bold mb-2'
 
 const selectClass =
-  'w-full bg-transparent border-b border-forest/20 py-3 text-sm font-lato text-charcoal focus:outline-none focus:border-forest/60 transition-colors duration-200 appearance-none cursor-pointer'
+  'w-full bg-transparent border-b border-charcoal/25 py-3 text-sm font-lato text-charcoal focus:outline-none focus:border-forest transition-colors duration-200 appearance-none cursor-pointer'
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -62,8 +62,8 @@ export default function Contact() {
       </section>
 
       {/* Main content */}
-      <section className="relative bg-sand-mid py-20 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20 overflow-hidden">
-        <ContourPattern />
+      <section className="relative bg-cream py-20 lg:py-36 px-8 sm:px-12 lg:px-16 xl:px-20 overflow-hidden">
+        <ContourPattern opacity="0.04" />
         <div className="max-w-screen-xl mx-auto relative">
           <div className="grid lg:grid-cols-[1fr_520px] xl:grid-cols-[1fr_580px] gap-16 lg:gap-24 items-start">
 
@@ -73,38 +73,43 @@ export default function Contact() {
               <p className="font-cormorant text-2xl lg:text-3xl text-forest leading-snug italic mb-8">
                 "We work with businesses across Phuket to reduce waste, recover value, and build the infrastructure for a circular economy."
               </p>
-              <div className="w-8 h-px bg-forest/15 mb-10" />
+              <div className="w-8 h-px bg-sand/15 mb-10" />
 
               <div className="space-y-8">
                 <div>
-                  <p className="text-[9px] font-lato tracking-ultra uppercase text-olive mb-2">Location</p>
+                  <p className="text-sm font-lato tracking-ultra uppercase text-olive font-bold mb-2">Location</p>
                   <p className="text-sm font-lato text-charcoal/65">Phuket, Thailand</p>
                 </div>
                 <div>
-                  <p className="text-[9px] font-lato tracking-ultra uppercase text-olive mb-2">Email</p>
+                  <p className="text-sm font-lato tracking-ultra uppercase text-olive font-bold mb-2">Email</p>
                   <a
-                    href="mailto:hello@thecompostbank.com"
-                    className="text-sm font-lato text-charcoal/65 hover:text-forest transition-colors"
+                    href="mailto:raeann@thecompostbank.com"
+                    className="text-sm font-lato text-charcoal/65 hover:text-forest transition-colors block"
                   >
-                    hello@thecompostbank.com
+                    raeann@thecompostbank.com
+                  </a>
+                  <a
+                    href="mailto:tom@thecompostbank.com"
+                    className="text-sm font-lato text-charcoal/65 hover:text-forest transition-colors block mt-1"
+                  >
+                    tom@thecompostbank.com
                   </a>
                 </div>
                 <div>
-                  <p className="text-[9px] font-lato tracking-ultra uppercase text-olive mb-2">Response Time</p>
+                  <p className="text-sm font-lato tracking-ultra uppercase text-olive font-bold mb-2">Response Time</p>
                   <p className="text-sm font-lato text-charcoal/65">Within 2 business days</p>
                 </div>
               </div>
 
               <div className="mt-14">
                 <div className="h-px bg-forest/10 mb-10" />
-                <p className="text-[9px] font-lato tracking-ultra uppercase text-charcoal/35 mb-5">
+                <p className="text-sm font-lato tracking-ultra uppercase text-charcoal/35 font-bold mb-5">
                   What to expect
                 </p>
                 <div className="space-y-4">
                   {[
                     'A brief discovery call to understand your situation',
                     'A clear summary of options and recommendations',
-                    'A proposal tailored to your business and budget',
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3">
                       <span className="w-3 h-px bg-olive/40 flex-shrink-0 mt-[10px]" />
@@ -116,20 +121,20 @@ export default function Contact() {
             </div>
 
             {/* Right — form */}
-            <div className="bg-cream p-8 sm:p-10 lg:p-12">
+            <div className="border-t lg:border-t-0 lg:border-l border-forest/10 pt-12 lg:pt-0 lg:pl-16">
               {submitted ? (
-                <div className="py-16 text-center">
+                <div className="bg-white p-10 lg:p-12 py-16 text-center">
                   <div className="w-8 h-px bg-olive mx-auto mb-8" />
                   <h2 className="font-cormorant font-semibold text-3xl text-forest mb-4">
                     Thank you for reaching out.
                   </h2>
-                  <p className="text-charcoal/60 text-sm font-lato leading-relaxed max-w-xs mx-auto">
+                  <p className="text-charcoal/65 text-sm font-lato leading-relaxed max-w-xs mx-auto">
                     We'll review your enquiry and be in touch within 2 business days.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} noValidate>
-                  <p className="text-[9px] font-lato tracking-ultra uppercase text-charcoal/35 mb-10">
+                <form onSubmit={handleSubmit} noValidate className="bg-white p-8 sm:p-10 lg:p-12">
+                  <p className="text-[10px] font-lato tracking-ultra uppercase text-charcoal/50 font-bold mb-10">
                     Enquiry Form
                   </p>
 
@@ -205,7 +210,7 @@ export default function Contact() {
                         <option>Community Organisation</option>
                         <option>Other</option>
                       </select>
-                      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-forest/30">
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-forest/50">
                         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
                           <path d="M4 6l4 4 4-4" />
                         </svg>
@@ -231,7 +236,7 @@ export default function Contact() {
                         <option>New Development / Bio-Generator Project</option>
                         <option>Not sure — help me figure it out</option>
                       </select>
-                      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-forest/30">
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-forest/50">
                         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4">
                           <path d="M4 6l4 4 4-4" />
                         </svg>
@@ -259,7 +264,7 @@ export default function Contact() {
                     Send Enquiry
                   </button>
 
-                  <p className="text-[9px] font-lato text-charcoal/30 text-center mt-5">
+                  <p className="text-[9px] font-lato text-charcoal/45 text-center mt-5">
                     We respond to all enquiries within 2 business days.
                   </p>
                 </form>

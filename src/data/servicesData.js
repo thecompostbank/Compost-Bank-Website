@@ -30,7 +30,6 @@ export const services = [
     title: 'Organic Waste Management Support',
     summary: 'Practical guidance, staff training, and operational support to help businesses better manage their organic waste.',
     image: { src: '/Images/service-02.png', alt: 'Organic waste management consultancy session' },
-    flipped: true,
     description: {
       heading: 'Making Waste Management Work in Practice.',
       body: 'Helping businesses understand, reduce, and better manage their organic waste through practical guidance, staff training, operational improvements, system implementation, monitoring, and ongoing support.',
