@@ -186,10 +186,13 @@ export default function About() {
                   The deeper she dug, the clearer the problem became. Huge volumes of food waste, garden waste, and other organic materials were ending up in landfill every day, not because they had no value, but because the infrastructure needed to recover them simply didn't exist.
                 </p>
                 <p>
-                  Determined to do something about it, she began developing the idea that would become The Compost Bank. With Tom's engineering background in renewable energy systems complementing her experience in resource management and waste systems, the project evolved from an idea into a practical mission.
+                  Around the same time, Rae Ann met Tom, an engineer with a background in renewable energy systems who shared a strong belief that sustainability should be practical, measurable, and embedded into everyday life. While teaching at an international school in Phuket, Tom looked for opportunities to incorporate sustainability concepts across subjects and inspire students to think critically about the systems that shape our world. Beyond the classroom, he was passionate about developing technology for good and building solutions that create tangible, lasting impact.
                 </p>
                 <p>
-                  Today, they are working to help Phuket rethink organic waste—not as rubbish to get rid of, but as a resource worth recovering. Their goal is simple: build practical solutions, create the infrastructure that's currently missing, and prove that waste only becomes waste when we fail to use it.
+                  What began as a shared interest in sustainability quickly evolved into a shared vision. Combining Rae Ann's experience in resource management and waste systems with Tom's engineering and systems-thinking approach, they saw an opportunity to tackle one of Phuket's most overlooked environmental challenges. Together, they began developing the idea that would become The Compost Bank.
+                </p>
+                <p>
+                  Today, they are working to help Phuket rethink organic waste—not as rubbish to get rid of, but as a resource worth recovering. Their goal is simple: build practical solutions, create the infrastructure that's currently missing, and demonstrate that with the right systems in place, waste can become a valuable resource that benefits businesses, communities, and the environment alike.
                 </p>
               </div>
             </div>
