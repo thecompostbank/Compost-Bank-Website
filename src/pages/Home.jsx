@@ -201,9 +201,12 @@ export default function Home() {
       <section data-nav-dark className="bg-charcoal">
         <div className="grid lg:grid-cols-[3fr_2fr] items-stretch">
           <div className="pt-24 pb-16 lg:pt-40 lg:pb-24 px-8 sm:px-12 lg:pl-40 lg:pr-16 xl:pl-52 xl:pr-20">
-            <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-sand leading-[1.06] mb-8">
+            <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-sand leading-[1.06] mb-6">
               Looking for a Solution?
             </h2>
+            <p className="text-sand/55 text-sm lg:text-base font-lato leading-relaxed mb-8 max-w-xl">
+              Every business is different. There is no one-size-fits-all approach to organic waste management. The right solution depends on your waste volumes, available space, operational needs, and long-term goals. Whether you're looking to manage organic waste on-site, improve existing systems, plan for future infrastructure, or explore collection services for the future, we'll help you identify the approach that makes the most sense for your situation.
+            </p>
             <div className="divide-y divide-sand/10">
               <div className="py-5">
                 <p className="text-sand/60 text-sm lg:text-base font-lato leading-relaxed mb-2">
