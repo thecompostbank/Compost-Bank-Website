@@ -157,6 +157,10 @@ export default function ServiceDetail() {
 
   if (!service) return <Navigate to="/services" replace />
 
+  const serviceIndex = services.findIndex(s => s.slug === slug)
+  const prevService = serviceIndex > 0 ? services[serviceIndex - 1] : null
+  const nextService = serviceIndex < services.length - 1 ? services[serviceIndex + 1] : null
+
   const seoDescriptions = {
     'on-site-composting': 'Custom-designed on-site composting systems for hotels, resorts, and businesses in Phuket. Force aeration composting infrastructure built around your waste volumes, space, and operational requirements.',
     'organic-waste-management': 'Practical organic waste management support for Phuket businesses. Waste audits, staff training, operational improvements, monitoring, and ongoing advisory to improve resource recovery.',
@@ -174,12 +178,38 @@ export default function ServiceDetail() {
       {/* Hero — title + intro description */}
       <section data-nav-dark className="bg-forest pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-44 lg:pb-20 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-screen-xl mx-auto">
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 text-sand/40 text-[11px] font-lato tracking-widest uppercase mb-8 hover:text-sand/70 transition-colors"
-          >
-            ← All Services
-          </Link>
+          <div className="flex items-center justify-between mb-8">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-sand/40 text-[11px] font-lato tracking-widest uppercase hover:text-sand/70 transition-colors"
+            >
+              ← All Services
+            </Link>
+            <div className="flex items-center gap-4">
+              {prevService && (
+                <Link
+                  to={`/services/${prevService.slug}`}
+                  className="inline-flex items-center gap-2 text-sand/40 text-[11px] font-lato tracking-widest uppercase hover:text-sand/70 transition-colors"
+                  title={prevService.title}
+                >
+                  <span className="hidden sm:inline">{prevService.number} {prevService.title}</span>
+                  <span className="sm:hidden">{prevService.number}</span>
+                  <span>←</span>
+                </Link>
+              )}
+              {nextService && (
+                <Link
+                  to={`/services/${nextService.slug}`}
+                  className="inline-flex items-center gap-2 text-sand/40 text-[11px] font-lato tracking-widest uppercase hover:text-sand/70 transition-colors"
+                  title={nextService.title}
+                >
+                  <span className="hidden sm:inline">{nextService.number} {nextService.title}</span>
+                  <span className="sm:hidden">{nextService.number}</span>
+                  <span>→</span>
+                </Link>
+              )}
+            </div>
+          </div>
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-6">{service.number}</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl text-sand leading-[1.04] mb-8">
             {service.comingSoon && <span className="font-bold text-terracotta">Coming Soon: </span>}
