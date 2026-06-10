@@ -142,16 +142,16 @@ export default function About() {
             <div className="w-8 h-px bg-sand/15 mb-7" />
             <div className="space-y-5 text-sand/60 text-sm lg:text-base font-lato leading-relaxed">
               <p>
-                Phuket generates enormous volumes of organic waste. Hotels, restaurants, markets, and a resident population of over 400,000 people produce food waste, garden waste, and agricultural residue at a scale that overwhelms existing infrastructure.
+                Phuket attracts millions of tourists every year, placing immense pressure on an island that was never originally designed to support such a large and growing population. Combined with more than 400,000 residents, this growth generates significant volumes of waste from hotels, restaurants, markets, communities, and agricultural activities. Organic materials are estimated to account for roughly 60% of the island's waste stream, making them one of the greatest opportunities for waste diversion and resource recovery. However, unlocking that opportunity requires more than separating organic waste at the source—it requires the infrastructure needed to collect, process, and recover value from it at scale.
               </p>
               <p>
-                The majority of this waste ends up in landfill — where it produces methane, leaches into groundwater, and occupies space that is increasingly difficult to find on an island under intense development pressure.
+                The majority of this waste ends up in landfill, where it produces methane, generates leachate, and occupies space that is increasingly difficult to find on an island under intense development pressure.
               </p>
               <p>
-                But Phuket also has the right conditions to do something different. A concentration of large hospitality businesses, a growing awareness of environmental responsibility, and a network of farms and gardens that could benefit from high-quality compost.
+                But Phuket also has the right conditions to do something different: a concentration of large hospitality businesses, a growing awareness of environmental responsibility, and a network of farms, gardens, golf courses, resorts, parks, and public green spaces that could benefit from high-quality compost.
               </p>
               <p>
-                The Compost Bank was built to connect those conditions — and to build the infrastructure that makes a circular organic economy possible.
+                The Compost Bank was built to connect these conditions by creating the infrastructure needed to divert organic waste from landfill and transform it into valuable resources for the island.
               </p>
             </div>
           </div>
