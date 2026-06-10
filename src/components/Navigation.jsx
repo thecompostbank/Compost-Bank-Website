@@ -89,16 +89,16 @@ export default function Navigation() {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${bgClass}`}>
-        <div className="w-full px-6 lg:px-10 py-5 flex items-center justify-between">
+        <div className="w-full px-5 lg:px-10 py-3 lg:py-5 flex items-center justify-between">
 
           {/* Logo */}
           <Link to="/" className={`flex items-center gap-1 group transition-opacity hover:opacity-75 ${logoColor}`}>
-            <img src="/Images/logo-for-website.png" alt="The Compost Bank" className="w-40 h-40 flex-shrink-0 object-contain" />
+            <img src="/Images/logo-for-website.png" alt="The Compost Bank" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-28 lg:h-28 flex-shrink-0 object-contain" />
             <div className="leading-none">
-              <p className={`text-[18px] font-lato tracking-ultra uppercase font-bold block mb-[3px] ${useLightText ? 'text-sand' : 'text-forest'}`}>
+              <p className={`text-[12px] sm:text-[14px] lg:text-[18px] font-lato tracking-ultra uppercase font-bold block mb-[2px] lg:mb-[3px] ${useLightText ? 'text-sand' : 'text-forest'}`}>
                 The Compost Bank
               </p>
-              <p className={`text-[13px] font-lato tracking-wide2 uppercase block transition-colors ${
+              <p className={`text-[9px] sm:text-[10px] lg:text-[13px] font-lato tracking-wide2 uppercase block transition-colors ${
                 useLightText ? 'text-sand/55' : 'text-terracotta'
               }`}>
                 Wealth in Waste

@@ -172,7 +172,7 @@ export default function ServiceDetail() {
         path={`/services/${service.slug}`}
       />
       {/* Hero — title + intro description */}
-      <section data-nav-dark className="bg-forest pt-36 pb-16 lg:pt-44 lg:pb-20 px-8 sm:px-12 lg:px-16 xl:px-20">
+      <section data-nav-dark className="bg-forest pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-44 lg:pb-20 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-screen-xl mx-auto">
           <Link
             to="/services"
@@ -181,14 +181,14 @@ export default function ServiceDetail() {
             ← All Services
           </Link>
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-6">{service.number}</p>
-          <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl text-sand leading-[1.04] whitespace-nowrap mb-8">
+          <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl text-sand leading-[1.04] mb-8">
             {service.comingSoon && <span className="font-bold text-terracotta">Coming Soon: </span>}
             {service.comingSoon ? <em className="italic">{service.title}</em> : service.title}
           </h1>
           {service.description && (
             <>
               {service.description.heading && (
-                <h2 className="font-cormorant text-2xl lg:text-3xl text-sand/80 mb-5 leading-snug whitespace-nowrap">
+                <h2 className="font-cormorant text-2xl lg:text-3xl text-sand/80 mb-5 leading-snug">
                   {service.description.heading}
                 </h2>
               )}

@@ -80,7 +80,7 @@ export default function HowItWorks() {
       {/* Hero */}
       <section
         data-nav-dark
-        className="relative overflow-hidden pt-52 pb-24 lg:pt-64 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20"
+        className="relative overflow-hidden pt-36 pb-16 sm:pt-44 sm:pb-20 lg:pt-64 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20"
         style={{
           backgroundImage: `linear-gradient(rgba(46,58,47,0.65), rgba(46,58,47,0.65)), url('/Images/lime.jpg')`,
           backgroundSize: 'cover',

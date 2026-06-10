@@ -98,7 +98,7 @@ export default function Home() {
         />
 
         {/* Text content */}
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-36 pb-20 lg:py-0 w-full max-w-2xl">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-28 pb-16 sm:pt-32 lg:py-0 w-full max-w-2xl">
           <p className="text-sand/60 text-[13px] tracking-ultra uppercase font-lato mb-10 [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
             Phuket, Thailand
           </p>
@@ -263,7 +263,7 @@ export default function Home() {
       {/* ── SECTION 6: VALUE PILLARS ────────────────────────────────────── */}
       <section className="py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 bg-cream">
         <div className="max-w-screen-xl mx-auto">
-          <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl xl:text-6xl text-forest whitespace-nowrap leading-[1.08] mb-20">
+          <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl xl:text-6xl text-forest leading-[1.08] mb-20">
             A smarter way to manage waste.
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-forest/8">

@@ -63,7 +63,7 @@ export default function About() {
         path="/about"
       />
       {/* Hero */}
-      <section data-nav-dark className="relative overflow-hidden bg-forest pt-52 pb-40 lg:pt-64 lg:pb-56 px-8 sm:px-12 lg:px-16 xl:px-20">
+      <section data-nav-dark className="relative overflow-hidden bg-forest pt-36 pb-20 sm:pt-44 sm:pb-28 lg:pt-64 lg:pb-56 px-8 sm:px-12 lg:px-16 xl:px-20">
 
         {/* Atmospheric image — full bleed */}
         <div className="absolute inset-0">

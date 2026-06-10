@@ -82,7 +82,7 @@ export default function Contact() {
         path="/contact"
       />
       {/* Hero */}
-      <section data-nav-dark className="bg-forest pt-40 pb-20 lg:pt-52 lg:pb-28 px-8 sm:px-12 lg:px-16 xl:px-20">
+      <section data-nav-dark className="bg-forest pt-32 pb-14 sm:pt-40 sm:pb-20 lg:pt-52 lg:pb-28 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">Contact</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
