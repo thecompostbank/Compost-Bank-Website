@@ -91,6 +91,8 @@ export default function About() {
           />
           {/* Dark green tint */}
           <div className="absolute inset-0 bg-forest/10" />
+          {/* Mobile: stronger dark overlay so heading is readable */}
+          <div className="absolute inset-0 bg-forest/55 lg:hidden" />
           {/* Fade into green from the left */}
           <div
             className="absolute inset-0"
