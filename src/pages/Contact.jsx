@@ -52,13 +52,13 @@ export default function Contact() {
     setSending(true)
     setError(false)
     try {
-      const res = await fetch('https://formsubmit.co/ajax/raeann@thecompostbank.com', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
+          access_key: '17a236ad-5d28-4ec4-bedc-7e61e20fd717',
+          subject: 'New Consultation Request — The Compost Bank',
           ...formState,
-          _subject: 'New Consultation Request — The Compost Bank',
-          _template: 'table',
         }),
       })
       const data = await res.json()

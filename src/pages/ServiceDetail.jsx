@@ -23,13 +23,13 @@ function InterestForm() {
     setSending(true)
     setError(false)
     try {
-      const res = await fetch('https://formsubmit.co/ajax/raeann@thecompostbank.com', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
+          access_key: '17a236ad-5d28-4ec4-bedc-7e61e20fd717',
+          subject: 'New Registration of Interest — Centralized Processing & Collection',
           ...form,
-          _subject: 'New Registration of Interest — Centralized Processing & Collection',
-          _template: 'table',
         }),
       })
       const data = await res.json()
