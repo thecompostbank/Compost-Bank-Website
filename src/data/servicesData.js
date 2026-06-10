@@ -29,7 +29,7 @@ export const services = [
     number: '02',
     title: 'Organic Waste Management Support',
     summary: 'Practical guidance, staff training, and operational support to help businesses better manage their organic waste.',
-    image: { src: '/Images/hands-compost.png', alt: 'Hands examining rich compost' },
+    image: { src: '/Images/service-02.png', alt: 'Organic waste management consultancy session' },
     flipped: true,
     description: {
       heading: 'Making Waste Management Work in Practice.',
@@ -54,7 +54,12 @@ export const services = [
     number: '03',
     title: 'Bio-Generator Projects',
     summary: 'Integrating organic waste infrastructure into new developments during the design phase — before construction begins.',
-    image: { src: '/Images/brand-grid.png', alt: 'Bio-generator and energy infrastructure' },
+    gallery: [
+      { src: '/Images/s03-building.png', alt: 'Mixed-use development with integrated waste infrastructure', title: 'Integrated Biogas System (building section)' },
+      { src: '/Images/s03-waste-processing.png', alt: 'Waste processing facility', title: 'Biogas System Integration' },
+      { src: '/Images/s03-system.png', alt: 'Biogas system and digester tanks', title: 'Biogas System Equipment' },
+      { src: '/Images/s03-bins.png', alt: 'Organic waste collection station', title: 'Organic Waste Collection Point' },
+    ],
     description: {
       heading: 'Build It Right From Day One.',
       body: 'The most cost-effective time to integrate organic waste infrastructure is before a project is built. Whether the focus is on composting or biogas systems, we work alongside developers, architects, engineers, and MEP teams to design systems that recover value from organic waste and support long-term operational sustainability from the outset. Rather than retrofitting solutions into existing operations, we help developments incorporate waste management infrastructure during the design phase—when space allocation, utility requirements, workflows, and operational procedures can be integrated efficiently and effectively.',
@@ -79,8 +84,12 @@ export const services = [
     number: '04',
     title: 'Centralized Processing & Collection',
     summary: 'A future service providing off-site organic waste collection and processing for businesses without on-site capacity.',
-    image: { src: '/Images/aerial.png', alt: 'Centralized composting facility' },
+    image: { src: '/Images/service-04.png', alt: 'Centralized composting facility and premium compost product' },
+    imageContain: true,
+    imageWide: true,
     flipped: true,
+    footerImage: '/Images/compost.png',
+    hideCTA: true,
     comingSoon: true,
     description: {
       heading: 'Building the Infrastructure Phuket Needs.',

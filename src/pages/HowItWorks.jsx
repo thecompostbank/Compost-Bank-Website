@@ -72,8 +72,17 @@ export default function HowItWorks() {
   return (
     <main>
       {/* Hero */}
-      <section data-nav-dark className="bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section data-nav-dark className="relative overflow-hidden bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
+        {/* Leaf photo with gradient blend — same technique as homepage hero */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(90deg, rgba(46,58,47,0.97) 0%, rgba(46,58,47,0.92) 30%, rgba(46,58,47,0.60) 55%, rgba(46,58,47,0.15) 75%, rgba(46,58,47,0) 100%), url('/Images/leaf.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center right',
+          }}
+        />
+        <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">The Process</p>
           <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
             Five steps to a circular operation.
@@ -101,7 +110,7 @@ export default function HowItWorks() {
                   {step.number}
                 </span>
                 <div className="lg:mt-4">
-                  <span className="inline-block text-[9px] font-lato tracking-ultra uppercase bg-forest text-sand px-4 py-2">
+                  <span className="inline-block text-sm font-lato tracking-ultra uppercase bg-forest text-sand px-4 py-2">
                     {step.title}
                   </span>
                 </div>
@@ -138,9 +147,9 @@ export default function HowItWorks() {
       {/* Full width image break */}
       <section className="h-72 sm:h-96 lg:h-[500px] overflow-hidden img-zoom">
         <img
-          src="/Images/aerial.png"
-          alt="Compost Bank composting facility"
-          className="w-full h-full object-cover"
+          src="/Images/trees.png"
+          alt="Tropical forest canopy in Phuket"
+          className="w-full h-full object-cover object-top"
         />
       </section>
 

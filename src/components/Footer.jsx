@@ -1,15 +1,5 @@
 import { Link } from 'react-router-dom'
 
-const LogoMark = ({ className = '' }) => (
-  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <circle cx="50" cy="50" r="46.5" stroke="currentColor" strokeWidth="2.5" />
-    <path d="M26,56 C21,43 26,27 40,20 C55,12 73,19 80,36 C86,51 81,69 68,77 C55,85 37,81 29,69 C26,64 26,60 26,56Z" stroke="currentColor" strokeWidth="2" fill="none" />
-    <path d="M34,53 C30,43 34,30 45,25 C57,19 71,25 76,38 C80,50 76,64 66,70 C56,76 41,72 36,61 C34,57 34,55 34,53Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
-    <path d="M43,51 C40,44 43,35 51,32 C59,28 68,33 71,42 C74,51 70,61 63,65 C56,69 47,65 44,57 C43,54 43,52 43,51Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
-    <path d="M52,50 C50,46 51,41 55,39 C59,37 63,40 64,45 C65,50 63,55 59,57 C55,59 51,56 52,52 C52,51 52,50 52,50Z" stroke="currentColor" strokeWidth="1" fill="none" />
-  </svg>
-)
-
 export default function Footer() {
   return (
     <footer className="bg-forest text-sand">
@@ -19,8 +9,8 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <LogoMark className="w-10 h-10 text-sand" />
+            <div className="flex items-center gap-1 mb-6">
+              <img src="/Images/logo-for-website.png" alt="The Compost Bank" className="w-24 h-24 flex-shrink-0 object-contain" />
               <div>
                 <p className="text-[10px] font-lato tracking-ultra uppercase font-bold block mb-[3px]">The Compost Bank</p>
                 <p className="text-[8.5px] font-lato tracking-wide2 uppercase text-terracotta block">Wealth in Waste</p>
@@ -43,7 +33,6 @@ export default function Footer() {
               {[
                 ['Services', '/services'],
                 ['How It Works', '/how-it-works'],
-                ['Projects', '/projects'],
                 ['About', '/about'],
                 ['Contact', '/contact'],
               ].map(([label, path]) => (

@@ -41,23 +41,37 @@ export default function ServiceDetail() {
       </section>
 
       {/* Details — who, included, why on cream */}
-      <ServiceSection {...service} description={null} showHeader={false} imageContain={service.imageContain} />
+      <ServiceSection {...service} description={null} showHeader={false} imageContain={service.imageContain} imageFullHeight={service.imageFullHeight} imageWide={service.imageWide} />
+
+      {/* Footer image — gradient blend matching homepage hero */}
+      {service.footerImage && (
+        <section
+          className="h-72 sm:h-96 lg:h-[500px]"
+          style={{
+            backgroundImage: `linear-gradient(270deg, rgba(46,58,47,0.96) 0%, rgba(46,58,47,0.75) 15%, rgba(46,58,47,0.35) 30%, rgba(46,58,47,0.08) 45%, rgba(46,58,47,0) 60%), url('${service.footerImage}')`,
+            backgroundSize: 'contain',
+            backgroundPosition: 'center center',
+          }}
+        />
+      )}
 
       {/* CTA */}
-      <section data-nav-dark className="bg-forest py-16 lg:py-24 px-8 sm:px-12 lg:px-16 xl:px-20 text-center">
-        <div className="max-w-screen-xl mx-auto">
-          <p className="text-sand/30 text-[13px] tracking-ultra uppercase font-lato mb-8">Get In Touch</p>
-          <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-sand leading-[1.06] mb-8 max-w-xl mx-auto">
-            Interested in this service?
-          </h2>
-          <Link
-            to="/contact"
-            className="inline-block bg-sand hover:bg-sand/90 text-forest text-[10px] tracking-ultra uppercase font-lato px-12 py-4 transition-colors duration-200"
-          >
-            Book a Consultation
-          </Link>
-        </div>
-      </section>
+      {!service.hideCTA && (
+        <section data-nav-dark className="bg-forest py-16 lg:py-24 px-8 sm:px-12 lg:px-16 xl:px-20 text-center">
+          <div className="max-w-screen-xl mx-auto">
+            <p className="text-sand/30 text-[13px] tracking-ultra uppercase font-lato mb-8">Get In Touch</p>
+            <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-sand leading-[1.06] mb-8 max-w-xl mx-auto">
+              Interested in this service?
+            </h2>
+            <Link
+              to="/contact"
+              className="inline-block bg-sand hover:bg-sand/90 text-forest text-[10px] tracking-ultra uppercase font-lato px-12 py-4 transition-colors duration-200"
+            >
+              Book a Consultation
+            </Link>
+          </div>
+        </section>
+      )}
     </main>
   )
 }

@@ -67,8 +67,8 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="bg-cream py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20">
-        <div className="max-w-screen-xl mx-auto">
+      <section className="relative bg-cream py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 overflow-hidden">
+        <div className="max-w-screen-xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
             <div>
               <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-6">Mission</p>
@@ -95,13 +95,15 @@ export default function About() {
       </section>
 
       {/* Why Phuket */}
+
       <section className="relative overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="h-64 sm:h-96 lg:h-auto overflow-hidden img-zoom order-2 lg:order-1">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-stretch">
+          <div className="h-56 sm:h-72 lg:h-full overflow-hidden img-zoom order-2 lg:order-1">
             <img
-              src="/Images/aerial.png"
-              alt="Phuket tropical landscape and composting infrastructure"
+              src="/Images/phuket.png"
+              alt="Phuket coastline and tropical landscape"
               className="w-full h-full object-cover"
+              style={{ objectPosition: 'center 80%' }}
             />
           </div>
           <div className="bg-forest p-10 lg:p-16 xl:p-20 flex flex-col justify-center order-1 lg:order-2">
@@ -132,31 +134,44 @@ export default function About() {
       <section className="relative bg-sand-mid py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 overflow-hidden">
         <ContourPattern />
         <div className="max-w-screen-xl mx-auto relative">
-          <div className="max-w-3xl">
-            <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-8">Our Story</p>
-            <h2 className="font-cormorant font-semibold text-3xl lg:text-4xl xl:text-5xl text-forest leading-[1.08] mb-7">
-              Started by challenging a common assumption.
-            </h2>
-            <div className="w-8 h-px bg-forest/15 mb-7" />
-            <p className="font-lato font-bold text-charcoal/80 text-sm lg:text-base mb-7">
-              The most visible waste problem isn't always the biggest one.
-            </p>
-            <div className="space-y-5 text-charcoal/65 text-sm lg:text-base font-lato leading-relaxed">
-              <p>
-                The Compost Bank was founded by Rae Ann Collier and Tom Gossland after they identified a gap in Phuket's waste management infrastructure that few people were talking about.
+          {/* Heading — full width above the grid */}
+          <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-8">Our Story</p>
+          <h2 className="font-cormorant font-semibold text-3xl lg:text-4xl xl:text-5xl text-forest leading-[1.08] mb-7">
+            Started by challenging a common assumption.
+          </h2>
+          <div className="w-8 h-px bg-forest/15 mb-7" />
+
+          {/* Two-column: body text left, image right — both start at the divider line */}
+          <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+            <div>
+              <p className="font-cormorant font-semibold text-2xl lg:text-3xl xl:text-4xl text-forest leading-snug mb-8">
+                "The most visible waste problem isn't always the biggest one."
               </p>
-              <p>
-                When Rae Ann began researching waste management on the island, much of the conversation focused on plastic pollution. But the more she looked into Phuket's waste system, the less convinced she became that plastic was the biggest challenge. Recycling networks already existed, collection initiatives were growing, and awareness was high. Yet one waste stream kept appearing in the data again and again: organic waste.
-              </p>
-              <p>
-                The deeper she dug, the clearer the problem became. Huge volumes of food waste, garden waste, and other organic materials were ending up in landfill every day, not because they had no value, but because the infrastructure needed to recover them simply didn't exist.
-              </p>
-              <p>
-                Determined to do something about it, she began developing the idea that would become The Compost Bank. With Tom's engineering background in renewable energy systems complementing her experience in resource management and waste systems, the project evolved from an idea into a practical mission.
-              </p>
-              <p>
-                Today, they are working to help Phuket rethink organic waste—not as rubbish to get rid of, but as a resource worth recovering. Their goal is simple: build practical solutions, create the infrastructure that's currently missing, and prove that waste only becomes waste when we fail to use it.
-              </p>
+              <div className="space-y-5 text-charcoal/65 text-sm lg:text-base font-lato leading-relaxed">
+                <p>
+                  The Compost Bank was founded by Rae Ann Collier and Tom Gossland after they identified a gap in Phuket's waste management infrastructure that few people were talking about.
+                </p>
+                <p>
+                  When Rae Ann began researching waste management on the island, much of the conversation focused on plastic pollution. But the more she looked into Phuket's waste system, the less convinced she became that plastic was the biggest challenge. Recycling networks already existed, collection initiatives were growing, and awareness was high. Yet one waste stream kept appearing in the data again and again: organic waste.
+                </p>
+                <p>
+                  The deeper she dug, the clearer the problem became. Huge volumes of food waste, garden waste, and other organic materials were ending up in landfill every day, not because they had no value, but because the infrastructure needed to recover them simply didn't exist.
+                </p>
+                <p>
+                  Determined to do something about it, she began developing the idea that would become The Compost Bank. With Tom's engineering background in renewable energy systems complementing her experience in resource management and waste systems, the project evolved from an idea into a practical mission.
+                </p>
+                <p>
+                  Today, they are working to help Phuket rethink organic waste—not as rubbish to get rid of, but as a resource worth recovering. Their goal is simple: build practical solutions, create the infrastructure that's currently missing, and prove that waste only becomes waste when we fail to use it.
+                </p>
+              </div>
+            </div>
+            {/* Image */}
+            <div className="h-[320px] lg:h-full overflow-hidden">
+              <img
+                src="/Images/shirts.png"
+                alt="The Compost Bank team shirt"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -175,30 +190,19 @@ export default function About() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {values.map((v) => (
-              <div key={v.title} className="group relative overflow-hidden border border-forest/10 p-8 lg:p-10 cursor-default transition-all duration-300 ease-in-out hover:scale-[1.04] hover:z-10 hover:shadow-xl hover:border-forest/25">
-                {/* Blurred background image */}
-                <img src={v.image} alt="" className="absolute inset-0 w-full h-full object-cover blur-sm scale-105 pointer-events-none" aria-hidden="true" />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-sand/90 group-hover:bg-cream/85 transition-colors duration-300 pointer-events-none" />
+              <div key={v.title} className="group relative overflow-hidden border border-sand/10 p-8 lg:p-10 cursor-default transition-all duration-300 ease-in-out hover:scale-[1.04] hover:z-10 hover:shadow-xl hover:border-sand/20">
+                {/* Background layer — blurs on hover, text stays sharp */}
+                <div className="absolute inset-0 bg-forest transition-all duration-300 group-hover:blur-sm group-hover:scale-110" />
                 {/* Content */}
-                <div className="relative">
+                <div className="relative z-10">
                   <div className="w-5 h-px bg-olive mb-6 transition-colors duration-300 group-hover:bg-terracotta" />
-                  <h3 className="font-cormorant text-2xl text-forest mb-4 leading-snug">{v.title}</h3>
-                  <p className="text-charcoal/65 text-sm font-lato leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">{v.body}</p>
+                  <h3 className="font-cormorant font-bold text-3xl text-sand mb-4 leading-snug">{v.title}</h3>
+                  <p className="text-sand/55 text-sm font-lato leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">{v.body}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Brand image */}
-      <section className="h-72 sm:h-96 lg:h-[500px] overflow-hidden img-zoom">
-        <img
-          src="/Images/brand-grid.png"
-          alt="The Compost Bank team and operations"
-          className="w-full h-full object-cover"
-        />
       </section>
 
       {/* CTA */}
