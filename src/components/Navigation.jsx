@@ -93,7 +93,7 @@ export default function Navigation() {
 
           {/* Logo */}
           <Link to="/" className={`flex items-center gap-1 group transition-opacity hover:opacity-75 ${logoColor}`}>
-            <img src="/Images/logo-for-website.png" alt="The Compost Bank" className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 flex-shrink-0 object-contain" />
+            <img src="/Images/logo-for-website.png" alt="The Compost Bank" className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 flex-shrink-0 object-contain" />
             <div className="leading-none">
               <p className={`text-[15px] sm:text-[16px] lg:text-[18px] font-lato tracking-ultra uppercase font-bold block mb-[2px] lg:mb-[3px] ${useLightText ? 'text-sand' : 'text-forest'}`}>
                 The Compost Bank
