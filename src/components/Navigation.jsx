@@ -178,7 +178,7 @@ export default function Navigation() {
           <button
             onClick={toggleMenu}
             aria-label="Toggle menu"
-            className={`lg:hidden flex flex-col gap-[5px] group ${logoColor}`}
+            className={`lg:hidden flex flex-col gap-[5px] group ${(navIsDark || navIsCharcoal) ? 'text-sand' : 'text-forest'}`}
           >
             <span className={`block h-px w-6 bg-current transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
             <span className={`block h-px bg-current transition-all duration-300 ${menuOpen ? 'w-0 opacity-0' : 'w-4 ml-auto'}`} />
