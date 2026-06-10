@@ -214,7 +214,7 @@ export default function Home() {
       {/* ── SECTION 5: LOOKING FOR A SOLUTION ──────────────────────────── */}
       <section data-nav-dark className="bg-charcoal">
         <div className="grid lg:grid-cols-[3fr_2fr] items-stretch">
-          <div className="pt-24 pb-16 lg:pt-40 lg:pb-24 px-8 sm:px-12 lg:pl-40 lg:pr-16 xl:pl-52 xl:pr-20">
+          <div className="pt-24 pb-4 lg:pt-40 lg:pb-24 px-8 sm:px-12 lg:pl-40 lg:pr-16 xl:pl-52 xl:pr-20">
             <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-sand leading-[1.06] mb-6">
               Looking for a Solution?
             </h2>
@@ -261,7 +261,7 @@ export default function Home() {
             </div>
           </div>
           {/* Map image */}
-          <div className="relative flex items-center justify-center h-full pl-0 pr-8 lg:pr-12 py-16 lg:py-24">
+          <div className="relative flex items-center justify-center h-full pl-0 pr-8 lg:pr-12 pt-4 pb-10 lg:py-24">
             <img
               src="/Images/map.png"
               alt="Phuket island map with collection network"
