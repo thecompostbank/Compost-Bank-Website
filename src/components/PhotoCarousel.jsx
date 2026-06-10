@@ -1,27 +1,12 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 
 export default function PhotoCarousel({ images }) {
   const [active, setActive] = useState(0)
-  const [slideWidth, setSlideWidth] = useState(0)
-  const containerRef = useRef(null)
   const startXRef = useRef(null)
-
-  // Measure container so we can calculate the transform offset
-  useEffect(() => {
-    const measure = () => {
-      if (containerRef.current) {
-        setSlideWidth(containerRef.current.offsetWidth * 0.92)
-      }
-    }
-    measure()
-    window.addEventListener('resize', measure)
-    return () => window.removeEventListener('resize', measure)
-  }, [])
 
   const prev = () => setActive(i => Math.max(0, i - 1))
   const next = () => setActive(i => Math.min(images.length - 1, i + 1))
 
-  // Swipe support
   const onTouchStart = (e) => { startXRef.current = e.touches[0].clientX }
   const onTouchEnd = (e) => {
     if (startXRef.current === null) return
@@ -31,29 +16,27 @@ export default function PhotoCarousel({ images }) {
     startXRef.current = null
   }
 
-  const gap = 12
-  const offset = active * (slideWidth + gap)
+  const n = images.length
 
   return (
     <div className="flex flex-col gap-4">
-      {/* Viewport — clips overflow */}
+      {/* Viewport */}
       <div
-        ref={containerRef}
         className="overflow-hidden"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        {/* Track — slides side by side, shifted by transform */}
+        {/* Track — width = n × 100% of viewport, shifted by CSS percentage */}
         <div
           className="flex"
           style={{
-            gap: `${gap}px`,
-            transform: `translateX(-${offset}px)`,
+            width: `${n * 100}%`,
+            transform: `translateX(-${active * (100 / n)}%)`,
             transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
           {images.map((img, i) => (
-            <div key={i} style={{ width: slideWidth, flexShrink: 0 }}>
+            <div key={i} style={{ width: `${100 / n}%`, flexShrink: 0 }}>
               <img
                 src={img.src}
                 alt={img.alt}
@@ -66,7 +49,6 @@ export default function PhotoCarousel({ images }) {
 
       {/* Controls */}
       <div className="flex items-center justify-between">
-        {/* Arrows */}
         <div className="flex items-center gap-2">
           <button
             onClick={prev}
@@ -90,7 +72,6 @@ export default function PhotoCarousel({ images }) {
           </button>
         </div>
 
-        {/* Dots */}
         <div className="flex items-center gap-2">
           {images.map((_, i) => (
             <button
@@ -106,7 +87,6 @@ export default function PhotoCarousel({ images }) {
           ))}
         </div>
 
-        {/* Photo title */}
         {images[active]?.title && (
           <p className="text-[11px] font-lato tracking-wide text-charcoal/45 italic text-right max-w-[40%]">
             {images[active].title}
