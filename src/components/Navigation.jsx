@@ -93,12 +93,12 @@ export default function Navigation() {
 
           {/* Logo */}
           <Link to="/" className={`flex items-center gap-1 group transition-opacity hover:opacity-75 ${logoColor}`}>
-            <img src="/Images/logo-for-website.png" alt="The Compost Bank" className="w-12 h-12 sm:w-16 sm:h-16 lg:w-28 lg:h-28 flex-shrink-0 object-contain" />
+            <img src="/Images/logo-for-website.png" alt="The Compost Bank" className="w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 flex-shrink-0 object-contain" />
             <div className="leading-none">
-              <p className={`text-[12px] sm:text-[14px] lg:text-[18px] font-lato tracking-ultra uppercase font-bold block mb-[2px] lg:mb-[3px] ${useLightText ? 'text-sand' : 'text-forest'}`}>
+              <p className={`text-[15px] sm:text-[16px] lg:text-[18px] font-lato tracking-ultra uppercase font-bold block mb-[2px] lg:mb-[3px] ${useLightText ? 'text-sand' : 'text-forest'}`}>
                 The Compost Bank
               </p>
-              <p className={`text-[9px] sm:text-[10px] lg:text-[13px] font-lato tracking-wide2 uppercase block transition-colors ${
+              <p className={`text-[10px] sm:text-[11px] lg:text-[13px] font-lato tracking-wide2 uppercase block transition-colors ${
                 useLightText ? 'text-sand/55' : 'text-terracotta'
               }`}>
                 Wealth in Waste
@@ -194,6 +194,9 @@ export default function Navigation() {
         <div className="mb-16">
           <p className="text-sand/30 text-[9px] tracking-ultra uppercase font-lato mb-10">Navigation</p>
           <nav className="flex flex-col gap-6">
+            <Link to="/" className="font-cormorant text-4xl text-sand hover:text-sand/60 transition-colors">
+              Home
+            </Link>
             <Link to="/services" className="font-cormorant text-4xl text-sand hover:text-sand/60 transition-colors">
               Services
             </Link>
