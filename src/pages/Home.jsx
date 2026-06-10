@@ -157,16 +157,18 @@ export default function Home() {
       </section>
 
       {/* ── SECTION 3: MISSION ──────────────────────────────────────────── */}
-      <section className="relative min-h-[560px] lg:min-h-[640px] overflow-hidden flex items-center">
-        {/* Full-width background image */}
+      {/* Mobile: text on cream, photo below. Desktop: text overlaid on full-bleed image */}
+      <section className="bg-cream lg:bg-transparent lg:relative lg:min-h-[640px] lg:overflow-hidden lg:flex lg:items-center">
+
+        {/* Background image — desktop only */}
         <img
           src="/Images/our-mission.png"
           alt="Young plant emerging from rich compost soil"
-          className="absolute inset-0 w-full h-full object-cover object-[60%_center]"
+          className="hidden lg:block absolute inset-0 w-full h-full object-cover object-[60%_center]"
         />
-        {/* Progressive blur — strong on left (text area), fades to nothing on right (plant stays sharp) */}
+        {/* Progressive blur overlay — desktop only */}
         <div
-          className="absolute inset-0"
+          className="hidden lg:block absolute inset-0"
           style={{
             backdropFilter: 'blur(14px)',
             WebkitBackdropFilter: 'blur(14px)',
@@ -174,15 +176,16 @@ export default function Home() {
             WebkitMaskImage: 'linear-gradient(to right, white 0%, white 30%, rgba(255,255,255,0.6) 48%, transparent 68%)',
           }}
         />
-        {/* Subtle warm overlay on text side for contrast */}
+        {/* Warm overlay — desktop only */}
         <div
-          className="absolute inset-0"
+          className="hidden lg:block absolute inset-0"
           style={{
             background: 'linear-gradient(to right, rgba(245,240,232,0.72) 0%, rgba(245,240,232,0.45) 35%, rgba(245,240,232,0.1) 58%, transparent 72%)',
           }}
         />
+
         {/* Text content */}
-        <div className="relative z-10 py-24 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 max-w-xl">
+        <div className="relative z-10 py-16 lg:py-40 px-8 sm:px-12 lg:px-16 xl:px-20 max-w-xl">
           <p className="text-olive text-[13px] tracking-ultra uppercase font-lato font-bold mb-8">
             Our Mission
           </p>
@@ -194,6 +197,17 @@ export default function Home() {
             Creating practical pathways for organic waste to be recovered, processed, and returned to the earth as a valuable resource.
           </p>
         </div>
+
+        {/* Photo below text — mobile only */}
+        <div className="lg:hidden">
+          <img
+            src="/Images/our-mission.png"
+            alt="Young plant emerging from rich compost soil"
+            className="w-full h-64 object-cover"
+            style={{ objectPosition: '60% center' }}
+          />
+        </div>
+
       </section>
 
 
