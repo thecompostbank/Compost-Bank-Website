@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const ContourPattern = ({ opacity = '0.06', color = '#2E3A2F' }) => (
   <svg
@@ -78,6 +79,11 @@ const metrics = [
 export default function Home() {
   return (
     <main>
+      <SEO
+        title="Wealth in Waste | Phuket Composting &amp; Organic Waste Solutions"
+        description="The Compost Bank transforms organic waste into valuable resources across Phuket. Composting systems, waste management consultancy, and circular economy infrastructure for hotels, restaurants, and businesses."
+        path="/"
+      />
 
       {/* ── SECTION 1: HERO ─────────────────────────────────────────────── */}
       <section data-nav-dark className="min-h-screen relative flex items-center overflow-hidden">

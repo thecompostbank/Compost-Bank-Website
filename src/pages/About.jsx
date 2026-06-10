@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const ContourPattern = ({ opacity = '0.06' }) => (
   <svg
@@ -56,8 +57,13 @@ const values = [
 export default function About() {
   return (
     <main>
+      <SEO
+        title="About Us | The Compost Bank, Phuket"
+        description="The Compost Bank was founded by Rae Ann Collier and Tom Gossland to address Phuket's organic waste problem and build the infrastructure needed for a circular economy on the island."
+        path="/about"
+      />
       {/* Hero */}
-      <section data-nav-dark className="relative overflow-hidden bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
+      <section data-nav-dark className="relative overflow-hidden bg-forest pt-52 pb-40 lg:pt-64 lg:pb-56 px-8 sm:px-12 lg:px-16 xl:px-20">
 
         {/* Atmospheric image — full bleed */}
         <div className="absolute inset-0">

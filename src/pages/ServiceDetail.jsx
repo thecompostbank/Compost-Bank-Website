@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams, Navigate, Link } from 'react-router-dom'
 import { services } from '../data/servicesData'
 import ServiceSection from '../components/ServiceSection'
+import SEO from '../components/SEO'
 
 const EMPTY_FORM = {
   businessName: '', contactName: '', position: '', email: '',
@@ -126,8 +127,20 @@ export default function ServiceDetail() {
 
   if (!service) return <Navigate to="/services" replace />
 
+  const seoDescriptions = {
+    'on-site-composting': 'Custom-designed on-site composting systems for hotels, resorts, and businesses in Phuket. Force aeration composting infrastructure built around your waste volumes, space, and operational requirements.',
+    'organic-waste-management': 'Practical organic waste management support for Phuket businesses. Waste audits, staff training, operational improvements, monitoring, and ongoing advisory to improve resource recovery.',
+    'bio-generator-projects': 'Integrate composting or biogas infrastructure into your new development from day one. We work alongside developers, architects, and MEP teams to build organic waste systems during the design phase.',
+    'centralized-processing': 'Register your interest in The Compost Bank\'s upcoming centralized organic waste collection and processing service — a practical off-site solution for Phuket businesses without on-site capacity.',
+  }
+
   return (
     <main>
+      <SEO
+        title={`${service.title} | The Compost Bank`}
+        description={seoDescriptions[service.slug] || service.summary}
+        path={`/services/${service.slug}`}
+      />
       {/* Hero — title + intro description */}
       <section data-nav-dark className="bg-forest pt-36 pb-16 lg:pt-44 lg:pb-20 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-screen-xl mx-auto">

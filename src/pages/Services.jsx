@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom'
 import { services } from '../data/servicesData'
+import SEO from '../components/SEO'
 
 export default function Services() {
   return (
     <main>
+      <SEO
+        title="Our Services | Organic Waste Solutions in Phuket"
+        description="Practical organic waste solutions for Phuket businesses. On-site composting systems, waste management support, bio-generator projects, and centralized processing infrastructure."
+        path="/services"
+      />
       {/* Hero */}
       <section data-nav-dark className="relative overflow-hidden bg-forest pt-52 pb-16 lg:pt-64 lg:pb-20 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div

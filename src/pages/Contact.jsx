@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SEO from '../components/SEO'
 
 const ContourPattern = ({ opacity = '0.06' }) => (
   <svg
@@ -51,6 +52,11 @@ export default function Contact() {
 
   return (
     <main>
+      <SEO
+        title="Book a Consultation | Get in Touch"
+        description="Ready to transform your organic waste? Book a consultation with The Compost Bank team. Based in Phuket, Thailand — we respond within 2 business days."
+        path="/contact"
+      />
       {/* Hero */}
       <section data-nav-dark className="bg-forest pt-40 pb-20 lg:pt-52 lg:pb-28 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-screen-xl mx-auto">
