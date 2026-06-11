@@ -225,6 +225,7 @@ export default function Contact() {
                     <label htmlFor="businessType" className={labelClass}>Type of Business</label>
                     <div className="relative">
                       <select
+                        required
                         id="businessType"
                         name="businessType"
                         value={formState.businessType}
@@ -252,6 +253,7 @@ export default function Contact() {
                     <label htmlFor="interest" className={labelClass}>What Are You Interested In?</label>
                     <div className="relative">
                       <select
+                        required
                         id="interest"
                         name="interest"
                         value={formState.interest}
@@ -277,6 +279,7 @@ export default function Contact() {
                   <div className="mb-10">
                     <label htmlFor="message" className={labelClass}>Message</label>
                     <textarea
+                      required
                       id="message"
                       name="message"
                       rows={4}
