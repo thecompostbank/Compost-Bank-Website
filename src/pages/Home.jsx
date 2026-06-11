@@ -98,7 +98,7 @@ export default function Home() {
         />
 
         {/* Text content */}
-        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-28 pb-16 sm:pt-32 lg:py-0 w-full max-w-2xl">
+        <div className="relative z-10 px-8 sm:px-12 lg:px-16 xl:px-20 pt-28 pb-16 sm:pt-32 lg:pt-44 xl:pt-52 lg:pb-16 w-full max-w-2xl">
           <p className="text-sand/60 text-[13px] tracking-ultra uppercase font-lato mb-10 [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
             Phuket, Thailand
           </p>
