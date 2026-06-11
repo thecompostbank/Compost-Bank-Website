@@ -112,7 +112,7 @@ export default function Home() {
           <div className="w-10 h-px bg-sand/30 mb-7" />
 
           <p className="text-sand/80 text-sm lg:text-[15px] font-lato leading-relaxed mb-10 max-w-[340px] [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]">
-            The Compost Bank helps businesses, new developments, and communities transform organic waste into valuable resources through practical solutions, infrastructure, and education—helping reduce environmental impact while supporting a more circular economy.
+            The Compost Bank helps businesses, new developments, and communities transform organic waste into valuable resources through practical solutions, infrastructure, and education. Our work helps reduce environmental impact while supporting a more circular economy.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
