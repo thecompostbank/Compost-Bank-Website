@@ -132,7 +132,7 @@ export default function About() {
               </h2>
               <div className="w-8 h-px bg-forest/15 mb-6" />
               <p className="text-charcoal/60 text-sm lg:text-base font-lato leading-relaxed">
-                Where every hotel, restaurant, farm, and community has access to the systems, knowledge, and support they need to close the organic loop — and where the island's organic waste becomes a foundation for food production, clean energy, and environmental restoration.
+                Where every hotel, restaurant, farm, and community has access to the systems, knowledge, and support they need to close the organic loop, transforming the island's organic waste into a foundation for food production, clean energy, and environmental restoration.
               </p>
             </div>
           </div>
