@@ -68,7 +68,7 @@ function InterestForm() {
 
         <div>
           <label className={labelClass}>Business Name</label>
-          <input required value={form.businessName} onChange={set('businessName')} className={inputClass} placeholder="Your organisation" />
+          <input value={form.businessName} onChange={set('businessName')} className={inputClass} placeholder="Your organisation" />
         </div>
         <div>
           <label className={labelClass}>Contact Name</label>
@@ -76,7 +76,7 @@ function InterestForm() {
         </div>
         <div>
           <label className={labelClass}>Position</label>
-          <input value={form.position} onChange={set('position')} className={inputClass} placeholder="Role or title" />
+          <input required value={form.position} onChange={set('position')} className={inputClass} placeholder="Role or title" />
         </div>
         <div>
           <label className={labelClass}>Email Address</label>
@@ -88,7 +88,7 @@ function InterestForm() {
         </div>
         <div>
           <label className={labelClass}>Business Type</label>
-          <select value={form.businessType} onChange={set('businessType')} className={`${inputClass} bg-sand-mid`}>
+          <select required value={form.businessType} onChange={set('businessType')} className={`${inputClass} bg-sand-mid`}>
             <option value="" disabled>Select type</option>
             {['Hotel / Resort', 'Restaurant / Café', 'School / University', 'Hospital / Healthcare', 'Market / Retail', 'Office Building', 'Shopping Centre', 'Residential Community', 'Government / Municipality', 'Other'].map(t => (
               <option key={t} value={t}>{t}</option>
@@ -97,11 +97,11 @@ function InterestForm() {
         </div>
         <div>
           <label className={labelClass}>Estimated Organic Waste Generated Per Day</label>
-          <input value={form.wasteVolume} onChange={set('wasteVolume')} className={inputClass} placeholder="e.g. 50 kg, 200 kg" />
+          <input required value={form.wasteVolume} onChange={set('wasteVolume')} className={inputClass} placeholder="e.g. 50 kg, 200 kg" />
         </div>
         <div>
           <label className={labelClass}>Preferred Participation Method</label>
-          <select value={form.participation} onChange={set('participation')} className={`${inputClass} bg-sand-mid`}>
+          <select required value={form.participation} onChange={set('participation')} className={`${inputClass} bg-sand-mid`}>
             <option value="" disabled>Select preference</option>
             <option value="self-delivery">Self-delivery</option>
             <option value="collection">Collection service</option>
