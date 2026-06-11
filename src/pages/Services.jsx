@@ -27,7 +27,7 @@ export default function Services() {
           </h1>
           <div className="w-10 h-px bg-sand/15 my-6" />
           <p className="text-sand/55 text-sm lg:text-base font-lato leading-relaxed max-w-xl">
-            Four service areas designed to meet businesses where they are — and bring them to where they need to be.
+            Four service areas designed to meet businesses where they are, and bring them to where they need to be.
           </p>
         </div>
       </section>
