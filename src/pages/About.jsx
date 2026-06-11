@@ -122,7 +122,7 @@ export default function About() {
               </h2>
               <div className="w-8 h-px bg-forest/15 mb-6" />
               <p className="text-charcoal/60 text-sm lg:text-base font-lato leading-relaxed">
-                While building the infrastructure needed for a more circular Phuket — one that keeps organic matter in productive use, supports local communities, and reduces the environmental burden of unnecessary waste.
+                We are building the infrastructure needed for a more circular Phuket, keeping organic matter in productive use, supporting local communities, and reducing the environmental burden of unnecessary waste.
               </p>
             </div>
             <div>
