@@ -29,7 +29,7 @@ export default function Footer() {
             <nav className="flex flex-col gap-3.5">
               {[
                 ['Services', '/services'],
-                ['How It Works', '/how-it-works'],
+                ['How We Work', '/how-it-works'],
                 ['About', '/about'],
                 ['Contact', '/contact'],
               ].map(([label, path]) => (

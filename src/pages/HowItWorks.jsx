@@ -73,7 +73,7 @@ export default function HowItWorks() {
   return (
     <main>
       <SEO
-        title="How It Works | From Waste Assessment to Compost"
+        title="How We Work | From Waste Assessment to Compost"
         description="A clear three-step process: we assess your organic waste streams, design the right solution for your site, and support you through implementation and ongoing operations."
         path="/how-it-works"
       />
