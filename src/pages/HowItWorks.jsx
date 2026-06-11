@@ -45,7 +45,7 @@ const steps = [
     number: '04',
     title: 'Train',
     headline: 'We train your team to run it well.',
-    body: 'The best infrastructure is only as good as the people operating it. We deliver hands-on training for your team — from kitchen staff separating waste at source to facilities managers maintaining the system — and provide clear written SOPs and reference materials that stay with you.',
+    body: 'The best infrastructure is only as good as the people operating it. We deliver hands-on training for your team, starting with the kitchen staff separating waste at source to facilities managers maintaining the system. We then provide clear written SOPs and reference materials that stay with you.',
     details: [
       'Hands-on operational training for all relevant staff',
       'Source separation training for kitchen and housekeeping teams',
