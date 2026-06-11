@@ -61,7 +61,7 @@ export const services = [
     ],
     description: {
       heading: 'Build It Right From Day One.',
-      body: 'The most cost-effective time to integrate organic waste infrastructure is before a project is built. Whether the focus is on composting or biogas systems, we work alongside developers, architects, engineers, and MEP teams to design systems that recover value from organic waste and support long-term operational sustainability from the outset. Rather than retrofitting solutions into existing operations, we help developments incorporate waste management infrastructure during the design phase—when space allocation, utility requirements, workflows, and operational procedures can be integrated efficiently and effectively.',
+      body: 'Rather than retrofitting solutions into existing operations, we help new developments incorporate waste management infrastructure during the design phase, allowing space allocation, utility requirements, workflows, and operational procedures to be integrated efficiently and effectively.',
     },
     forWho: 'Developers, architects, MEP consultants, project managers, and owners planning hotels, resorts, mixed-use developments, schools, hospitals, residential communities, or other projects that will generate significant volumes of organic waste. Best suited to projects still in the design or pre-construction phase.',
     included: [
