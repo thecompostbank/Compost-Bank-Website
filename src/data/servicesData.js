@@ -90,6 +90,7 @@ export const services = [
     footerImage: '/Images/compost.png',
     hideCTA: true,
     comingSoon: true,
+    imageNote: 'Image shown for illustrative purposes only. Conceptual rendering of potential organic waste infrastructure.',
     description: {
       heading: 'Building the Infrastructure Phuket Needs.',
       body: 'While on-site systems can be an excellent solution for some organizations, they are not suitable for every site. Many businesses lack the space, resources, or operational requirements needed to justify dedicated processing infrastructure. Our long-term vision is to create a centralized processing facility that allows these organizations to participate in resource recovery without managing the processing themselves.',

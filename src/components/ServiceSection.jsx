@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import PhotoCarousel from './PhotoCarousel'
 
-export default function ServiceSection({ id, number, title, description, forWho, included, includedLabel, whyMatters, image, gallery, flipped, comingSoon, showHeader = true, imageContain = false, imageFullHeight = false, imageWide = false }) {
+export default function ServiceSection({ id, number, title, description, forWho, included, includedLabel, whyMatters, image, gallery, flipped, comingSoon, showHeader = true, imageContain = false, imageFullHeight = false, imageWide = false, imageNote }) {
   return (
     <section id={id} className="py-14 lg:py-20 px-8 sm:px-12 lg:px-16 xl:px-20 bg-cream">
       <div className="max-w-screen-xl mx-auto">
@@ -90,8 +90,13 @@ export default function ServiceSection({ id, number, title, description, forWho,
                 </p>
               </div>
             ) : image ? (
-              <div className={imageContain ? '' : 'h-56 sm:h-72 lg:h-[400px] overflow-hidden img-zoom'}>
-                <img src={image.src} alt={image.alt} className={imageContain ? 'w-full h-auto' : 'w-full h-full object-cover'} />
+              <div>
+                <div className={imageContain ? '' : 'h-56 sm:h-72 lg:h-[400px] overflow-hidden img-zoom'}>
+                  <img src={image.src} alt={image.alt} className={imageContain ? 'w-full h-auto' : 'w-full h-full object-cover'} />
+                </div>
+                {imageNote && (
+                  <p className="mt-3 text-[11px] font-lato italic text-charcoal/40 leading-relaxed">{imageNote}</p>
+                )}
               </div>
             ) : null}
 
