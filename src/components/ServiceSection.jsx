@@ -83,7 +83,12 @@ export default function ServiceSection({ id, number, title, description, forWho,
 
             {/* Gallery carousel or single image */}
             {gallery ? (
-              <PhotoCarousel images={gallery} />
+              <div>
+                <PhotoCarousel images={gallery} />
+                <p className="mt-3 text-[11px] font-lato italic text-charcoal/40 leading-relaxed">
+                  Image shown for illustrative purposes only. Conceptual rendering of potential organic waste infrastructure.
+                </p>
+              </div>
             ) : image ? (
               <div className={imageContain ? '' : 'h-56 sm:h-72 lg:h-[400px] overflow-hidden img-zoom'}>
                 <img src={image.src} alt={image.alt} className={imageContain ? 'w-full h-auto' : 'w-full h-full object-cover'} />
