@@ -105,6 +105,6 @@ export const services = [
       'Compost return programs for landscaping and gardens',
       'Environmental impact certificates and sustainability reporting',
     ],
-    whyMatters: 'Building a circular economy requires more than individual action—it requires the right infrastructure. A centralized processing facility would create a shared pathway for organic waste recovery across Phuket, enabling more organizations to divert waste from landfill, return nutrients to the earth, and contribute to a more sustainable future for the island.',
+    whyMatters: 'Building a circular economy requires more than individual action, it requires the right infrastructure. A centralized processing facility would create a shared pathway for organic waste recovery across Phuket, enabling more organizations to divert waste from landfill, return nutrients to the earth, and contribute to a more sustainable future for the island.',
   },
 ]
