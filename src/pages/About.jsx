@@ -105,7 +105,7 @@ export default function About() {
         {/* Text */}
         <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">About Us</p>
-          <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-4xl">
+          <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-7xl 2xl:text-8xl text-sand leading-[1.04] max-w-4xl">
             A practical response to a real problem.
           </h1>
         </div>

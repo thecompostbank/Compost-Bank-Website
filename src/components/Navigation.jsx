@@ -107,7 +107,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop nav + CTA */}
-          <div className="hidden lg:flex items-center gap-9">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-9">
 
             {/* Home */}
             <Link
@@ -164,7 +164,7 @@ export default function Navigation() {
             ))}
             <Link
               to="/contact"
-              className={`text-[13px] font-lato tracking-ultra uppercase px-7 py-3 border transition-all duration-200 ${
+              className={`text-[13px] font-lato tracking-ultra uppercase px-5 xl:px-7 py-3 border transition-all duration-200 ${
                 (isHome && !navBgVisible) || !useLightText
                   ? 'border-forest/40 text-forest hover:bg-forest hover:text-sand hover:border-forest'
                   : 'border-sand/35 text-sand hover:bg-sand/10 hover:border-sand/60'

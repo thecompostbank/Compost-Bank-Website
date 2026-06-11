@@ -143,7 +143,7 @@ export default function Home() {
             <p className="text-sand/30 text-[13px] tracking-ultra uppercase font-lato font-bold mb-12">
               Our Approach
             </p>
-            <h2 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] mb-10">
+            <h2 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-7xl 2xl:text-8xl text-sand leading-[1.04] mb-10">
               Building infrastructure.<br />
               Creating value.<br />
               Restoring balance.
@@ -214,7 +214,7 @@ export default function Home() {
       {/* ── SECTION 5: LOOKING FOR A SOLUTION ──────────────────────────── */}
       <section data-nav-dark className="bg-charcoal">
         <div className="grid lg:grid-cols-[3fr_2fr] items-stretch">
-          <div className="pt-24 pb-4 lg:pt-40 lg:pb-24 px-8 sm:px-12 lg:pl-40 lg:pr-16 xl:pl-52 xl:pr-20">
+          <div className="pt-24 pb-4 lg:pt-40 lg:pb-24 px-8 sm:px-12 lg:pl-40 lg:pr-16 xl:pl-44 2xl:pl-52 xl:pr-20">
             <h2 className="font-cormorant font-semibold text-4xl lg:text-5xl text-sand leading-[1.06] mb-6">
               Looking for a Solution?
             </h2>

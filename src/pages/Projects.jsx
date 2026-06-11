@@ -78,7 +78,7 @@ export default function Projects() {
       <section data-nav-dark className="bg-forest pt-40 pb-24 lg:pt-52 lg:pb-32 px-8 sm:px-12 lg:px-16 xl:px-20">
         <div className="max-w-screen-xl mx-auto">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">Our Work</p>
-          <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
+          <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-7xl 2xl:text-8xl text-sand leading-[1.04] max-w-3xl">
             Projects that prove the principle.
           </h1>
           <div className="w-10 h-px bg-sand/15 my-8" />

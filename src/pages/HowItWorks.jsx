@@ -89,7 +89,7 @@ export default function HowItWorks() {
       >
         <div className="max-w-screen-xl mx-auto relative z-10">
           <p className="text-sand/35 text-[13px] tracking-ultra uppercase font-lato mb-8">The Process</p>
-          <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-sand leading-[1.04] max-w-3xl">
+          <h1 className="font-cormorant font-semibold text-5xl sm:text-6xl lg:text-7xl xl:text-7xl 2xl:text-8xl text-sand leading-[1.04] max-w-3xl">
             Five steps to a circular operation.
           </h1>
           <div className="w-10 h-px bg-sand/15 my-8" />
@@ -111,7 +111,7 @@ export default function HowItWorks() {
             >
               {/* Step label */}
               <div className="flex flex-row lg:flex-col items-start gap-4 lg:gap-0">
-                <span className="font-cormorant text-7xl lg:text-8xl text-forest/12 font-light leading-none flex-shrink-0">
+                <span className="font-cormorant text-7xl lg:text-7xl 2xl:text-8xl text-forest/12 font-light leading-none flex-shrink-0">
                   {step.number}
                 </span>
                 <div className="lg:mt-4">
