@@ -222,7 +222,7 @@ export default function Contact() {
                   </div>
 
                   <div className="mb-8">
-                    <label htmlFor="businessType" className={labelClass}>Type of Business</label>
+                    <label htmlFor="businessType" className={labelClass}>Type of Business *</label>
                     <div className="relative">
                       <select
                         required
@@ -250,7 +250,7 @@ export default function Contact() {
                   </div>
 
                   <div className="mb-8">
-                    <label htmlFor="interest" className={labelClass}>What Are You Interested In?</label>
+                    <label htmlFor="interest" className={labelClass}>What Are You Interested In? *</label>
                     <div className="relative">
                       <select
                         required
@@ -277,7 +277,7 @@ export default function Contact() {
                   </div>
 
                   <div className="mb-10">
-                    <label htmlFor="message" className={labelClass}>Message</label>
+                    <label htmlFor="message" className={labelClass}>Message *</label>
                     <textarea
                       required
                       id="message"
