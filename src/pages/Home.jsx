@@ -150,7 +150,7 @@ export default function Home() {
             </h2>
             <div className="w-14 h-px bg-sand/15 mb-8" />
             <p className="text-sand/50 text-sm lg:text-base font-lato leading-relaxed max-w-lg">
-              We believe waste should create value, not problems. Organic waste doesn't belong in landfill. By building practical systems and working closely with our partners, we keep valuable nutrients in circulation—refeeding the earth and restoring balance to the systems that sustain us.
+              We believe waste should create value, not problems. Organic waste doesn't belong in landfill. By building practical systems and working closely with our partners, we keep valuable nutrients in circulation. Our mantra is refeed the Earth, restore balance to the systems that sustain us, and find wealth in waste.
             </p>
           </div>
         </div>
