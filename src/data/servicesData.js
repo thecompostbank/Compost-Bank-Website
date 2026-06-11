@@ -61,7 +61,7 @@ export const services = [
     ],
     description: {
       heading: 'Build It Right From Day One.',
-      body: 'Rather than retrofitting solutions into existing operations, we help new developments incorporate waste management infrastructure during the design phase, allowing space allocation, utility requirements, workflows, and operational procedures to be integrated efficiently and effectively.',
+      body: 'Rather than retrofitting solutions into existing operations, we help new developments incorporate waste management infrastructure during the design phase, allowing space allocation, utility requirements, workflows, and operational procedures to be integrated efficiently and effectively. By considering waste management from the outset, developers can also evaluate projected operating costs, disposal savings, resource recovery opportunities, and overall return on investment as part of the planning process.',
     },
     forWho: 'Developers, architects, MEP consultants, project managers, and owners planning hotels, resorts, mixed-use developments, schools, hospitals, residential communities, or other projects that will generate significant volumes of organic waste. Best suited to projects still in the design or pre-construction phase.',
     included: [
