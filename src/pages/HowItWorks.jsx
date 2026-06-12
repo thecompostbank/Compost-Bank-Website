@@ -73,8 +73,8 @@ export default function HowItWorks() {
   return (
     <main>
       <SEO
-        title="How We Work | From Waste Assessment to Compost"
-        description="A clear three-step process: we assess your organic waste streams, design the right solution for your site, and support you through implementation and ongoing operations."
+        title="How We Work | Organic Waste Management Process | The Compost Bank"
+        description="Our five-step process — assess, design, build, train, and monitor — helps Phuket businesses transform organic waste into a valuable circular resource."
         path="/how-it-works"
       />
       {/* Hero */}

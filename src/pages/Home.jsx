@@ -80,8 +80,8 @@ export default function Home() {
   return (
     <main>
       <SEO
-        title="Wealth in Waste | Phuket Composting &amp; Organic Waste Solutions"
-        description="The Compost Bank transforms organic waste into valuable resources across Phuket. Composting systems, waste management consultancy, and circular economy infrastructure for hotels, restaurants, and businesses."
+        title="The Compost Bank | Organic Waste Management &amp; Composting, Phuket"
+        description="The Compost Bank provides organic waste management, composting systems, and biogas solutions for hotels, resorts, and developments across Phuket, Thailand."
         path="/"
       />
 

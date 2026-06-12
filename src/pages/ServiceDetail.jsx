@@ -161,17 +161,24 @@ export default function ServiceDetail() {
   const prevService = serviceIndex > 0 ? services[serviceIndex - 1] : null
   const nextService = serviceIndex < services.length - 1 ? services[serviceIndex + 1] : null
 
+  const seoTitles = {
+    'on-site-composting': 'On-Site Composting Systems in Phuket | The Compost Bank',
+    'organic-waste-management': 'Organic Waste Management Support | The Compost Bank',
+    'bio-generator-projects': 'Biogas & Bio-Generator Projects Phuket | The Compost Bank',
+    'centralized-processing': 'Centralized Organic Waste Collection | The Compost Bank',
+  }
+
   const seoDescriptions = {
-    'on-site-composting': 'Custom-designed on-site composting systems for hotels, resorts, and businesses in Phuket. Force aeration composting infrastructure built around your waste volumes, space, and operational requirements.',
-    'organic-waste-management': 'Practical organic waste management support for Phuket businesses. Waste audits, staff training, operational improvements, monitoring, and ongoing advisory to improve resource recovery.',
-    'bio-generator-projects': 'Integrate composting or biogas infrastructure into your new development from day one. We work alongside developers, architects, and MEP teams to build organic waste systems during the design phase.',
-    'centralized-processing': 'Register your interest in The Compost Bank\'s upcoming centralized organic waste collection and processing service — a practical off-site solution for Phuket businesses without on-site capacity.',
+    'on-site-composting': 'Custom on-site composting systems for hotels, resorts, and businesses in Phuket. Force aeration technology designed around your waste volumes, available space, and operational requirements.',
+    'organic-waste-management': 'Organic waste management support for Phuket businesses. Waste audits, staff training, monitoring, and advisory to reduce waste and improve resource recovery.',
+    'bio-generator-projects': 'Integrate biogas and organic waste-to-energy systems into new developments at the design stage. Serving hotels, resorts, and mixed-use developments in Phuket, Thailand.',
+    'centralized-processing': 'Register your interest in The Compost Bank\'s future centralized organic waste collection and processing service for Phuket businesses without on-site capacity.',
   }
 
   return (
     <main>
       <SEO
-        title={`${service.title} | The Compost Bank`}
+        title={seoTitles[service.slug] || `${service.title} | The Compost Bank`}
         description={seoDescriptions[service.slug] || service.summary}
         path={`/services/${service.slug}`}
       />

@@ -4,11 +4,10 @@ const SITE_NAME = 'The Compost Bank'
 const CANONICAL_DOMAIN = 'https://thecompostbank.com'
 const DEFAULT_OG_IMAGE = `${CANONICAL_DOMAIN}/og-image-square.jpg`
 const DEFAULT_OG_IMAGE_TWITTER = `${CANONICAL_DOMAIN}/og-image-landscape.jpg`
+const DEFAULT_TITLE = `${SITE_NAME} | Organic Waste Management & Composting, Phuket`
 
-export default function SEO({ title, description, path = '', ogImage }) {
-  const fullTitle = title
-    ? `${title} — ${SITE_NAME}`
-    : `${SITE_NAME} — Wealth in Waste`
+export default function SEO({ title, description, path = '', ogImage, structuredData }) {
+  const fullTitle = title || DEFAULT_TITLE
   const canonical = `${CANONICAL_DOMAIN}${path}`
   const image = ogImage || DEFAULT_OG_IMAGE
   const twitterImage = ogImage || DEFAULT_OG_IMAGE_TWITTER
@@ -35,6 +34,13 @@ export default function SEO({ title, description, path = '', ogImage }) {
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={twitterImage} />
+
+      {/* Structured Data */}
+      {structuredData && (
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      )}
     </Helmet>
   )
 }

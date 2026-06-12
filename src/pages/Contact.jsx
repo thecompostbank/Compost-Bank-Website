@@ -77,8 +77,8 @@ export default function Contact() {
   return (
     <main>
       <SEO
-        title="Book a Consultation | Get in Touch"
-        description="Ready to transform your organic waste? Book a consultation with The Compost Bank team. Based in Phuket, Thailand — we respond within 2 business days."
+        title="Book a Consultation | The Compost Bank Phuket"
+        description="Book a consultation with The Compost Bank. We help Phuket hotels, restaurants, and developments manage organic waste through composting and biogas solutions."
         path="/contact"
       />
       {/* Hero */}

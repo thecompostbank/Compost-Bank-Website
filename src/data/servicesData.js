@@ -60,8 +60,8 @@ export const services = [
       { src: '/Images/s03-bins.png', alt: 'Organic waste collection station', title: 'Organic Waste Collection Point' },
     ],
     description: {
-      heading: 'Build It Right From Day One.',
-      body: 'Rather than retrofitting solutions into existing operations, we help new developments incorporate waste management infrastructure during the design phase, allowing space allocation, utility requirements, workflows, and operational procedures to be integrated efficiently and effectively. By considering waste management from the outset, developers can also evaluate projected operating costs, disposal savings, resource recovery opportunities, and overall return on investment as part of the planning process.',
+      heading: 'Integrate Biogas & Waste Infrastructure From Day One.',
+      body: 'Rather than retrofitting solutions into existing operations, we help new developments incorporate organic waste management and biogas infrastructure during the design phase, allowing space allocation, utility requirements, workflows, and operational procedures to be integrated efficiently and effectively. Whether the solution involves anaerobic digestion for biogas generation, on-site composting, or a combination of both, planning ahead allows developers to evaluate projected operating costs, disposal savings, resource recovery opportunities, and overall return on investment as part of the planning process.',
     },
     forWho: 'Developers, architects, MEP consultants, project managers, and owners planning hotels, resorts, mixed-use developments, schools, hospitals, residential communities, or other projects that will generate significant volumes of organic waste. Best suited to projects still in the design or pre-construction phase.',
     included: [
@@ -75,7 +75,7 @@ export const services = [
       'Operator training and operational planning',
       'Long-term performance monitoring and optimization',
     ],
-    whyMatters: 'Retrofitting waste infrastructure into an operating facility is often expensive, disruptive, and constrained by the decisions made during construction. By considering organic waste management during the design phase, developments can allocate the necessary space, utilities, workflows, and operational procedures from the beginning. This creates a more efficient system, reduces future costs, and allows sustainability objectives to be built into the project rather than added later.',
+    whyMatters: 'Retrofitting biogas systems or composting infrastructure into an operating facility is often expensive, disruptive, and constrained by decisions made during construction. By considering organic waste management and biogas generation from the design phase, developments can allocate the necessary space, utilities, workflows, and operational procedures from the beginning — making food waste-to-energy systems and composting far more cost-effective and operationally viable.',
   },
   {
     id: 'centralized',

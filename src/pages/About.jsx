@@ -58,8 +58,8 @@ export default function About() {
   return (
     <main>
       <SEO
-        title="About Us | The Compost Bank, Phuket"
-        description="The Compost Bank was founded by Rae Ann Collier and Tom Gossland to address Phuket's organic waste problem and build the infrastructure needed for a circular economy on the island."
+        title="About The Compost Bank | Organic Waste Management, Phuket"
+        description="The Compost Bank was founded to build organic waste management infrastructure for a circular Phuket. Learn about our mission, team, values, and vision."
         path="/about"
       />
       {/* Hero */}
