@@ -78,7 +78,7 @@ export default function Contact() {
     <main>
       <SEO
         title="Book a Consultation | The Compost Bank Phuket"
-        description="Book a consultation with The Compost Bank. We help Phuket hotels, restaurants, and developments manage organic waste through composting and biogas solutions."
+        description="Book a consultation with The Compost Bank in Phuket. We help hotels, restaurants, farms, and developments manage food waste, composting, and organic waste recovery."
         path="/contact"
       />
       {/* Hero */}

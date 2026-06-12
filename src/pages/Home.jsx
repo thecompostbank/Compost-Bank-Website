@@ -76,6 +76,45 @@ const metrics = [
   { number: '—', unit: 'Tons', label: 'CO₂ Emissions Avoided' },
 ]
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How can Phuket hotels and businesses manage organic waste?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Compost Bank provides on-site composting systems and organic waste management support for hotels, resorts, restaurants, and farms in Phuket. Custom forced aeration composting infrastructure is designed around your food waste volumes and operational requirements.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What organic waste services are available for Phuket businesses?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Compost Bank offers four services: on-site composting systems, organic waste management support (audits, training, monitoring), bio-generator and biogas projects for new developments, and a future centralized organic waste collection and processing service across Phuket.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can biogas systems be integrated into new hotel and resort developments in Phuket?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The Compost Bank\'s Bio-Generator Projects service helps developers and architects integrate biogas and organic waste infrastructure into new Phuket hotels, resorts, and mixed-use developments from the design phase — before construction begins.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is there an organic waste collection service in Phuket?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Compost Bank is developing a centralized organic waste collection and processing service for Phuket businesses without the space or capacity for on-site composting systems. Businesses can register their interest now.',
+      },
+    },
+  ],
+}
+
 export default function Home() {
   return (
     <main>
@@ -83,6 +122,7 @@ export default function Home() {
         title="The Compost Bank | Organic Waste Management &amp; Composting, Phuket"
         description="The Compost Bank provides organic waste management, composting systems, and biogas solutions for hotels, resorts, and developments across Phuket, Thailand."
         path="/"
+        structuredData={faqSchema}
       />
 
       {/* ── SECTION 1: HERO ─────────────────────────────────────────────── */}
@@ -163,7 +203,7 @@ export default function Home() {
         {/* Background image — desktop only */}
         <img
           src="/Images/our-mission.png"
-          alt="Young plant emerging from rich compost soil"
+          alt="Young plant emerging from organic compost soil, representing circular waste recovery in Phuket"
           className="hidden lg:block absolute inset-0 w-full h-full object-cover object-[60%_center]"
         />
         {/* Progressive blur overlay — desktop only */}
@@ -202,7 +242,7 @@ export default function Home() {
         <div className="lg:hidden">
           <img
             src="/Images/our-mission.png"
-            alt="Young plant emerging from rich compost soil"
+            alt="Young plant emerging from organic compost soil, representing circular waste recovery in Phuket"
             className="w-full h-64 object-cover"
             style={{ objectPosition: '60% center' }}
           />

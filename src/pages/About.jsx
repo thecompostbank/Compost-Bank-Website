@@ -217,7 +217,7 @@ export default function About() {
             <div className="h-[320px] lg:h-full overflow-hidden">
               <img
                 src="/Images/shirts.png"
-                alt="The Compost Bank team shirt"
+                alt="Rae Ann Collier and Tom Gossland, founders of The Compost Bank, organic waste management company in Phuket"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -266,6 +266,21 @@ export default function About() {
           >
             Get in Touch
           </Link>
+          <div className="mt-12 pt-10 border-t border-sand/10 max-w-2xl mx-auto">
+            <p className="text-sand/30 text-[11px] tracking-ultra uppercase font-lato mb-6">Our Services</p>
+            <div className="flex flex-wrap justify-center gap-x-10 gap-y-3">
+              {[
+                { label: 'On-Site Composting', path: '/services/on-site-composting' },
+                { label: 'Waste Management Support', path: '/services/organic-waste-management' },
+                { label: 'Bio-Generator Projects', path: '/services/bio-generator-projects' },
+                { label: 'Centralized Processing', path: '/services/centralized-processing' },
+              ].map(s => (
+                <Link key={s.path} to={s.path} className="text-sand/45 hover:text-sand text-sm font-lato transition-colors duration-200">
+                  {s.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </main>

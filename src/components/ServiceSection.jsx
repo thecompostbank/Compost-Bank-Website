@@ -35,14 +35,14 @@ export default function ServiceSection({ id, number, title, description, forWho,
                 {description && <div className="w-full h-px bg-forest/8 mb-7" />}
 
                 <div className="mb-7">
-                  <p className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-3">Who We Work With</p>
+                  <h3 className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-3">Who We Work With</h3>
                   <p className="text-charcoal/70 text-sm font-lato leading-relaxed">{forWho}</p>
                 </div>
 
                 <div className="w-full h-px bg-forest/8 mb-7" />
 
                 <div>
-                  <p className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-4">{includedLabel || 'What Is Included'}</p>
+                  <h3 className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-4">{includedLabel || 'What Is Included'}</h3>
                   <ul className="space-y-2">
                     {included.map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm font-lato text-charcoal/65 leading-relaxed">
@@ -71,7 +71,7 @@ export default function ServiceSection({ id, number, title, description, forWho,
             {whyMatters && (
               <div className="mt-10 lg:mt-14 max-w-[60%]">
                 <div className="w-full h-px bg-forest/8 mb-7" />
-                <p className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-3">Why It Matters</p>
+                <h3 className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-3">Why It Matters</h3>
                 <p className="text-charcoal/65 text-sm font-lato leading-relaxed">{whyMatters}</p>
               </div>
             )}
@@ -114,14 +114,14 @@ export default function ServiceSection({ id, number, title, description, forWho,
               {description && <div className="w-full h-px bg-forest/8 mb-7" />}
 
               <div className="mb-7">
-                <p className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-3">Who We Work With</p>
+                <h3 className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-3">Who We Work With</h3>
                 <p className="text-charcoal/70 text-sm font-lato leading-relaxed">{forWho}</p>
               </div>
 
               <div className="w-full h-px bg-forest/8 mb-7" />
 
               <div className="mb-7">
-                <p className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-4">{includedLabel || 'What Is Included'}</p>
+                <h3 className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-4">{includedLabel || 'What Is Included'}</h3>
                 <ul className="space-y-2">
                   {included.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm font-lato text-charcoal/65 leading-relaxed">
@@ -136,7 +136,7 @@ export default function ServiceSection({ id, number, title, description, forWho,
 
               {whyMatters && (
                 <div>
-                  <p className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-3">Why It Matters</p>
+                  <h3 className="text-[13px] font-lato tracking-ultra uppercase text-olive mb-3">Why It Matters</h3>
                   <p className="text-charcoal/65 text-sm font-lato leading-relaxed">{whyMatters}</p>
                 </div>
               )}

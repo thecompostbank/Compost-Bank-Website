@@ -73,8 +73,8 @@ export default function HowItWorks() {
   return (
     <main>
       <SEO
-        title="How We Work | Organic Waste Management Process | The Compost Bank"
-        description="Our five-step process — assess, design, build, train, and monitor — helps Phuket businesses transform organic waste into a valuable circular resource."
+        title="Our Organic Waste Management Process | The Compost Bank"
+        description="Our five-step process — assess, design, build, train, and monitor — helps Phuket hotels, resorts, and businesses transform organic waste into a circular resource."
         path="/how-it-works"
       />
       {/* Hero */}
@@ -146,6 +146,33 @@ export default function HowItWorks() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Services bridge */}
+      <section className="bg-sand-mid py-16 lg:py-24 px-8 sm:px-12 lg:px-16 xl:px-20">
+        <div className="max-w-screen-xl mx-auto">
+          <p className="text-olive text-[13px] tracking-ultra uppercase font-lato mb-6">Our Services</p>
+          <p className="text-charcoal/55 text-sm font-lato leading-relaxed mb-10 max-w-lg">
+            Ready to see which solution fits your operation? Explore what we offer for Phuket hotels, resorts, farms, and new developments.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {[
+              { label: 'On-Site Composting', path: '/services/on-site-composting' },
+              { label: 'Waste Management Support', path: '/services/organic-waste-management' },
+              { label: 'Bio-Generator Projects', path: '/services/bio-generator-projects' },
+              { label: 'Centralized Processing', path: '/services/centralized-processing' },
+            ].map(s => (
+              <Link
+                key={s.path}
+                to={s.path}
+                className="border border-forest/15 px-6 py-4 text-sm font-lato text-forest hover:bg-forest hover:text-sand hover:border-forest transition-all duration-200 flex items-center justify-between gap-3 group"
+              >
+                <span>{s.label}</span>
+                <span className="text-olive/60 group-hover:text-sand/60 transition-colors">→</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

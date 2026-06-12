@@ -162,17 +162,44 @@ export default function ServiceDetail() {
   const nextService = serviceIndex < services.length - 1 ? services[serviceIndex + 1] : null
 
   const seoTitles = {
-    'on-site-composting': 'On-Site Composting Systems in Phuket | The Compost Bank',
-    'organic-waste-management': 'Organic Waste Management Support | The Compost Bank',
+    'on-site-composting': 'On-Site Composting Systems, Phuket | The Compost Bank',
+    'organic-waste-management': 'Organic Waste & Food Waste Management Phuket | The Compost Bank',
     'bio-generator-projects': 'Biogas & Bio-Generator Projects Phuket | The Compost Bank',
-    'centralized-processing': 'Centralized Organic Waste Collection | The Compost Bank',
+    'centralized-processing': 'Organic Waste Collection & Processing Phuket | The Compost Bank',
   }
 
   const seoDescriptions = {
-    'on-site-composting': 'Custom on-site composting systems for hotels, resorts, and businesses in Phuket. Force aeration technology designed around your waste volumes, available space, and operational requirements.',
-    'organic-waste-management': 'Organic waste management support for Phuket businesses. Waste audits, staff training, monitoring, and advisory to reduce waste and improve resource recovery.',
-    'bio-generator-projects': 'Integrate biogas and organic waste-to-energy systems into new developments at the design stage. Serving hotels, resorts, and mixed-use developments in Phuket, Thailand.',
+    'on-site-composting': 'On-site composting systems for Phuket hotels, resorts, and farms. Custom forced aeration technology designed around your food waste volumes and operational requirements.',
+    'organic-waste-management': 'Organic waste and food waste management for Phuket businesses. Waste audits, staff training, and advisory to reduce waste and improve resource recovery.',
+    'bio-generator-projects': 'Integrate biogas and waste-to-energy infrastructure into new developments from the design phase. Serving developers planning hotels and resorts in Phuket, Thailand.',
     'centralized-processing': 'Register your interest in The Compost Bank\'s future centralized organic waste collection and processing service for Phuket businesses without on-site capacity.',
+  }
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://thecompostbank.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://thecompostbank.com/services' },
+          { '@type': 'ListItem', position: 3, name: service.title, item: `https://thecompostbank.com/services/${service.slug}` },
+        ],
+      },
+      {
+        '@type': 'Service',
+        '@id': `https://thecompostbank.com/services/${service.slug}#service`,
+        name: service.title,
+        description: seoDescriptions[service.slug] || service.summary,
+        provider: {
+          '@type': 'Organization',
+          '@id': 'https://thecompostbank.com/#organization',
+          name: 'The Compost Bank',
+        },
+        areaServed: { '@type': 'City', name: 'Phuket', addressCountry: 'TH' },
+        url: `https://thecompostbank.com/services/${service.slug}`,
+      },
+    ],
   }
 
   return (
@@ -181,6 +208,7 @@ export default function ServiceDetail() {
         title={seoTitles[service.slug] || `${service.title} | The Compost Bank`}
         description={seoDescriptions[service.slug] || service.summary}
         path={`/services/${service.slug}`}
+        structuredData={structuredData}
       />
       {/* Hero — title + intro description */}
       <section data-nav-dark className="bg-forest pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-44 lg:pb-20 px-8 sm:px-12 lg:px-16 xl:px-20">

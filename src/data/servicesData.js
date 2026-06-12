@@ -5,13 +5,13 @@ export const services = [
     number: '01',
     title: 'On-Site Composting Systems',
     summary: 'Custom-designed composting infrastructure built around your waste volumes, space, and operational requirements.',
-    image: { src: '/Images/service-01.jpg', alt: 'On-site composting infrastructure' },
+    image: { src: '/Images/service-01.jpg', alt: 'On-site composting system and forced aeration infrastructure for hotels and businesses in Phuket' },
     imageContain: true,
     description: {
       heading: 'Designed Around Your Waste, Not Around a Machine.',
       body: 'Many composting providers offer standardized equipment with fixed processing capacities. We take a different approach. Our systems are based on forced aeration composting, a proven technology that uses controlled airflow to accelerate decomposition, minimize odors, and improve compost quality. Rather than selling a one-size-fits-all machine, we design each system around your waste volumes, available space, operational requirements, and long-term objectives. The result is a practical, scalable solution capable of managing the organic waste you actually produce.',
     },
-    forWho: 'Hotels, resorts, large restaurants, farms, golf courses, schools, and new property developments with sufficient space and organic waste volumes to justify a dedicated on-site system. Typically suited for operations generating more than 100 kg of organic waste per day.',
+    forWho: 'Hotels, resorts, large restaurants, farms, golf courses, schools, and new property developments in Phuket and across Thailand with sufficient space and organic waste volumes to justify a dedicated on-site system. Typically suited for operations generating more than 100 kg of organic waste per day.',
     included: [
       'Site assessment and organic waste volume audit',
       'Custom system design and capacity planning',
@@ -29,12 +29,12 @@ export const services = [
     number: '02',
     title: 'Organic Waste Management Support',
     summary: 'Practical guidance, staff training, and operational support to help businesses better manage their organic waste.',
-    image: { src: '/Images/service-02.png', alt: 'Organic waste management consultancy session' },
+    image: { src: '/Images/service-02.png', alt: 'Organic waste management consultation and staff training for Phuket businesses' },
     description: {
       heading: 'Making Waste Management Work in Practice.',
       body: 'Helping businesses understand, reduce, and better manage their organic waste through practical guidance, staff training, operational improvements, system implementation, monitoring, and ongoing support.',
     },
-    forWho: 'Suitable for hotels, resorts, restaurants, schools, hospitals, commercial facilities, and organizations at any stage of their sustainability journey.',
+    forWho: 'Suitable for hotels, resorts, restaurants, schools, hospitals, commercial facilities, and organizations in Phuket and Thailand at any stage of their sustainability journey.',
     included: [
       'Organic waste assessments and waste stream analysis',
       'Current waste management and operational review',
@@ -54,8 +54,8 @@ export const services = [
     title: 'Bio-Generator Projects',
     summary: 'Integrating organic waste infrastructure into new developments during the design phase — before construction begins.',
     gallery: [
-      { src: '/Images/s03-building.png', alt: 'Mixed-use development with integrated waste infrastructure', title: 'Integrated Biogas System (building section)' },
-      { src: '/Images/s03-waste-processing.png', alt: 'Waste processing facility', title: 'Biogas System Integration' },
+      { src: '/Images/s03-building.png', alt: 'Mixed-use development in Phuket with integrated biogas and organic waste infrastructure', title: 'Integrated Biogas System (building section)' },
+      { src: '/Images/s03-waste-processing.png', alt: 'Organic waste processing facility with biogas system components', title: 'Biogas System Integration' },
       { src: '/Images/s03-system.png', alt: 'Biogas system and digester tanks', title: 'Biogas System Equipment' },
       { src: '/Images/s03-bins.png', alt: 'Organic waste collection station', title: 'Organic Waste Collection Point' },
     ],
@@ -63,7 +63,7 @@ export const services = [
       heading: 'Integrate Biogas & Waste Infrastructure From Day One.',
       body: 'Rather than retrofitting solutions into existing operations, we help new developments incorporate organic waste management and biogas infrastructure during the design phase, allowing space allocation, utility requirements, workflows, and operational procedures to be integrated efficiently and effectively. Whether the solution involves anaerobic digestion for biogas generation, on-site composting, or a combination of both, planning ahead allows developers to evaluate projected operating costs, disposal savings, resource recovery opportunities, and overall return on investment as part of the planning process.',
     },
-    forWho: 'Developers, architects, MEP consultants, project managers, and owners planning hotels, resorts, mixed-use developments, schools, hospitals, residential communities, or other projects that will generate significant volumes of organic waste. Best suited to projects still in the design or pre-construction phase.',
+    forWho: 'Developers, architects, MEP consultants, project managers, and owners planning hotels, resorts, mixed-use developments, schools, hospitals, and residential communities in Phuket and Thailand. Best suited to projects still in the design or pre-construction phase.',
     included: [
       'Organic waste generation forecasting',
       'Feasibility assessments and business case development',
@@ -95,7 +95,7 @@ export const services = [
       heading: 'Building the Infrastructure Phuket Needs.',
       body: 'While on-site systems can be an excellent solution for some organizations, they are not suitable for every site. Many businesses lack the space, resources, or operational requirements needed to justify dedicated processing infrastructure. Our long-term vision is to create a centralized processing facility that allows these organizations to participate in resource recovery without managing the processing themselves.',
     },
-    forWho: 'Businesses that want to divert organic waste from landfill but lack the space, budget, or operational capacity to build and operate their own processing system. This future service is intended for hotels, restaurants, cafés, markets, schools, shopping centers, office buildings, and other organizations seeking a practical off-site solution.',
+    forWho: 'Businesses in Phuket that want to divert organic waste from landfill but lack the space, budget, or operational capacity to build and operate their own processing system. Intended for hotels, restaurants, cafés, markets, schools, shopping centers, office buildings, and other organizations seeking a practical off-site solution.',
     includedLabel: 'What The Service Could Include',
     included: [
       'Scheduled collection of source-separated organic waste',
