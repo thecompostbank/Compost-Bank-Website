@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import SEO from '../components/SEO'
 import { createRateLimiter } from '../utils/rateLimit'
+import Turnstile, { turnstileEnabled } from '../components/Turnstile'
 
 const ContourPattern = ({ opacity = '0.06' }) => (
   <svg
@@ -62,6 +63,9 @@ export default function Contact() {
   const [blockedUntil, setBlockedUntil] = useState(0)
   const [blockReason, setBlockReason] = useState(null)
   const [now, setNow] = useState(() => Date.now())
+  const [captchaToken, setCaptchaToken] = useState('')
+  const [captchaNonce, setCaptchaNonce] = useState(0)
+  const [errorMsg, setErrorMsg] = useState('')
 
   // Set both clocks from one reading, so the first rendered countdown
   // is not measured against a stale `now`.
@@ -111,11 +115,13 @@ export default function Contact() {
     setError(false)
 
     let serverCooldownMs = 0
+    let succeeded = false
+    setErrorMsg('')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({ ...formState, cfTurnstileToken: captchaToken }),
       })
       const data = await res.json().catch(() => ({}))
 
@@ -123,7 +129,14 @@ export default function Contact() {
         const retryAfter = Number(res.headers.get('Retry-After')) || data.retryAfter || 60
         serverCooldownMs = retryAfter * 1000
       } else if (data.success) {
+        succeeded = true
         setSubmitted(true)
+      } else if (data.error === 'captcha_missing' || data.error === 'captcha_failed') {
+        setErrorMsg("We couldn't verify that you're human. Please try again.")
+        setError(true)
+      } else if (data.error === 'captcha_unavailable') {
+        setErrorMsg('Our verification check is unavailable right now. Please try again shortly.')
+        setError(true)
       } else {
         setError(true)
       }
@@ -131,6 +144,11 @@ export default function Contact() {
       setError(true)
     } finally {
       setSending(false)
+      // Tokens are single-use, so anything short of success needs a new one.
+      if (!succeeded) {
+        setCaptchaToken('')
+        setCaptchaNonce((n) => n + 1)
+      }
       // A server limit outranks the local one; do not shorten it.
       if (serverCooldownMs) {
         startCooldown(serverCooldownMs, 'server')
@@ -360,9 +378,15 @@ export default function Contact() {
                     />
                   </div>
 
+                  <Turnstile
+                    onToken={setCaptchaToken}
+                    resetSignal={captchaNonce}
+                    className="mb-6 flex justify-center"
+                  />
+
                   <button
                     type="submit"
-                    disabled={sending || throttled}
+                    disabled={sending || throttled || (turnstileEnabled && !captchaToken)}
                     className="w-full bg-forest hover:bg-forest/85 disabled:opacity-60 disabled:hover:bg-forest text-sand text-[10px] tracking-ultra uppercase font-lato py-4 transition-colors duration-200"
                   >
                     {sending ? 'Sending…' : throttled ? `Please wait ${formatWait(waitMs)}` : 'Send Enquiry'}
@@ -382,7 +406,7 @@ export default function Contact() {
 
                   {error && !throttled && (
                     <p className="text-[10px] font-lato text-terracotta text-center mt-4">
-                      Something went wrong. Please try again or email us directly.
+                      {errorMsg || 'Something went wrong. Please try again or email us directly.'}
                     </p>
                   )}
 

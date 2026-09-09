@@ -8,6 +8,10 @@
  */
 
 const ENDPOINT = 'https://api.web3forms.com/submit'
+const TURNSTILE_VERIFY = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
+
+// Turnstile tokens cap out at 2048 chars.
+const MAX_TOKEN_LENGTH = 2_048
 
 const MAX_BODY_BYTES = 20_000
 const MAX_FIELD_LENGTH = 5_000
@@ -95,6 +99,23 @@ function validate(payload, form) {
   return null
 }
 
+/**
+ * Verifies a Turnstile token. Tokens are single-use and valid for 5 minutes,
+ * so a replayed one comes back as timeout-or-duplicate.
+ */
+async function verifyTurnstile(token, secret, remoteip) {
+  const body = new FormData()
+  body.append('secret', secret)
+  body.append('response', token)
+  if (remoteip && remoteip !== 'unknown') body.append('remoteip', remoteip)
+
+  const res = await fetch(TURNSTILE_VERIFY, { method: 'POST', body })
+  if (!res.ok) throw new Error(`siteverify returned ${res.status}`)
+
+  const result = await res.json()
+  return { success: result.success === true, errorCodes: result['error-codes'] || [] }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url)
@@ -138,6 +159,30 @@ export default {
     const invalid = validate(payload, form)
     if (invalid) {
       return json({ success: false, error: 'invalid_input', message: invalid }, 400)
+    }
+
+    // Captcha is enforced only once a secret is configured, so the Worker can
+    // be deployed before the widget exists without rejecting real enquiries.
+    if (env.TURNSTILE_SECRET_KEY) {
+      const token = payload.cfTurnstileToken
+      if (typeof token !== 'string' || token === '' || token.length > MAX_TOKEN_LENGTH) {
+        return json({ success: false, error: 'captcha_missing' }, 403)
+      }
+
+      let verdict
+      try {
+        verdict = await verifyTurnstile(token, env.TURNSTILE_SECRET_KEY, clientIp)
+      } catch (err) {
+        console.error('turnstile verification failed', err)
+        return json({ success: false, error: 'captcha_unavailable' }, 502)
+      }
+
+      if (!verdict.success) {
+        console.warn('turnstile rejected token', verdict.errorCodes.join(','))
+        return json({ success: false, error: 'captcha_failed' }, 403)
+      }
+    } else {
+      console.warn('TURNSTILE_SECRET_KEY is not set — captcha verification is disabled')
     }
 
     if (!env.WEB3FORMS_ACCESS_KEY) {

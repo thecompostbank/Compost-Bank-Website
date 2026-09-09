@@ -1,3 +1,7 @@
 # Copy to .dev.vars for local `wrangler dev`. Never commit .dev.vars.
-# In production this is set with: wrangler secret put WEB3FORMS_ACCESS_KEY
+# In production set these as Worker secrets, not build variables.
+#   wrangler secret put WEB3FORMS_ACCESS_KEY
+#   wrangler secret put TURNSTILE_SECRET_KEY
 WEB3FORMS_ACCESS_KEY=your-web3forms-access-key
+# Leave unset to skip captcha verification entirely.
+TURNSTILE_SECRET_KEY=your-turnstile-secret-key
