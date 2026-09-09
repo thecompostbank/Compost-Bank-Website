@@ -5,8 +5,7 @@
   "compatibility_date": "2026-09-08",
 
   // Vite builds the SPA into ./dist. Anything that is not a real file falls
-  // back to index.html so react-router handles the route (replaces the
-  // catch-all rewrite that vercel.json used to do).
+  // back to index.html so react-router handles the route.
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application",
