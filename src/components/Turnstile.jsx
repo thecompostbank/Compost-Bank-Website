@@ -1,6 +1,11 @@
 import { useEffect, useRef } from 'react'
 
-const SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY
+// Turnstile sitekeys are public by design — they appear in the HTML of every
+// site using Turnstile. Hardcoding the default means a missing or wiped build
+// variable can no longer silently ship a bundle with no widget, which pairs
+// with a configured TURNSTILE_SECRET_KEY to reject every submission.
+const DEFAULT_SITE_KEY = '0x4AAAAAAEtbJhlT7NpeaAHu'
+const SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || DEFAULT_SITE_KEY
 const SCRIPT_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
 
 /**
