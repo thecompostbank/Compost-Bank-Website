@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SEO from '../components/SEO'
+import { createRateLimiter } from '../utils/rateLimit'
 
 const ContourPattern = ({ opacity = '0.06' }) => (
   <svg
@@ -29,6 +30,22 @@ const labelClass = 'block text-[9px] font-lato tracking-ultra uppercase text-cha
 const selectClass =
   'w-full bg-transparent border-b border-charcoal/25 py-3 text-sm font-lato text-charcoal focus:outline-none focus:border-forest transition-colors duration-200 appearance-none cursor-pointer'
 
+// Throttles enquiry submissions from this browser: one every 30s,
+// and at most 3 in any 15-minute window.
+const submitLimiter = createRateLimiter({
+  key: 'cb:contact-submits',
+  maxAttempts: 3,
+  windowMs: 15 * 60 * 1000,
+  cooldownMs: 30 * 1000,
+})
+
+function formatWait(ms) {
+  const secs = Math.max(0, Math.ceil(ms / 1000))
+  if (secs < 60) return `${secs} second${secs === 1 ? '' : 's'}`
+  const mins = Math.ceil(secs / 60)
+  return `${mins} minute${mins === 1 ? '' : 's'}`
+}
+
 export default function Contact() {
   const [formState, setFormState] = useState({
     name: '',
@@ -42,6 +59,35 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
+  const [blockedUntil, setBlockedUntil] = useState(0)
+  const [blockReason, setBlockReason] = useState(null)
+  const [now, setNow] = useState(() => Date.now())
+
+  // Set both clocks from one reading, so the first rendered countdown
+  // is not measured against a stale `now`.
+  const startCooldown = (retryAfterMs, reason) => {
+    const t = Date.now()
+    setNow(t)
+    setBlockedUntil(t + retryAfterMs)
+    setBlockReason(reason)
+  }
+
+  // A limit reached before a reload still applies when the page comes back.
+  useEffect(() => {
+    const { allowed, retryAfterMs, reason } = submitLimiter.check()
+    if (!allowed) startCooldown(retryAfterMs, reason)
+  }, [])
+
+  useEffect(() => {
+    if (!blockedUntil) return
+    setNow(Date.now())
+    const id = setInterval(() => {
+      const t = Date.now()
+      if (t >= blockedUntil) setBlockedUntil(0)
+      else setNow(t)
+    }, 1000)
+    return () => clearInterval(id)
+  }, [blockedUntil])
 
   const handleChange = (e) => {
     setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -49,20 +95,34 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (sending) return
+
+    // Fast local check first: avoids a pointless round trip and gives
+    // instant feedback. The Worker enforces the real limit by IP.
+    const { allowed, retryAfterMs, reason } = submitLimiter.check()
+    if (!allowed) {
+      startCooldown(retryAfterMs, reason)
+      setError(false)
+      return
+    }
+
+    submitLimiter.record()
     setSending(true)
     setError(false)
+
+    let serverCooldownMs = 0
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          access_key: '17a236ad-5d28-4ec4-bedc-7e61e20fd717',
-          subject: 'New Consultation Request — The Compost Bank',
-          ...formState,
-        }),
+        body: JSON.stringify(formState),
       })
-      const data = await res.json()
-      if (data.success) {
+      const data = await res.json().catch(() => ({}))
+
+      if (res.status === 429) {
+        const retryAfter = Number(res.headers.get('Retry-After')) || data.retryAfter || 60
+        serverCooldownMs = retryAfter * 1000
+      } else if (data.success) {
         setSubmitted(true)
       } else {
         setError(true)
@@ -71,8 +131,18 @@ export default function Contact() {
       setError(true)
     } finally {
       setSending(false)
+      // A server limit outranks the local one; do not shorten it.
+      if (serverCooldownMs) {
+        startCooldown(serverCooldownMs, 'server')
+      } else {
+        const next = submitLimiter.check()
+        if (!next.allowed) startCooldown(next.retryAfterMs, next.reason)
+      }
     }
   }
+
+  const waitMs = blockedUntil ? blockedUntil - now : 0
+  const throttled = waitMs > 0
 
   return (
     <main>
@@ -292,13 +362,25 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    disabled={sending}
-                    className="w-full bg-forest hover:bg-forest/85 disabled:opacity-60 text-sand text-[10px] tracking-ultra uppercase font-lato py-4 transition-colors duration-200"
+                    disabled={sending || throttled}
+                    className="w-full bg-forest hover:bg-forest/85 disabled:opacity-60 disabled:hover:bg-forest text-sand text-[10px] tracking-ultra uppercase font-lato py-4 transition-colors duration-200"
                   >
-                    {sending ? 'Sending…' : 'Send Enquiry'}
+                    {sending ? 'Sending…' : throttled ? `Please wait ${formatWait(waitMs)}` : 'Send Enquiry'}
                   </button>
 
-                  {error && (
+                  {throttled && (
+                    <p aria-live="polite" className="text-[10px] font-lato text-charcoal/60 text-center mt-4">
+                      {blockReason === 'server'
+                        ? "We've received several enquiries from your connection."
+                        : blockReason === 'window'
+                          ? "You've sent a few enquiries already."
+                          : "You've just sent an enquiry."}{' '}
+                      You can send another in {formatWait(waitMs)}, or email us directly at
+                      raeann@thecompostbank.com.
+                    </p>
+                  )}
+
+                  {error && !throttled && (
                     <p className="text-[10px] font-lato text-terracotta text-center mt-4">
                       Something went wrong. Please try again or email us directly.
                     </p>

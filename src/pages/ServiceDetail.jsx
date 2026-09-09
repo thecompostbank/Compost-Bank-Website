@@ -1,12 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, Navigate, Link } from 'react-router-dom'
 import { services } from '../data/servicesData'
 import ServiceSection from '../components/ServiceSection'
 import SEO from '../components/SEO'
+import { createRateLimiter } from '../utils/rateLimit'
 
 const EMPTY_FORM = {
   businessName: '', contactName: '', position: '', email: '',
   phone: '', businessType: '', wasteVolume: '', participation: '', comments: '', consent: false,
+}
+
+// Same policy as the consultation form; the Worker enforces the real
+// per-IP limit, this is the instant-feedback layer.
+const interestLimiter = createRateLimiter({
+  key: 'cb:interest-submits',
+  maxAttempts: 3,
+  windowMs: 15 * 60 * 1000,
+  cooldownMs: 30 * 1000,
+})
+
+function formatWait(ms) {
+  const secs = Math.max(0, Math.ceil(ms / 1000))
+  if (secs < 60) return `${secs} second${secs === 1 ? '' : 's'}`
+  const mins = Math.ceil(secs / 60)
+  return `${mins} minute${mins === 1 ? '' : 's'}`
 }
 
 function InterestForm() {
@@ -14,26 +31,64 @@ function InterestForm() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
+  const [blockedUntil, setBlockedUntil] = useState(0)
+  const [blockReason, setBlockReason] = useState(null)
+  const [now, setNow] = useState(() => Date.now())
+
+  const startCooldown = (retryAfterMs, reason) => {
+    const t = Date.now()
+    setNow(t)
+    setBlockedUntil(t + retryAfterMs)
+    setBlockReason(reason)
+  }
+
+  useEffect(() => {
+    const { allowed, retryAfterMs, reason } = interestLimiter.check()
+    if (!allowed) startCooldown(retryAfterMs, reason)
+  }, [])
+
+  useEffect(() => {
+    if (!blockedUntil) return
+    setNow(Date.now())
+    const id = setInterval(() => {
+      const t = Date.now()
+      if (t >= blockedUntil) setBlockedUntil(0)
+      else setNow(t)
+    }, 1000)
+    return () => clearInterval(id)
+  }, [blockedUntil])
 
   const set = (field) => (e) =>
     setForm(f => ({ ...f, [field]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }))
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (sending) return
+
+    const { allowed, retryAfterMs, reason } = interestLimiter.check()
+    if (!allowed) {
+      startCooldown(retryAfterMs, reason)
+      setError(false)
+      return
+    }
+
+    interestLimiter.record()
     setSending(true)
     setError(false)
+
+    let serverCooldownMs = 0
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/interest', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          access_key: '17a236ad-5d28-4ec4-bedc-7e61e20fd717',
-          subject: 'New Registration of Interest — Centralized Processing & Collection',
-          ...form,
-        }),
+        body: JSON.stringify(form),
       })
-      const data = await res.json()
-      if (data.success) {
+      const data = await res.json().catch(() => ({}))
+
+      if (res.status === 429) {
+        const retryAfter = Number(res.headers.get('Retry-After')) || data.retryAfter || 60
+        serverCooldownMs = retryAfter * 1000
+      } else if (data.success) {
         setSubmitted(true)
       } else {
         setError(true)
@@ -42,11 +97,20 @@ function InterestForm() {
       setError(true)
     } finally {
       setSending(false)
+      if (serverCooldownMs) {
+        startCooldown(serverCooldownMs, 'server')
+      } else {
+        const next = interestLimiter.check()
+        if (!next.allowed) startCooldown(next.retryAfterMs, next.reason)
+      }
     }
   }
 
   const inputClass = "w-full bg-transparent border-b border-forest/20 py-3 text-sm font-lato text-charcoal placeholder-charcoal/30 focus:outline-none focus:border-forest/60 transition-colors duration-200"
   const labelClass = "block text-[10px] font-lato tracking-ultra uppercase text-forest/50 mb-1"
+
+  const waitMs = blockedUntil ? blockedUntil - now : 0
+  const throttled = waitMs > 0
 
   if (submitted) {
     return (
@@ -133,12 +197,20 @@ function InterestForm() {
       <div className="mt-10">
         <button
           type="submit"
-          disabled={sending}
-          className="inline-block bg-forest hover:bg-forest/90 disabled:opacity-60 text-sand text-[10px] tracking-ultra uppercase font-lato px-12 py-4 transition-colors duration-200"
+          disabled={sending || throttled}
+          className="inline-block bg-forest hover:bg-forest/90 disabled:opacity-60 disabled:hover:bg-forest text-sand text-[10px] tracking-ultra uppercase font-lato px-12 py-4 transition-colors duration-200"
         >
-          {sending ? 'Sending…' : 'Submit Interest'}
+          {sending ? 'Sending…' : throttled ? `Please wait ${formatWait(waitMs)}` : 'Submit Interest'}
         </button>
-        {error && (
+        {throttled && (
+          <p aria-live="polite" className="text-[10px] font-lato text-charcoal/60 mt-4">
+            {blockReason === 'server'
+              ? "We've received several submissions from your connection."
+              : "You've just submitted this form."}{' '}
+            You can send another in {formatWait(waitMs)}.
+          </p>
+        )}
+        {error && !throttled && (
           <p className="text-[10px] font-lato text-terracotta mt-4">
             Something went wrong. Please try again or email us directly.
           </p>
