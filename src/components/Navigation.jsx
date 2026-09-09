@@ -76,7 +76,8 @@ export default function Navigation() {
   const navIsCharcoal = navBgVisible && onCharcoalSection
   const useLightText = !navBgVisible || navIsDark || navIsCharcoal
 
-  const logoColor = useLightText ? 'text-sand' : 'text-forest'
+  const lightLogo = useLightText || menuOpen
+  const logoColor = lightLogo ? 'text-sand' : 'text-forest'
   const linkColor = (isHome && !navBgVisible) ? 'text-forest' : (useLightText ? 'text-sand' : 'text-forest')
   const bgClass = navIsCharcoal
     ? 'bg-charcoal/95 backdrop-blur-md'
@@ -88,18 +89,18 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${bgClass}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${menuOpen ? 'bg-forest' : bgClass}`}>
         <div className="w-full px-5 lg:px-10 py-3 lg:py-5 flex items-center justify-between">
 
           {/* Logo */}
           <Link to="/" className={`flex items-center gap-1 group transition-opacity hover:opacity-75 ${logoColor}`}>
             <img src="/Images/logo-for-website.png" alt="The Compost Bank" className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 flex-shrink-0 object-contain" />
             <div className="leading-none">
-              <p className={`text-[15px] sm:text-[16px] lg:text-[18px] font-lato tracking-ultra uppercase font-bold block mb-[2px] lg:mb-[3px] ${useLightText ? 'text-sand' : 'text-forest'}`}>
+              <p className={`text-[15px] sm:text-[16px] lg:text-[18px] font-lato tracking-ultra uppercase font-bold block mb-[2px] lg:mb-[3px] ${lightLogo ? 'text-sand' : 'text-forest'}`}>
                 The Compost Bank
               </p>
               <p className={`text-[10px] sm:text-[11px] lg:text-[13px] font-lato tracking-wide2 uppercase block transition-colors ${
-                useLightText ? 'text-sand/55' : 'text-terracotta'
+                lightLogo ? 'text-sand/55' : 'text-terracotta'
               }`}>
                 Wealth in Waste
               </p>
@@ -178,7 +179,10 @@ export default function Navigation() {
           <button
             onClick={toggleMenu}
             aria-label="Toggle menu"
-            className={`lg:hidden flex flex-col gap-[5px] group ${(navIsDark || navIsCharcoal) ? 'text-sand' : 'text-forest'}`}
+            aria-expanded={menuOpen}
+            className={`lg:hidden relative z-50 flex flex-col gap-[5px] p-2 -mr-2 group ${
+              menuOpen || navIsDark || navIsCharcoal ? 'text-sand' : 'text-forest'
+            }`}
           >
             <span className={`block h-px w-6 bg-current transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
             <span className={`block h-px bg-current transition-all duration-300 ${menuOpen ? 'w-0 opacity-0' : 'w-4 ml-auto'}`} />
@@ -188,43 +192,45 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile fullscreen menu */}
-      <div className={`fixed inset-0 z-40 bg-forest flex flex-col justify-center px-10 transition-all duration-500 ${
+      <div className={`fixed inset-0 z-40 bg-forest flex flex-col px-10 pt-32 sm:pt-36 pb-10 overflow-y-auto overscroll-contain transition-all duration-500 ${
         menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
-        <div className="mb-16">
-          <p className="text-sand/30 text-[9px] tracking-ultra uppercase font-lato mb-10">Navigation</p>
-          <nav className="flex flex-col gap-6">
-            <Link to="/" className="font-cormorant text-4xl text-sand hover:text-sand/60 transition-colors">
-              Home
-            </Link>
-            <Link to="/services" className="font-cormorant text-4xl text-sand hover:text-sand/60 transition-colors">
-              Services
-            </Link>
-            <div className="pl-4 flex flex-col gap-3 -mt-2">
-              {services.map(s => (
-                <Link key={s.slug} to={`/services/${s.slug}`} className="text-sand/50 text-sm font-lato hover:text-sand/80 transition-colors">
-                  {s.comingSoon ? `Coming Soon: ${s.title}` : s.title}
+        <div className="m-auto w-full">
+          <div className="mb-14">
+            <p className="text-sand/30 text-[9px] tracking-ultra uppercase font-lato mb-8">Navigation</p>
+            <nav className="flex flex-col gap-6">
+              <Link to="/" className="font-cormorant text-4xl text-sand hover:text-sand/60 transition-colors">
+                Home
+              </Link>
+              <Link to="/services" className="font-cormorant text-4xl text-sand hover:text-sand/60 transition-colors">
+                Services
+              </Link>
+              <div className="pl-4 flex flex-col gap-3 -mt-2">
+                {services.map(s => (
+                  <Link key={s.slug} to={`/services/${s.slug}`} className="text-sand/50 text-sm font-lato hover:text-sand/80 transition-colors">
+                    {s.comingSoon ? `Coming Soon: ${s.title}` : s.title}
+                  </Link>
+                ))}
+              </div>
+              {navLinks.map(({ label, path }) => (
+                <Link
+                  key={path}
+                  to={path}
+                  className="font-cormorant text-4xl text-sand hover:text-sand/60 transition-colors"
+                >
+                  {label}
                 </Link>
               ))}
-            </div>
-            {navLinks.map(({ label, path }) => (
-              <Link
-                key={path}
-                to={path}
-                className="font-cormorant text-4xl text-sand hover:text-sand/60 transition-colors"
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="border-t border-sand/10 pt-8">
-          <Link
-            to="/contact"
-            className="inline-block text-[10px] font-lato tracking-ultra uppercase border border-sand/30 text-sand px-8 py-3.5 hover:bg-sand hover:text-forest transition-colors"
-          >
-            Book a Consultation
-          </Link>
+            </nav>
+          </div>
+          <div className="border-t border-sand/10 pt-8">
+            <Link
+              to="/contact"
+              className="inline-block text-[10px] font-lato tracking-ultra uppercase border border-sand/30 text-sand px-8 py-3.5 hover:bg-sand hover:text-forest transition-colors"
+            >
+              Book a Consultation
+            </Link>
+          </div>
         </div>
       </div>
     </>
