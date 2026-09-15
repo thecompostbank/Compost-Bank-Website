@@ -159,8 +159,8 @@ export default function HowItWorks() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               { label: 'On-Site Composting', path: '/services/on-site-composting' },
-              { label: 'Waste Management Support', path: '/services/organic-waste-management' },
-              { label: 'Integrated Waste Planning', path: '/services/integrated-waste-management' },
+              { label: 'Organic Waste Management Support', path: '/services/organic-waste-management' },
+              { label: 'Complete Integrated Waste Management Plan', path: '/services/integrated-waste-management' },
               { label: 'Centralized Processing', path: '/services/centralized-processing' },
             ].map(s => (
               <Link

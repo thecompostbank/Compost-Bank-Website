@@ -273,7 +273,7 @@ export default function Home() {
               </div>
               <div className="py-5">
                 <p className="text-sand/60 text-sm lg:text-base font-lato leading-relaxed mb-2">
-                  Need help making waste management work in practice?
+                  need help making organic waste management work in practice?
                 </p>
                 <Link to="/services/organic-waste-management" className="flex items-center gap-3 text-sand font-lato text-sm lg:text-base group hover:opacity-70 transition-opacity">
                   <span className="text-terracotta">→</span>

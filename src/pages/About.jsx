@@ -269,7 +269,7 @@ export default function About() {
               {[
                 { label: 'On-Site Composting', path: '/services/on-site-composting' },
                 { label: 'Waste Management Support', path: '/services/organic-waste-management' },
-                { label: 'Integrated Waste Planning', path: '/services/integrated-waste-management' },
+                { label: 'Complete Integrated Waste Management Plan', path: '/services/integrated-waste-management' },
                 { label: 'Centralized Processing', path: '/services/centralized-processing' },
               ].map(s => (
                 <Link key={s.path} to={s.path} className="text-sand/45 hover:text-sand text-sm font-lato transition-colors duration-200">
