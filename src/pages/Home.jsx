@@ -35,7 +35,7 @@ const pillars = [
   },
   {
     title: 'Recover Value',
-    body: 'Transform organic waste streams into premium compost, biogas, and soil amendments — outputs with real market value and environmental benefit.',
+    body: 'Transform organic waste streams into premium compost and soil amendments — outputs with real market value and environmental benefit.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
         <path d="M12 22c0 0-8-4-8-11a8 8 0 0116 0c0 7-8 11-8 11z" />
@@ -93,15 +93,15 @@ const faqSchema = {
       name: 'What organic waste services are available for Phuket businesses?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The Compost Bank offers four services: on-site composting systems, organic waste management support (audits, training, monitoring), bio-generator and biogas projects for new developments, and a future centralized organic waste collection and processing service across Phuket.',
+        text: 'The Compost Bank offers four services: on-site composting systems, organic waste management support (audits, training, monitoring), integrated waste management planning for new developments, and a future centralized organic waste collection and processing service across Phuket.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Can biogas systems be integrated into new hotel and resort developments in Phuket?',
+      name: 'Can waste management be planned into new hotel and resort developments in Phuket?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The Compost Bank\'s Bio-Generator Projects service helps developers and architects integrate biogas and organic waste infrastructure into new Phuket hotels, resorts, and mixed-use developments from the design phase — before construction begins.',
+        text: 'Yes. The Compost Bank\'s Integrated Waste Management Planning service helps developers, architects, and master planners design complete waste systems for new developments in Phuket during the planning and design phase — before construction begins. The service covers all waste streams, including organic waste, recyclables, residual waste, and other project-specific materials.',
       },
     },
     {
@@ -120,7 +120,7 @@ export default function Home() {
     <main>
       <SEO
         title="The Compost Bank | Organic Waste Management &amp; Composting, Phuket"
-        description="The Compost Bank provides organic waste management, composting systems, and biogas solutions for hotels, resorts, and developments across Phuket, Thailand."
+        description="The Compost Bank provides organic waste management, composting systems, and integrated waste planning for hotels, resorts, and new developments across Phuket, Thailand."
         path="/"
         structuredData={faqSchema}
       />
@@ -282,11 +282,11 @@ export default function Home() {
               </div>
               <div className="py-5">
                 <p className="text-sand/60 text-sm lg:text-base font-lato leading-relaxed mb-2">
-                  Are you planning a new development in Phuket that will generate organic waste?
+                  Are you planning a new development that needs a complete waste management system?
                 </p>
-                <Link to="/services/bio-generator-projects" className="flex items-center gap-3 text-sand font-lato text-sm lg:text-base group hover:opacity-70 transition-opacity">
+                <Link to="/services/integrated-waste-management" className="flex items-center gap-3 text-sand font-lato text-sm lg:text-base group hover:opacity-70 transition-opacity">
                   <span className="text-terracotta">→</span>
-                  <span className="border-b border-sand/20 group-hover:border-sand/50 transition-colors pb-px">Design organic waste infrastructure before construction begins</span>
+                  <span className="border-b border-sand/20 group-hover:border-sand/50 transition-colors pb-px">Plan an integrated waste system across all waste streams before construction begins</span>
                 </Link>
               </div>
               <div className="py-5">

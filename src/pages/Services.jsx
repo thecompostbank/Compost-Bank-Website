@@ -7,7 +7,7 @@ export default function Services() {
     <main>
       <SEO
         title="Composting &amp; Organic Waste Solutions Phuket | The Compost Bank"
-        description="Four organic waste services in Phuket: composting systems, organic waste management support, biogas and bio-generator projects, and future centralized collection."
+        description="Four waste management services in Phuket: on-site composting systems, organic waste management support, integrated waste management planning for new developments, and future centralized collection."
         path="/services"
       />
       {/* Hero */}

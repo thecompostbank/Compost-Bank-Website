@@ -347,7 +347,7 @@ export default function Contact() {
                         <option>On-Site Composting</option>
                         <option>Centralized Organic Waste Processing</option>
                         <option>Sustainability Consultancy</option>
-                        <option>New Development / Bio-Generator Project</option>
+                        <option>New Development / Integrated Waste Planning</option>
                         <option>Not sure — help me figure it out</option>
                       </select>
                       <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-forest/50">

@@ -19,7 +19,7 @@ const steps = [
     number: '02',
     title: 'Design',
     headline: 'We design the right solution for your needs.',
-    body: "No two businesses are the same. We use the findings from the assessment to design an approach that fits your space, your volumes, your team, and your budget. Whether that means operational improvements, an on-site composting system, a future biogas project, or a pathway toward centralized processing, we develop practical solutions tailored to your goals, constraints, and resources.",
+    body: "No two businesses are the same. We use the findings from the assessment to design an approach that fits your space, your volumes, your team, and your budget. Whether that means operational improvements, an on-site composting system, integrated waste planning for a new development, or a pathway toward centralized processing, we develop practical solutions tailored to your goals, constraints, and resources.",
     details: [
       'System type selection and pathway recommendation',
       'Infrastructure design and capacity planning',
@@ -160,7 +160,7 @@ export default function HowItWorks() {
             {[
               { label: 'On-Site Composting', path: '/services/on-site-composting' },
               { label: 'Waste Management Support', path: '/services/organic-waste-management' },
-              { label: 'Bio-Generator Projects', path: '/services/bio-generator-projects' },
+              { label: 'Integrated Waste Planning', path: '/services/integrated-waste-management' },
               { label: 'Centralized Processing', path: '/services/centralized-processing' },
             ].map(s => (
               <Link
