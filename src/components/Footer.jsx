@@ -57,9 +57,6 @@ export default function Footer() {
                 <a href="mailto:raeann@thecompostbank.com" className="text-[11px] font-lato text-sand/60 hover:text-sand transition-colors block">
                   raeann@thecompostbank.com
                 </a>
-                <a href="mailto:tom@thecompostbank.com" className="text-[11px] font-lato text-sand/60 hover:text-sand transition-colors block mt-1">
-                  tom@thecompostbank.com
-                </a>
               </div>
               <div className="pt-4">
                 <Link

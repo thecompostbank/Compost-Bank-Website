@@ -194,7 +194,7 @@ export default function About() {
               </p>
               <div className="space-y-5 text-charcoal/65 text-sm lg:text-base font-lato leading-relaxed">
                 <p>
-                  The Compost Bank was founded by Rae Ann Collier and Tom Gossland after they identified a gap in Phuket's waste management infrastructure that few people were talking about.
+                  The Compost Bank was founded by Rae Ann Collier after she identified a gap in Phuket's waste management infrastructure that few people were talking about.
                 </p>
                 <p>
                   When Rae Ann began researching waste management on the island, much of the conversation focused on plastic pollution. But the more she looked into Phuket's waste system, the less convinced she became that plastic was the biggest challenge. Recycling networks already existed, collection initiatives were growing, and awareness was high. Yet one waste stream kept appearing in the data again and again: organic waste.
@@ -203,13 +203,10 @@ export default function About() {
                   The deeper she dug, the clearer the problem became. Huge volumes of food waste, garden waste, and other organic materials were ending up in landfill every day, not because they had no value, but because the infrastructure needed to recover them simply didn't exist.
                 </p>
                 <p>
-                  Around the same time, Rae Ann met Tom, an engineer with a background in renewable energy systems who shared a strong belief that sustainability should be practical, measurable, and embedded into everyday life. While teaching at an international school in Phuket, Tom looked for opportunities to incorporate sustainability concepts across subjects and inspire students to think critically about the systems that shape our world. Beyond the classroom, he was passionate about developing technology for good and building solutions that create tangible, lasting impact.
+                  Drawing on her background in environmental management, circular economy, and waste systems, Rae Ann began developing the idea that would become The Compost Bank. What started as a vision for a centralized organic waste facility evolved as she worked directly with businesses across Phuket and gained a deeper understanding of the different challenges they faced. It became clear that solving the island's organic waste problem would require more than a single facility or technology. It would require practical systems that could work across different sites, operations, and scales.
                 </p>
                 <p>
-                  What began as a shared interest in sustainability quickly evolved into a shared vision. Combining Rae Ann's experience in resource management and waste systems with Tom's engineering and systems-thinking approach, they saw an opportunity to tackle one of Phuket's most overlooked environmental challenges. Together, they began developing the idea that would become The Compost Bank.
-                </p>
-                <p>
-                  Today, they are working to help Phuket rethink organic waste—not as rubbish to get rid of, but as a resource worth recovering. Their goal is simple: build practical solutions, create the infrastructure that's currently missing, and demonstrate that with the right systems in place, waste can become a valuable resource that benefits businesses, communities, and the environment alike.
+                  Today, The Compost Bank is working to help Phuket rethink organic waste, not as rubbish to get rid of, but as a resource worth recovering. The goal is simple: build practical solutions, create the infrastructure that's currently missing, and demonstrate that with the right systems in place, waste can become a valuable resource that benefits businesses, communities, and the environment alike.
                 </p>
               </div>
             </div>
@@ -217,7 +214,7 @@ export default function About() {
             <div className="h-[320px] lg:h-full overflow-hidden">
               <img
                 src="/Images/shirts.png"
-                alt="Rae Ann Collier and Tom Gossland, founders of The Compost Bank, organic waste management company in Phuket"
+                alt="Rae Ann Collier, founder of The Compost Bank, organic waste management company in Phuket"
                 className="w-full h-full object-cover"
               />
             </div>

@@ -206,12 +206,6 @@ export default function Contact() {
                   >
                     raeann@thecompostbank.com
                   </a>
-                  <a
-                    href="mailto:tom@thecompostbank.com"
-                    className="text-sm font-lato text-charcoal/65 hover:text-forest transition-colors block mt-1"
-                  >
-                    tom@thecompostbank.com
-                  </a>
                 </div>
                 <div>
                   <p className="text-sm font-lato tracking-ultra uppercase text-olive font-bold mb-2">Response Time</p>
