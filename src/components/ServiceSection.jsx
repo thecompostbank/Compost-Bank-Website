@@ -78,8 +78,8 @@ export default function ServiceSection({ id, number, title, description, forWho,
 
           </>
         ) : (
-          /* Standard grid — 40/60 when imageWide, else 50/50 */
-          <div className={`grid ${imageWide ? 'lg:grid-cols-[2fr_3fr]' : 'lg:grid-cols-2'} gap-8 lg:gap-14 items-start ${flipped ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+          /* Standard grid — 40/60 when imageWide, else 50/50; single column when no image */
+          <div className={`${(gallery || image) ? `grid ${imageWide ? 'lg:grid-cols-[2fr_3fr]' : 'lg:grid-cols-2'} gap-8 lg:gap-14 items-start` : ''} ${flipped ? 'lg:[&>*:first-child]:order-2' : ''}`}>
 
             {/* Gallery carousel or single image */}
             {gallery ? (
